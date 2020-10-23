@@ -1,12 +1,13 @@
 import React from 'react';
-import BoxStyle from './BoxStyle';
+import StyleHome from './StyleHome';
+import '../CSS/Home/Home.css';
 
 function Home() {
   return (
     <div>
-      <h1> Home</h1>
-      <BoxStyle />
+      <StyleHome />
     </div>
   );
 }
+
 export default Home;
