@@ -60,12 +60,15 @@ span {
     height: 100vh;
     display: flex;
     justify-content: center;
-    position: fixed;
+    position: absolute;
+    z-index: 1000;
     top: -100%;
     transition: 850ms;
     margin-top: 5px;
   }
   .nav-menu.active {
+    position: absolute;
+    z-index: 1000;
     display: flex;
     justify-content: flex-start;
     top: 0;

@@ -30,12 +30,12 @@ function NavBarMobile() {
       icons: <AiIcons.AiOutlineMessage />,
       className: 'nav-text',
     },
-    {
-      title: 'Politique de Confidentialité',
-      path: '/politique-de-confidentialité',
-      icons: <AiIcons.AiOutlineFileExclamation />,
-      className: 'nav-text',
-    },
+    // {
+    //   title: 'Politique de Confidentialité',
+    //   path: '/politique-de-confidentialité',
+    //   icons: <AiIcons.AiOutlineFileExclamation />,
+    //   className: 'nav-text',
+    // },
   ];
 
   return (
