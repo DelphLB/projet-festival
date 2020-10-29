@@ -1,12 +1,14 @@
 import React from 'react';
-import StyleHome from './StyleHome';
+import PageStyle from '../PageStyle/PageStyle';
 import '../CSS/Home/Home.css';
-import Footer from '../Reusable/Footer';
+import Footer from '../Reusable/Footer/Footer';
+import NavBar from '../Reusable/NavBar/Navbar';
 
 function Home() {
   return (
     <div>
-      <StyleHome />
+      <NavBar />
+      <PageStyle />
       <Footer />
     </div>
   );

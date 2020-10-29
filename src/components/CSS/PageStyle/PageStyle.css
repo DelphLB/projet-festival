@@ -1,0 +1,19 @@
+.pageStyle {
+  background-color: black;
+}
+
+.styleBox {
+  display: flex;
+  margin-bottom: 46px;
+  margin-top: 46px;
+}
+
+.insideStyleBox {
+  width: 100%;
+  background-color: white;
+  border-radius: 14px;
+}
+
+.titleStyleBox {
+  padding: 1em;
+}

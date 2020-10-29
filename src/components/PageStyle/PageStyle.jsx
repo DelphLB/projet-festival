@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../CSS/PageStyle/PageStyle.css';
+import Fade from 'react-reveal/Fade';
 
 class PageStyle extends Component {
   constructor() {
@@ -20,10 +22,32 @@ class PageStyle extends Component {
     const { listofStyles } = this.state;
 
     return (
-      <div>
-        <p> Page Style </p>
+      <div className="pageStyle">
         {listofStyles.map((style) => (
-          <Link to={`/style/${style.idstyle}`}> {style.name} </Link>
+          <Link
+            to={`/style/${style.idstyle}`}
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              fontSize: '54px',
+            }}
+          >
+            <Fade big duration={2200} delay={220}>
+              <div className="styleBox">
+                <div
+                  className="insideStyleBox"
+                  style={{
+                    backgroundRepeat: 'no-repeat',
+                    backgroundImage: `url(${style.image})`,
+                  }}
+                >
+                  <div className="titleBox">
+                    <p className="titleStyleBox">{style.name}</p>
+                  </div>
+                </div>
+              </div>
+            </Fade>
+          </Link>
         ))}
       </div>
     );

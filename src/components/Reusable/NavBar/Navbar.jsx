@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import '../CSS/Reusable/NavBar/Navbar.css';
+import '../../CSS/Reusable/NavBar/Navbar.css';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
-import Search from './NavBar/Search';
+import Search from './Search';
 
 function NavBarMobile() {
   const [topbar, setTopbar] = useState(false);
