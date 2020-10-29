@@ -12,6 +12,11 @@
   margin-top: -16px;
   height: 80px;
 }
+.nav-menu {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
 .nav-menu-items {
   display: flex;
   flex-direction: row;
@@ -58,6 +63,7 @@ span {
     position: fixed;
     top: -100%;
     transition: 850ms;
+    margin-top: 5px;
   }
   .nav-menu.active {
     display: flex;
