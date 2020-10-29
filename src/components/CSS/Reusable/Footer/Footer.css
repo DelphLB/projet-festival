@@ -1,0 +1,22 @@
+.footer {
+  border: 1px solid black;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.info {
+  list-style-type: none;
+}
+
+@media screen and (min-width: 480px) {
+  footer .map {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+  }
+}
