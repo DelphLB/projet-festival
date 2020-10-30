@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../CSS/PageStyle/PageStyle.css';
-import Fade from 'react-reveal/Fade';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 class PageStyle extends Component {
   constructor() {
@@ -16,6 +17,7 @@ class PageStyle extends Component {
     axios
       .get('https://api-festit-09-20.herokuapp.com/api/styles')
       .then((response) => this.setState({ listofStyles: response.data }));
+    Aos.init({ duration: 1000 });
   }
 
   render() {
@@ -24,16 +26,16 @@ class PageStyle extends Component {
     return (
       <div className="pageStyle">
         {listofStyles.map((style) => (
-          <Link
-            to={`/style/${style.idstyle}`}
-            style={{
-              textDecoration: 'none',
-              color: 'white',
-              fontSize: '54px',
-            }}
-          >
-            <Fade big duration={2200} delay={220}>
-              <div className="styleBox">
+          <div className="pageStyle_box">
+            <Link
+              to={`/style/${style.idstyle}`}
+              style={{
+                textDecoration: 'none',
+                color: 'white',
+                fontSize: '54px',
+              }}
+            >
+              <div data-aos="flip-up">
                 <div
                   className="insideStyleBox"
                   style={{
@@ -46,8 +48,8 @@ class PageStyle extends Component {
                   </div>
                 </div>
               </div>
-            </Fade>
-          </Link>
+            </Link>
+          </div>
         ))}
       </div>
     );

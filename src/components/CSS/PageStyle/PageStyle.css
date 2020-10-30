@@ -1,17 +1,27 @@
 .pageStyle {
   background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.pageStyle_box {
+  width: 90%;
 }
 
 .styleBox {
   display: flex;
-  margin-bottom: 46px;
-  margin-top: 46px;
+  margin: 46px 0;
 }
 
 .insideStyleBox {
-  width: 100%;
+  width: 90%;
   background-color: white;
   border-radius: 14px;
+  margin: auto;
+  text-align: center;
 }
 
 .titleStyleBox {

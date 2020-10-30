@@ -5,6 +5,7 @@
   text-decoration: none;
   border: none;
   transition: 350ms;
+  pointer-events: none;
 }
 .search-icon {
   display: flex;
@@ -21,7 +22,7 @@
   margin-top: 10px;
 }
 input.sc-bdVaJa {
-  width: 400px;
+  width: 280px;
   font-size: 15px;
   border-radius: 30px;
   height: 35px;

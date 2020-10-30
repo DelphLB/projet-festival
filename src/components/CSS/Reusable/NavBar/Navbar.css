@@ -10,7 +10,8 @@
   justify-content: space-around;
   background-color: black;
   margin-top: -16px;
-  height: 80px;
+  height: 72px;
+  border-bottom: 1px solid white;
 }
 .nav-menu {
   display: flex;

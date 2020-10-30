@@ -1,8 +1,5 @@
 .footer {
-  border: 1px solid black;
-  bottom: 0;
   width: 100%;
-  background-color: black;
   color: white;
   text-align: center;
   padding-bottom: 10px;
@@ -10,6 +7,16 @@
 
 .info {
   list-style-type: none;
+  padding: 0;
+}
+
+#button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
 }
 
 @media screen and (min-width: 480px) {
