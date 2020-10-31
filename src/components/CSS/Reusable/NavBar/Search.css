@@ -10,10 +10,10 @@
 .search-icon {
   display: flex;
   font-size: 2rem;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 .search-icon svg {
-  margin-top: 15px;
+  margin-top: 14px;
 }
 .search_active {
   display: flex;
@@ -26,6 +26,7 @@ input.sc-bdVaJa {
   font-size: 15px;
   border-radius: 30px;
   height: 35px;
+  margin-top: 1px;
 }
 .sc-bwzfXH {
   font-size: 20px;
