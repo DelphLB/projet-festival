@@ -6,7 +6,7 @@ import NavBar from '../Reusable/NavBar/Navbar';
 
 function Home() {
   return (
-    <div>
+    <div className="Home">
       <NavBar />
       <BoxStyle />
       <Footer />
