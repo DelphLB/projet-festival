@@ -1,5 +1,5 @@
 import React from 'react';
-import PageStyle from '../PageStyle/PageStyle';
+import BoxStyle from './BoxStyle';
 import '../CSS/Home/Home.css';
 import Footer from '../Reusable/Footer/Footer';
 import NavBar from '../Reusable/NavBar/Navbar';
@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <NavBar />
-      <PageStyle />
+      <BoxStyle />
       <Footer />
     </div>
   );
