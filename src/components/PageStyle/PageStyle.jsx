@@ -6,6 +6,11 @@ import Box from './componentsStyle/Box';
 import '../CSS/PageStyle/PageStyle.css';
 
 function PageStyle() {
+  // const { idStyle } = match.params;
+  // Appel Api couleur
+  // axios.get(//style/id)
+  // {id, name, color}
+
   return (
     <div className="Style">
       <NavBar />
