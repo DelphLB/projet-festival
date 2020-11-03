@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Reusable/NavBar/Navbar';
+import Navbar from '../Reusable/Navbar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 import Banner from './componentsStyle/Banner';
 import Box from './componentsStyle/Box';
