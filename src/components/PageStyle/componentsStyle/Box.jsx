@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../CSS/PageStyle/Box.css';
+import '../../../style/CSS/PageStyle/Box.css';
 
 function Box() {
   return <div className="Box">Box</div>;

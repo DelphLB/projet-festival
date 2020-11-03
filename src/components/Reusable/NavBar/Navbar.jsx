@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import '../../CSS/Reusable/NavBar/Navbar.css';
+import '../../../style/CSS/Reusable/Navbar/Navbar.css';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import Search from './Search';
 
-function NavBarMobile() {
+function Navbar() {
   const [topbar, setTopbar] = useState(false);
 
   const showTopbar = () => setTopbar(!topbar);
@@ -73,4 +73,4 @@ function NavBarMobile() {
   );
 }
 
-export default NavBarMobile;
+export default Navbar;

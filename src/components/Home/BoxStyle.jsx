@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import '../CSS/Home/BoxStyle.css';
+import '../../style/CSS/Home/BoxStyle.css';
 
 class BoxStyle extends Component {
   constructor() {
@@ -40,9 +40,11 @@ class BoxStyle extends Component {
                 }}
               >
                 <div className="titleBox">
-                  <p className="titleStyleBox">
-                    <p className="styleName">{style.name}</p>
-                  </p>
+                  <div className="titleStyleBox">
+                    <div className="styleName">
+                      <p className="pName">{style.name}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Link>

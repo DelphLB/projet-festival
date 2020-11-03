@@ -1,14 +1,14 @@
 import React from 'react';
-import NavBar from '../Reusable/NavBar/Navbar';
+import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 import Banner from './componentsStyle/Banner';
 import Box from './componentsStyle/Box';
-import '../CSS/PageStyle/PageStyle.css';
+import '../../style/CSS/PageStyle/PageStyle.css';
 
 function PageStyle() {
   return (
     <div className="Style">
-      <NavBar />
+      <Navbar />
       <Banner />
       <Box />
       <Footer />
