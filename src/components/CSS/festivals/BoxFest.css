@@ -3,6 +3,32 @@
   margin: auto;
   text-align: center;
 }
+
+.festival {
+  background-color: #0e1f31;
+}
+
 .descriptionText {
   color: beige;
+}
+
+.lineUp {
+  color: beige;
+}
+
+.packCadre {
+  width: 90%;
+
+  background: rgba(62, 100, 134, 0.83);
+  border-radius: 11px;
+}
+
+.bouttonResa p {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  text-decoration: none;
+}
+.cardsPack {
+  display: inline;
 }
