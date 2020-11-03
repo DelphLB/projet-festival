@@ -5,23 +5,22 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-top: 26px;
 }
 
 .pageStyle_box {
-  width: 90%;
+  width: 100%;
 }
 
 .insideStyleBox {
-  width: 90%;
+  width: 100%;
   background-color: white;
-  border-radius: 14px;
-  margin: auto;
   text-align: center;
 }
 
 .titleStyleBox {
-  margin: 50px 0px 0px 0px;
-  padding: 1.25em;
+  margin: 26px 0px;
+  padding: 22px;
 }
 
 .styleName {
@@ -33,11 +32,14 @@
 @media screen and (min-width: 950px) {
   .pageStyle {
     flex-direction: row;
-    margin: 60px 0px 120px 0px;
+  }
+
+  .pageStyle_box {
+    margin-top: 10px;
   }
 
   .insideStyleBox {
-    height: 560px;
+    height: 600px;
   }
 
   .insideStyleBox:hover {
