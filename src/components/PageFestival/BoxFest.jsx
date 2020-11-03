@@ -13,7 +13,9 @@ class BoxFest extends Component {
       festivals: {},
       tickets: [],
       artists: [],
+      isToggleOn: false,
     };
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -39,6 +41,15 @@ class BoxFest extends Component {
 
     axios
       .get(
+        `https://api-festit-09-20.herokuapp.com/api//tickets/festivals/${idfestival}`
+      )
+      .then((response) => {
+        this.setState({
+          tickets: response.data[0],
+        });
+      });
+    axios
+      .get(
         `https://api-festit-09-20.herokuapp.com/api//festivals/${idfestival}/artists`
       )
       .then((response) => {
@@ -48,10 +59,17 @@ class BoxFest extends Component {
       });
   }
 
+  handleClick() {
+    this.setState((state) => ({
+      isToggleOn: !state.isToggleOn,
+    }));
+  }
+
   render() {
     const { festivals } = this.state;
     const { tickets } = this.state;
     const { artists } = this.state;
+    const Toggle = this.state;
     return (
       <div className="festival">
         <Navbar />;{/* box festival : image en background et nom festoch */}
@@ -62,9 +80,53 @@ class BoxFest extends Component {
           <h1 className="styleName">{festivals.name}</h1>
           <img src={festivals.image1} alt={festivals.name} />
         </div>
-        <div className="descriptionFestival">
-          <p className="descriptionText">{festivals.description}</p>
+        {/* ------- Partie description ---------*/}
+        <div
+          className="container-description"
+          aria-hidden="true"
+          onClick={this.handleClick}
+        >
+          <div className="descriptionFestival">
+            <p className="details"> Need more details ? </p>
+            {Toggle.isToggleOn ? (
+              <div className="descriptionText">{festivals.description}</div>
+            ) : (
+              ''
+            )}
+          </div>
         </div>
+        {/* ------- Partie description ---------*/}
+        {/* -----Partie icones ----- */}
+        <div className="container-icones">
+          <div className="icone-texte">
+            <img
+              className="image-icone"
+              src="https://loire.envie.org/wp-content/uploads/sites/5/2018/04/2017-05-04-Icone-Lieu-charte-ERA.png"
+              alt="location"
+            />
+            <p className="text-icone"> {festivals.city}</p>
+          </div>
+
+          <div className="icone-texte">
+            <img
+              className="image-icone"
+              src="https://cdn.pixabay.com/photo/2016/06/29/21/11/calendar-icon-1487803_960_720.png"
+              alt="date"
+            />
+            <p className="text-icone">
+              {festivals.startDate} {festivals.endDate}
+            </p>
+          </div>
+          <div className="icone-texte">
+            <img
+              className="image-icone"
+              src="https://cdn.pixabay.com/photo/2017/06/17/04/17/purchasing-2411136_960_720.png"
+              alt="price"
+            />
+            <p className="text-icone">{tickets.price} € </p>
+          </div>
+        </div>
+        {/* -------fin partie icones -------- */}
         {/* le lineup */}
         <div className="lineUp">
           {' '}

@@ -1,6 +1,7 @@
 .boxFestival {
   width: auto;
   margin: auto;
+  margin-bottom: 0px;
   text-align: center;
 }
 
@@ -8,8 +9,47 @@
   background-color: #0e1f31;
 }
 
+.container-description {
+  background-color: wheat;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* border: solid 1px blue; */
+  text-align: center;
+}
+.descriptionFestival {
+  margin-top: 0px;
+  /* border: 1px solid white; */
+  margin: 15px auto;
+}
+
+.details {
+  cursor: pointer;
+  font-weight: bold;
+}
 .descriptionText {
-  color: beige;
+  color: black;
+  /* border: 1px solid red; */
+  margin: 30px auto;
+}
+/* -----------partie icones --------------*/
+.container-icones {
+  display: flex;
+  width: 60%;
+  margin: 50px auto;
+  justify-content: space-around;
+}
+
+.icone-texte {
+  text-align: center;
+}
+
+.text-icone {
+  color: white;
+}
+
+.image-icone {
+  width: 50px;
 }
 
 .lineUp {
