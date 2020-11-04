@@ -13,6 +13,7 @@ class BoxFest extends Component {
       festivals: {},
       tickets: [],
       artists: [],
+      ticket: {},
       isToggleOn: false,
     };
     this.handleClick = this.handleClick.bind(this);
@@ -36,18 +37,10 @@ class BoxFest extends Component {
       .then((response) => {
         this.setState({
           tickets: response.data,
+          ticket: response.data[0],
         });
       });
 
-    axios
-      .get(
-        `https://api-festit-09-20.herokuapp.com/api//tickets/festivals/${idfestival}`
-      )
-      .then((response) => {
-        this.setState({
-          tickets: response.data[0],
-        });
-      });
     axios
       .get(
         `https://api-festit-09-20.herokuapp.com/api//festivals/${idfestival}/artists`
@@ -69,16 +62,20 @@ class BoxFest extends Component {
     const { festivals } = this.state;
     const { tickets } = this.state;
     const { artists } = this.state;
+    const { ticket } = this.state;
     const Toggle = this.state;
     return (
       <div className="festival">
         <Navbar />;{/* box festival : image en background et nom festoch */}
         <div
           className="boxFestival"
-          //    styles={{ backgroundImage: `url(${festivals.image1})` }}
+          style={{
+            backgroundImage: `url("${festivals.image1}")`,
+            backgroundSize: 'cover',
+          }}
         >
-          <h1 className="styleName">{festivals.name}</h1>
-          <img src={festivals.image1} alt={festivals.name} />
+          <div className="cadreTitle" />
+          <h2 className="styleNameFest">{festivals.name}</h2>
         </div>
         {/* ------- Partie description ---------*/}
         <div
@@ -123,7 +120,7 @@ class BoxFest extends Component {
               src="https://cdn.pixabay.com/photo/2017/06/17/04/17/purchasing-2411136_960_720.png"
               alt="price"
             />
-            <p className="text-icone">{tickets.price} € </p>
+            <p className="text-icone">{ticket.price} € </p>
           </div>
         </div>
         {/* -------fin partie icones -------- */}

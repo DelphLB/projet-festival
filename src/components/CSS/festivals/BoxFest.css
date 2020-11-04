@@ -2,7 +2,20 @@
   width: auto;
   margin: auto;
   margin-bottom: 0px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  opacity: 0.8;
+}
+
+.styleNameFest {
+  background: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 120px;
+  text-shadow: black 2px 5px 50px;
 }
 
 .festival {
@@ -58,7 +71,6 @@
 
 .packCadre {
   width: 90%;
-
   background: rgba(62, 100, 134, 0.83);
   border-radius: 11px;
 }
@@ -70,5 +82,7 @@
   text-decoration: none;
 }
 .cardsPack {
-  display: inline;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
