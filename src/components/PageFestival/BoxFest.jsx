@@ -14,6 +14,7 @@ class BoxFest extends Component {
       tickets: [],
       artists: [],
       isToggleOn: false,
+      ticket: {},
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -36,18 +37,19 @@ class BoxFest extends Component {
       .then((response) => {
         this.setState({
           tickets: response.data,
+          ticket: response.data[0],
         });
       });
 
-    axios
-      .get(
-        `https://api-festit-09-20.herokuapp.com/api//tickets/festivals/${idfestival}`
-      )
-      .then((response) => {
-        this.setState({
-          tickets: response.data[0],
-        });
-      });
+    // axios
+    //   .get(
+    //     `https://api-festit-09-20.herokuapp.com/api//tickets/festivals/${idfestival}`
+    //   )
+    //   .then((response) => {
+    //     this.setState({
+    //       tickets: response.data[0],
+    //     });
+    //   });
     axios
       .get(
         `https://api-festit-09-20.herokuapp.com/api//festivals/${idfestival}/artists`
@@ -69,6 +71,7 @@ class BoxFest extends Component {
     const { festivals } = this.state;
     const { tickets } = this.state;
     const { artists } = this.state;
+    const { ticket } = this.state;
     const Toggle = this.state;
     return (
       <div className="festival">
@@ -87,7 +90,12 @@ class BoxFest extends Component {
           onClick={this.handleClick}
         >
           <div className="descriptionFestival">
-            <p className="details"> Need more details ? </p>
+            <p className="details">
+              {' '}
+              <p className="fleche"> &darr; </p>
+              <p className="description">Description</p>{' '}
+              <p className="fleche"> &darr; </p>
+            </p>
             {Toggle.isToggleOn ? (
               <div className="descriptionText">{festivals.description}</div>
             ) : (
@@ -123,16 +131,22 @@ class BoxFest extends Component {
               src="https://cdn.pixabay.com/photo/2017/06/17/04/17/purchasing-2411136_960_720.png"
               alt="price"
             />
-            <p className="text-icone">{tickets.price} € </p>
+            <p className="text-icone">{ticket.price} € </p>
           </div>
         </div>
         {/* -------fin partie icones -------- */}
         {/* le lineup */}
         <div className="lineUp">
-          {' '}
-          {artists.map((artist) => (
-            <div> {artist.name}</div>
-          ))}
+          <div className="title-lineUp">
+            <p className="tiret"> &#8212;</p>
+            <p> Line - Up </p>
+            <p className="tiret"> &#8212;</p>
+          </div>
+          <div className="container-artist-name">
+            {artists.map((artist) => (
+              <p className="artist-name"> {artist.name} &emsp; - &emsp; </p>
+            ))}
+          </div>
         </div>
         {/* package festival (box ticket) */}
         <div className="packFestival">
