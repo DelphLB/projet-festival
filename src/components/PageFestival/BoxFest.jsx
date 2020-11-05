@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
+import AutoPlay from './AutoPlay';
 
 class BoxFest extends Component {
   constructor() {
@@ -12,7 +13,7 @@ class BoxFest extends Component {
     this.state = {
       festivals: {},
       tickets: [],
-      artists: [],
+      // artists: [],
       ticket: {},
       isToggleOn: false,
     };
@@ -41,15 +42,15 @@ class BoxFest extends Component {
         });
       });
 
-    axios
-      .get(
-        `https://api-festit-09-20.herokuapp.com/api//festivals/${idfestival}/artists`
-      )
-      .then((response) => {
-        this.setState({
-          artists: response.data,
-        });
-      });
+    // axios
+    //   .get(
+    //     `https://api-festit-09-20.herokuapp.com/api//festivals/${idfestival}/artists`
+    //   )
+    //   .then((response) => {
+    //     this.setState({
+    //       artists: response.data,
+    //     });
+    //   });
   }
 
   handleClick() {
@@ -61,7 +62,7 @@ class BoxFest extends Component {
   render() {
     const { festivals } = this.state;
     const { tickets } = this.state;
-    const { artists } = this.state;
+    // const { artists } = this.state;
     const { ticket } = this.state;
     const Toggle = this.state;
     return (
@@ -129,20 +130,19 @@ class BoxFest extends Component {
           </div>
         </div>
         {/* -------fin partie icones -------- */}
-        {/* le lineup */}
-        <div className="lineUp">
+        {/* ------ le lineup ---------- */}
+        <AutoPlay />
+        {/* <div className="lineUp">
           <div className="title-lineUp">
             <p className="tiret"> &#8212;</p>
             <p> Line - Up </p>
             <p className="tiret"> &#8212;</p>
           </div>
           <div className="container-artist-name">
-            {artists.map((artist) => (
-              <p className="artist-name"> {artist.name} &emsp; - &emsp; </p>
-            ))}
+            {artists.map((artist) => ())}
           </div>
-        </div>
-        {/* package festival (box ticket) */}
+        </div> */}
+        {/* ----- package festival (box ticket)------ */}
         <div className="packFestival">
           <div className="cardsPack">
             {tickets.map((pack) => (

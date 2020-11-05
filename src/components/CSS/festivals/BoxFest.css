@@ -103,28 +103,20 @@
   text-transform: uppercase;
 }
 
-.artist-name {
-  /* border: 1px solid yellow; */
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  color: white;
-}
-.container-artist-name {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
 /* ----- fin partie Line up ----- */
-.packCadre {
-  width: 90%;
-  background: rgba(62, 100, 134, 0.83);
+.pakCadre {
+  /* border: 1px solid red; */
+  width: 30%;
+  background: white;
   border-radius: 11px;
 }
-
+.imagepack {
+  width: 100%;
+}
 .bouttonResa p {
-  color: white;
+  color: black;
+  border: solid black 2px;
+  width: 20%;
   font-size: 20px;
   text-decoration: none;
   text-decoration: none;
