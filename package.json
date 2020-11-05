@@ -21,6 +21,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-search-box": "^2.0.2",
+    "react-slick": "^0.27.12",
+    "slick-carousel": "^1.8.1"
     "react-transition-group": "^4.4.1"
   },
   "engines": {
