@@ -2,7 +2,20 @@
   width: auto;
   margin: auto;
   margin-bottom: 0px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  opacity: 0.8;
+}
+
+.styleNameFest {
+  background: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 120px;
+  text-shadow: black 2px 5px 50px;
 }
 
 .festival {
@@ -52,7 +65,7 @@
 .container-icones {
   /* border: 1px solid red; */
   display: flex;
-  width: 80%;
+  width: 90%;
   margin: 50px auto;
   justify-content: space-around;
 }
@@ -106,7 +119,6 @@
 /* ----- fin partie Line up ----- */
 .packCadre {
   width: 90%;
-
   background: rgba(62, 100, 134, 0.83);
   border-radius: 11px;
 }
@@ -118,5 +130,7 @@
   text-decoration: none;
 }
 .cardsPack {
-  display: inline;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }

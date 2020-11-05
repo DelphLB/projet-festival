@@ -10,5 +10,6 @@ ReactDOM.render(
       <App />
     </Router>
   </React.StrictMode>,
+
   document.getElementById('root')
 );

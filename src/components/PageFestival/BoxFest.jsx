@@ -13,8 +13,8 @@ class BoxFest extends Component {
       festivals: {},
       tickets: [],
       artists: [],
-      isToggleOn: false,
       ticket: {},
+      isToggleOn: false,
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -41,15 +41,6 @@ class BoxFest extends Component {
         });
       });
 
-    // axios
-    //   .get(
-    //     `https://api-festit-09-20.herokuapp.com/api//tickets/festivals/${idfestival}`
-    //   )
-    //   .then((response) => {
-    //     this.setState({
-    //       tickets: response.data[0],
-    //     });
-    //   });
     axios
       .get(
         `https://api-festit-09-20.herokuapp.com/api//festivals/${idfestival}/artists`
@@ -78,10 +69,13 @@ class BoxFest extends Component {
         <Navbar />;{/* box festival : image en background et nom festoch */}
         <div
           className="boxFestival"
-          //    styles={{ backgroundImage: `url(${festivals.image1})` }}
+          style={{
+            backgroundImage: `url("${festivals.image1}")`,
+            backgroundSize: 'cover',
+          }}
         >
-          <h1 className="styleName">{festivals.name}</h1>
-          <img src={festivals.image1} alt={festivals.name} />
+          <div className="cadreTitle" />
+          <h2 className="styleNameFest">{festivals.name}</h2>
         </div>
         {/* ------- Partie description ---------*/}
         <div
@@ -109,7 +103,7 @@ class BoxFest extends Component {
           <div className="icone-texte">
             <img
               className="image-icone"
-              src="https://loire.envie.org/wp-content/uploads/sites/5/2018/04/2017-05-04-Icone-Lieu-charte-ERA.png"
+              src="https://www.flaticon.com/svg/static/icons/svg/929/929426.svg"
               alt="location"
             />
             <p className="text-icone"> {festivals.city}</p>
@@ -118,7 +112,7 @@ class BoxFest extends Component {
           <div className="icone-texte">
             <img
               className="image-icone"
-              src="https://cdn.pixabay.com/photo/2016/06/29/21/11/calendar-icon-1487803_960_720.png"
+              src="https://www.flaticon.com/svg/static/icons/svg/1861/1861233.svg"
               alt="date"
             />
             <p className="text-icone">
@@ -128,7 +122,7 @@ class BoxFest extends Component {
           <div className="icone-texte">
             <img
               className="image-icone"
-              src="https://cdn.pixabay.com/photo/2017/06/17/04/17/purchasing-2411136_960_720.png"
+              src="https://www.flaticon.com/svg/static/icons/svg/945/945582.svg"
               alt="price"
             />
             <p className="text-icone">{ticket.price} € </p>
