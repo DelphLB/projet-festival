@@ -4,7 +4,7 @@ import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
-import Searchbar from './Searchbar';
+import Search from './Search';
 
 function Navbar() {
   const [topbar, setTopbar] = useState(false);
@@ -57,7 +57,7 @@ function Navbar() {
           </p>
           <div className="nav-menu-items">
             <div className="searchbar">
-              <Searchbar />
+              <Search />
             </div>
             {TopbarData.map((item) => {
               return (
