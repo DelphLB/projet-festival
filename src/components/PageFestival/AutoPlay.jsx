@@ -22,7 +22,7 @@ function AutoPlay() {
     <div className="container-artists">
       <Slider {...settings}>
         <div> Nasrat</div>
-        <div>Patrick Sebastien </div>
+        <div>Patrick Seba </div>
         <div>Queen.B</div>
         <div>Moi </div>
         <div>Grosse Resta </div>
@@ -30,7 +30,7 @@ function AutoPlay() {
         <div>Wejdene</div>
         <div>Rammstein</div>
         <div> Nasrat</div>
-        <div>Patrick Sebastien </div>
+        <div>Patrick Seba</div>
         <div>Queen.B</div>
         <div>Moi </div>
         <div>Grosse Resta </div>
