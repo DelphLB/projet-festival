@@ -15,8 +15,10 @@ class BoxFest extends Component {
       artists: [],
       ticket: {},
       isToggleOn: false,
+      isToggle: false,
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleMouse = this.handleMouse.bind(this);
   }
 
   componentDidMount() {
@@ -58,24 +60,34 @@ class BoxFest extends Component {
     }));
   }
 
+  handleMouse() {
+    this.setState((state) => ({
+      isToggle: !state.isToggle,
+    }));
+  }
+
   render() {
     const { festivals } = this.state;
     const { tickets } = this.state;
     const { artists } = this.state;
     const { ticket } = this.state;
     const Toggle = this.state;
+    const isToggle = this.state;
     return (
       <div className="festival">
         <Navbar />;{/* box festival : image en background et nom festoch */}
-        <div
-          className="boxFestival"
-          style={{
-            backgroundImage: `url("${festivals.image1}")`,
-            backgroundSize: 'cover',
-          }}
-        >
-          <div className="cadreTitle" />
-          <h2 className="styleNameFest">{festivals.name}</h2>
+        <div className="fadeEffect">
+          <div
+            className="boxFestival"
+            style={{
+              backgroundImage: `url("${festivals.image1}")`,
+              backgroundSize: 'cover',
+              zIndex: -1,
+            }}
+          >
+            <div className="cadreTitle" />
+            <h2 className="styleNameFest">{festivals.name}</h2>
+          </div>
         </div>
         {/* ------- Partie description ---------*/}
         <div
@@ -128,31 +140,58 @@ class BoxFest extends Component {
         <div className="lineUp">
           {' '}
           {artists.map((artist) => (
-            <div> {artist.name}</div>
+            <span> {artist.name} </span>
           ))}
+          <span>Nasrat </span>
+          <span>Patrick Sebastien </span>
+          <span>Queen.B</span>
+          <span>Moi </span>
+          <span>Grosse Resta </span>
+          <span>quelquun </span>
+          <span>Wejdene</span>
+          <span>Rammstein</span>
         </div>
         {/* package festival (box ticket) */}
-        <div className="packFestival">
-          <div className="cardsPack">
-            {tickets.map((pack) => (
-              <div className="packCadre">
-                <h3>{pack.name}</h3>
-                <p>{pack.description}</p>
-                <p>{pack.date}</p>
-                <p>{pack.price}€</p>
-                {/* lien vers la résa  */}
-                <Link
-                  to="/"
-                  className="bouttonResa"
-                  style={{
-                    textDecoration: 'none',
-                  }}
-                >
-                  <p>Réserver</p>
-                </Link>
+        <div className="cardsPack">
+          {tickets.map((pack) => (
+            <div
+              className="packCadre"
+              onMouseEnter={this.handleMouse}
+              onMouseLeave={this.handleMouse}
+            >
+              <div className="imagepackcard">
+                <img
+                  className="imgCard"
+                  src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                  alt="imagecard"
+                />
               </div>
-            ))}
-          </div>
+              <div className="textPack">
+                <h2>{pack.name}</h2>
+
+                <p>{pack.description}</p>
+
+                {isToggle.isToggle ? (
+                  <div className="moreInfo">
+                    <p>{pack.date}</p>
+                    <p>{pack.price}€</p>
+
+                    {/* lien vers la résa  */}
+                    <Link
+                      to="/"
+                      style={{
+                        textDecoration: 'none',
+                      }}
+                    >
+                      <div className="bouttonResa"> &gt; Réserver</div>
+                    </Link>
+                  </div>
+                ) : (
+                  ''
+                )}
+              </div>
+            </div>
+          ))}
         </div>
         <Footer />
       </div>

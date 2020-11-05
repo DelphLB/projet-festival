@@ -1,3 +1,13 @@
+@media screen and (max-width: 950px) {
+  .cardsPack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+/* Banner tmrland*/
+
 .boxFestival {
   width: auto;
   margin: auto;
@@ -5,10 +15,84 @@
   height: 500px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
   text-align: center;
   opacity: 0.8;
 }
+
+.boxFestival :after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 500px;
+  opacity: 0.85;
+  background: linear-gradient(transparent, #0e1f31 90%);
+  z-index: -1;
+}
+
+/* fin banner tmr */
+/* les cards tickets */
+.cardsPack {
+  display: flex;
+  justify-content: space-around;
+}
+
+.bouttonResa {
+  background: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  color: black;
+  position: relative;
+  font-weight: bold;
+}
+
+.textPack {
+  margin: 8px;
+  display: flex;
+  flex-flow: column;
+  text-align-last: start;
+}
+
+/* une card ticket */
+.packCadre {
+  width: 40%;
+  background-color: white;
+  border-radius: 11px;
+  scroll-snap-align: start;
+  flex-direction: column;
+  margin: auto;
+  height: auto;
+}
+
+.packCadre img {
+  height: auto;
+  width: 100%;
+}
+
+.imagepackcard {
+  width: auto;
+  margin: auto;
+  margin-bottom: 0px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.packCadre h2 {
+  text-align: center;
+  font-size: 1.1em;
+  margin: none;
+}
+
+.textPack p {
+  text-transform: uppercase;
+  padding: 0px;
+}
+/* fin de card individuelle */
+/* fin des cards tickets */
 
 .styleNameFest {
   background: none;
@@ -21,9 +105,31 @@
 .festival {
   background-color: #0e1f31;
 }
+/* LineUP */
+.lineUp {
+  justify-content: center;
+  font-family: Raleway;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2em;
+  line-height: 2em;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 1.5em;
+}
+
+.lineUp span {
+  margin: 1em;
+}
+/*Fin LineUp */
+
+/* container description */
 
 .container-description {
-  background-color: wheat;
+  background-color: #0e1f31;
+  border-bottom: solid 1px white;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -34,6 +140,7 @@
   margin-top: 0px;
   /* border: 1px solid white; */
   margin: 15px auto;
+  color: white;
 }
 
 .details {
@@ -69,20 +176,9 @@
   color: beige;
 }
 
-.packCadre {
-  width: 90%;
-  background: rgba(62, 100, 134, 0.83);
-  border-radius: 11px;
-}
-
 .bouttonResa p {
   color: white;
   font-size: 20px;
   text-decoration: none;
   text-decoration: none;
-}
-.cardsPack {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
