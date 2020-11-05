@@ -1,24 +1,42 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
+import PropTypes from 'prop-types';
+
 import NavBar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 import Banner from './componentsStyle/Banner';
 import Box from './componentsStyle/Box';
+
 import '../CSS/PageStyle/PageStyle.css';
 
-function PageStyle() {
-  // const { idStyle } = match.params;
-  // Appel Api couleur
-  // axios.get(//style/id)
-  // {id, name, color}
+function PageStyle({ match }) {
+  const [style, setStyle] = useState([]);
+  const { idStyle } = match.params;
+
+  useEffect(() => {
+    Axios.get(`https://api-festit-09-20.herokuapp.com/api/styles/${idStyle}`)
+      .then((response) => response.data[0])
+      .then((data) => setStyle(data));
+  }, [idStyle]);
 
   return (
-    <div className="Style">
-      <NavBar />
-      <Banner />
-      <Box />
-      <Footer />
+    <div>
+      <div className="Style" style={{ backgroundColor: style.color }}>
+        <NavBar />
+        <Banner style={style} />
+        <Box style={style} />
+        <Footer />
+      </div>
     </div>
   );
 }
+
+PageStyle.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      idStyle: PropTypes.number.isRequired,
+    }),
+  }).isRequired,
+};
 
 export default PageStyle;

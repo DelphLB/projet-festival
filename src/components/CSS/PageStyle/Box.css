@@ -1,7 +1,7 @@
 .Box {
   background-color: #353548;
   width: 650px;
-  height: 500px;
+  height: 550px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -13,9 +13,10 @@
 .boxImage {
   width: 90%;
   height: 300px;
-  background-color: blue;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
   margin: auto;
   border-radius: 10px;
   margin-top: 10px;
@@ -23,6 +24,14 @@
 .boxImage img {
   width: 100%;
   border-radius: 10px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
 }
 .text {
   width: 100%;
@@ -46,4 +55,13 @@
 .boxbutton a {
   text-decoration: none;
   color: white;
+}
+@media screen and (max-width: 950px) {
+  .boxImage {
+    display: none;
+  }
+  .Box {
+    width: auto;
+    height: auto;
+  }
 }

@@ -1,21 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import '../../CSS/PageStyle/Banner.css';
 
-const Banner = () => {
-  // const [video, setVideo] = useState({});
-
-  // useEffect(() => {
-  //   Axios.get(`https://api-festit-09-20.herokuapp.com/api/styles/${idStyle}`)
-  //     .then((results) => results.data)
-  //     .then((data) => setVideo(data[0]));
-  // }, []);
-
+const Banner = ({ style }) => {
   return (
-    <div className="banner">
-      Banner
-      {/* <video src={video.url_video} /> */}
+    <div
+      className="banner"
+      style={{
+        backgroundImage: `url(${style.image})`,
+      }}
+    >
+      <p>{style.name}</p>
     </div>
   );
+};
+
+Banner.propTypes = {
+  style: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    color_two: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Banner;
