@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../CSS/festivals/BoxFest.css';
+import '../../style/CSS/festivals/BoxFest.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Navbar from '../Reusable/NavBar/Navbar';
