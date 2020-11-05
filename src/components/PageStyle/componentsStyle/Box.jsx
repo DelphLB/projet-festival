@@ -23,26 +23,31 @@ const Box = ({ style }) => {
   return (
     <div data-aos="fade-up" data-aos-duration="3000">
       {boxs &&
-        boxs.map((box) => (
-          <div className="Box" style={{ backgroundColor: style.color_two }}>
-            <div className="title">
-              <p>{box.name}</p>
+        boxs.map((box) => {
+          return (
+            <div className="displaybox">
+              <div className="Box" style={{ backgroundColor: style.color_two }}>
+                <div className="title">
+                  <p>{box.name}</p>
+                </div>
+                <div className="boxImage">
+                  <img src={box.image1} alt={box.name} title={box.name} />
+                </div>
+
+                <div className="text">
+                  <p>{box.description}</p>
+                </div>
+                <button
+                  type="button"
+                  className="boxbutton"
+                  style={{ backgroundColor: style.color }}
+                >
+                  <Link to="/">En savoir plus</Link>
+                </button>
+              </div>
             </div>
-            <div className="boxImage">
-              <img src={box.image1} alt={box.name} title={box.name} />
-            </div>
-            <div className="text">
-              <p>{box.description}</p>
-            </div>
-            <button
-              type="button"
-              className="boxbutton"
-              style={{ backgroundColor: style.color }}
-            >
-              <Link to="/">En savoir plus</Link>
-            </button>
-          </div>
-        ))}
+          );
+        })}
     </div>
   );
 };

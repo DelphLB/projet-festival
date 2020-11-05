@@ -42,15 +42,18 @@ function NavBarMobile() {
     <div className="Navbar">
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className="navbar">
-          <Link to="/" className="menu-bars">
-            <FaIcons.FaBars onClick={showTopbar} />
-          </Link>
+          <div className="menu-bars">
+            <FaIcons.FaBars onKeyDown={showTopbar} onClick={showTopbar} />
+          </div>
         </div>
         <nav className={topbar ? 'nav-menu active' : 'nav-menu'}>
           <p className="navbar-toggle">
-            <Link to="/" className="menu-close" onClick={showTopbar}>
-              <AiIcons.AiOutlineClose />
-            </Link>
+            <div className="menu-close">
+              <AiIcons.AiOutlineClose
+                onKeyDown={showTopbar}
+                onClick={showTopbar}
+              />
+            </div>
           </p>
           <div className="nav-menu-items">
             <div className="searchbar">

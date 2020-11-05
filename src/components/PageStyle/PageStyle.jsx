@@ -25,7 +25,7 @@ function PageStyle({ match }) {
         <NavBar />
         <Banner style={style} />
         <Box style={style} />
-        <Footer />
+        <Footer style={style} />
       </div>
     </div>
   );
