@@ -4,7 +4,7 @@ import * as AiIcons from 'react-icons/ai';
 import ReactSearchBox from 'react-search-box';
 import axios from 'axios';
 
-function Search() {
+function Searchbar() {
   const [click, setClick] = useState(false);
   // const [queryInput, setQueryInput] = useState('');
   const [dataArray, setDataArray] = useState([]);
@@ -37,4 +37,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default Searchbar;

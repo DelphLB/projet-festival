@@ -25,7 +25,7 @@ class BoxStyle extends Component {
         {listofStyles.map((style) => (
           <div className="pageStyle_box">
             <Link
-              to={`/style/${style.idstyle}`}
+              to={`/pageStyle/${style.idstyle}`}
               style={{
                 textDecoration: 'none',
                 color: 'white',

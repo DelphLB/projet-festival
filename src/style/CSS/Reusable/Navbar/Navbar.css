@@ -49,11 +49,11 @@ svg {
     align-items: center;
   }
   .menu-bars {
-    margin-left: 10px;
+    padding-top: 20px;
     font-size: 2rem;
     background: none;
     display: inline;
-    margin-top: 22px;
+    margin-left: 5px;
   }
   .menu-close {
     font-size: 2rem;
