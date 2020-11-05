@@ -1,12 +1,17 @@
 import React from 'react';
 import BoxStyle from './BoxStyle';
+import '../../style/CSS/Home/Home.css';
+import Footer from '../Reusable/Footer/Footer';
+import Navbar from '../Reusable/NavBar/Navbar';
 
 function Home() {
   return (
-    <div>
-      <h1> Home</h1>
+    <div className="Home">
+      <Navbar />
       <BoxStyle />
+      <Footer />
     </div>
   );
 }
+
 export default Home;
