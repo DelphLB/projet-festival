@@ -18,13 +18,11 @@ function PageStyle({ match }) {
   }, [idStyle]);
 
   return (
-    <div>
-      <div className="Style" style={{ backgroundColor: style.color }}>
-        <NavBar />
-        <Banner style={style} />
-        <Box style={style} />
-        <Footer style={style} />
-      </div>
+    <div className="Style" style={{ backgroundColor: style.color }}>
+      <NavBar />
+      <Banner style={style} />
+      <Box style={style} />
+      <Footer style={style} />
     </div>
   );
 }

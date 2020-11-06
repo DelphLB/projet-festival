@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import BoxFest from './components/PageFestival/BoxFest';
 import PageStyle from './components/PageStyle/PageStyle';
 
+import './App.css';
 
 function App() {
   return (
