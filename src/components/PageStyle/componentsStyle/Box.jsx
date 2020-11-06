@@ -40,7 +40,9 @@ const Box = ({ style }) => {
                   className="boxbutton"
                   style={{ backgroundColor: style.color }}
                 >
-                  <Link to="/">En savoir plus</Link>
+                  <Link to={`/festivals/${box.idfestival}`}>
+                    En savoir plus
+                  </Link>
                 </button>
               </div>
             </div>

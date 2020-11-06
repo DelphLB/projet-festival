@@ -33,6 +33,8 @@ class BoxFest extends Component {
         });
       });
 
+    window.scrollTo(0, 0);
+
     axios
       .get(
         `https://api-festit-09-20.herokuapp.com/api//tickets/festivals/${idfestival}`
@@ -83,7 +85,6 @@ class BoxFest extends Component {
             style={{
               backgroundImage: `url("${festivals.image1}")`,
               backgroundSize: 'cover',
-              zIndex: -1,
             }}
           >
             <div className="cadreTitle" />
