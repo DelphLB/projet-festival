@@ -52,6 +52,8 @@
   display: flex;
   flex-flow: column;
   text-align-last: start;
+  min-height: 140px;
+  padding: 10px 25px;
 }
 
 /* une card ticket */
@@ -68,6 +70,7 @@
 .packCadre img {
   height: auto;
   width: 100%;
+  border-radius: 8px;
 }
 
 .imagepackcard {
@@ -84,12 +87,15 @@
 .packCadre h2 {
   text-align: center;
   font-size: 1.1em;
+  font-family: 'poppins';
   margin: none;
+  text-transform: uppercase;
 }
 
 .textPack p {
-  text-transform: uppercase;
   padding: 0px;
+  color: rgb(48, 48, 48);
+  font-family: 'poppins';
 }
 /* fin de card individuelle */
 /* fin des cards tickets */
@@ -108,19 +114,16 @@
 
 /*----- partie description -------*/
 /* LineUP */
-/* .lineUp {
-  justify-content: center;
+.container-artists {
   font-family: Raleway;
   font-style: italic;
   font-weight: 600;
   font-size: 2em;
   line-height: 2em;
-  align-items: center;
-  text-align: center;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  margin: 1.5em;
-} */
+}
+*/
 
 /*Fin LineUp */
 
@@ -140,6 +143,8 @@
   /* border: 1px solid white; */
   margin: 15px auto;
   color: white;
+  z-index: 1;
+  position: relative;
 }
 
 .details {
@@ -163,6 +168,7 @@
   color: white;
   margin: 30px auto;
   font-size: 1.2em;
+  text-align: center;
 }
 /* -----------partie icones --------------*/
 .container-icones {

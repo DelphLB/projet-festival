@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../CSS/festivals/BoxFest.css';
+import '../../style/CSS/festivals/BoxFest.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Navbar from '../Reusable/NavBar/Navbar';
@@ -50,9 +50,9 @@ class BoxFest extends Component {
     }));
   }
 
-  handleMouse() {
-    this.setState((state) => ({
-      isToggle: !state.isToggle,
+  handleMouse(pack) {
+    this.setState(() => ({
+      isToggle: pack.idticket,
     }));
   }
 
@@ -135,7 +135,7 @@ class BoxFest extends Component {
           {tickets.map((pack) => (
             <div
               className="packCadre"
-              onMouseEnter={this.handleMouse}
+              onMouseEnter={() => this.handleMouse(pack)}
               onMouseLeave={this.handleMouse}
             >
               <div className="imagepackcard">
@@ -150,7 +150,7 @@ class BoxFest extends Component {
 
                 <p>{pack.description}</p>
 
-                {isToggle.isToggle ? (
+                {isToggle.isToggle === pack.idticket ? (
                   <div className="moreInfo">
                     <p>{pack.date}</p>
                     <p>{pack.price}€</p>

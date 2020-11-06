@@ -1,61 +1,40 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import '../CSS/PageStyle/PageStyle.css';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
+import PropTypes from 'prop-types';
+import NavBar from '../Reusable/NavBar/Navbar';
+import Footer from '../Reusable/Footer/Footer';
+import Banner from './componentsStyle/Banner';
+import Box from './componentsStyle/Box';
+import '../../style/CSS/PageStyle/PageStyle.css';
 
-class PageStyle extends Component {
-  constructor() {
-    super();
-    this.state = {
-      listofStyles: [],
-    };
-  }
+function PageStyle({ match }) {
+  const [style, setStyle] = useState([]);
+  const { idStyle } = match.params;
 
-  componentDidMount() {
-    axios
-      .get('https://api-festit-09-20.herokuapp.com/api/styles')
-      .then((response) => this.setState({ listofStyles: response.data }));
-    Aos.init({ duration: 250 });
-  }
+  useEffect(() => {
+    Axios.get(`https://api-festit-09-20.herokuapp.com/api/styles/${idStyle}`)
+      .then((response) => response.data[0])
+      .then((data) => setStyle(data));
+  }, [idStyle]);
 
-  render() {
-    const { listofStyles } = this.state;
-
-    return (
-      <div className="pageStyle">
-        {listofStyles.map((style) => (
-          <div className="pageStyle_box">
-            <Link
-              to={`/style/${style.idstyle}`}
-              style={{
-                textDecoration: 'none',
-                color: 'white',
-                fontSize: '54px',
-              }}
-            >
-              <div data-aos="fade-in">
-                <div
-                  className="insideStyleBox"
-                  style={{
-                    backgroundRepeat: 'no-repeat',
-                    backgroundImage: `url(https://cdn.pixabay.com/photo/2018/03/02/10/03/wildlife-3192772_960_720.jpg)`,
-                  }}
-                >
-                  <div className="titleBox">
-                    <p className="titleStyleBox">
-                      <p className="styleName">{style.name}</p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-        ))}
+  return (
+    <div>
+      <div className="Style" style={{ backgroundColor: style.color }}>
+        <NavBar />
+        <Banner style={style} />
+        <Box style={style} />
+        <Footer style={style} />
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+PageStyle.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      idStyle: PropTypes.number.isRequired,
+    }),
+  }).isRequired,
+};
 
 export default PageStyle;
