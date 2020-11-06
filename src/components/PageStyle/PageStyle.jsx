@@ -40,7 +40,7 @@ class PageStyle extends Component {
                   className="insideStyleBox"
                   style={{
                     backgroundRepeat: 'no-repeat',
-                    backgroundImage: `url(${style.image})`,
+                    backgroundImage: `url(https://cdn.pixabay.com/photo/2018/03/02/10/03/wildlife-3192772_960_720.jpg)`,
                   }}
                 >
                   <div className="titleBox">
