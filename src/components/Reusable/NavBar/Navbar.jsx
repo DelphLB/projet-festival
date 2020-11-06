@@ -61,7 +61,11 @@ function Navbar() {
             </div>
             {TopbarData.map((item) => {
               return (
-                <div key={item.title} className={item.className}>
+                <div
+                  key={item.title}
+                  className={item.className}
+                  id="navbarlink"
+                >
                   <Link to={item.path}>
                     {item.icons}
                     <span>{item.title}</span>

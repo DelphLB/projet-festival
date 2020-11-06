@@ -39,6 +39,21 @@ svg {
   margin: -1.5px;
 }
 
+#navbarlink {
+  margin-top: 30px;
+}
+
+#navbarlink a {
+  color: white;
+  text-decoration: none;
+}
+
+span:hover {
+  border-bottom: 1px solid white;
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+
 @media screen and (max-width: 950px) {
   .navbar {
     width: 100%;
@@ -59,7 +74,7 @@ svg {
     margin-left: 8px;
   }
   .nav-menu {
-    background-color: black;
+    background-color: none;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -71,11 +86,12 @@ svg {
     margin-top: 5px;
   }
   .nav-menu.active {
+    background-color: black;
     position: fixed;
     z-index: 1000;
     display: flex;
     justify-content: flex-start;
-    top: 0;
+    top: -5px;
     transition: 850ms;
   }
 
@@ -102,9 +118,18 @@ svg {
 
   .navbar-toogle {
     background-color: blue;
+    margin: 0;
   }
 
   span {
     margin-left: 16px;
+  }
+
+  #navbarlink {
+    width: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 50px 0px 50px 75px;
   }
 }
