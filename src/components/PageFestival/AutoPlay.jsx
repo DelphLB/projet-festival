@@ -8,21 +8,17 @@ import 'slick-carousel/slick/slick-theme.css';
 
 import axios from 'axios';
 
-const AutoPlay = (props) => {
-  const { idFestival } = props;
-
+const AutoPlay = ({ idFestival }) => {
   const [artists, setArtists] = useState([]);
-
-  // const { idFestival } = match.params;
 
   const settings = {
     dots: false,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 5000,
-    autoplaySpeed: 10,
+    speed: 8000,
+    autoplaySpeed: 0,
     cssEase: 'linear',
     arrows: false,
   };
@@ -35,12 +31,13 @@ const AutoPlay = (props) => {
       .then((response) => response.data)
       .then((data) => setArtists(data));
   }, [idFestival]);
+
   return (
     <div className="container-artists">
       {/* eslint-disable react/jsx-props-no-spreading */}
       <Slider {...settings}>
         {artists.map((artist) => (
-          <div>{artist.name}</div>
+          <div> &#8249; &#47; {artist.name} &#8250; </div>
         ))}
       </Slider>
     </div>

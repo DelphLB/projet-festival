@@ -22,8 +22,8 @@ class BoxFest extends Component {
   }
 
   componentDidMount() {
-    const festi = this.props;
-    const { idfestival } = festi.match.params;
+    const { match } = this.props;
+    const { idfestival } = match.params;
     axios
       .get(`https://api-festit-09-20.herokuapp.com/api/festivals/${idfestival}`)
       .then((response) => {
@@ -57,10 +57,7 @@ class BoxFest extends Component {
   }
 
   render() {
-    const { festivals } = this.state;
-    const { tickets } = this.state;
-    // const { artists } = this.state;
-    const { ticket } = this.state;
+    const { festivals, ticket, tickets } = this.state;
     const Toggle = this.state;
     const isToggle = this.state;
     return (
