@@ -1,17 +1,14 @@
 import React from 'react';
 import '../../../style/CSS/Reusable/Footer/Footer.css';
-import PropTypes from 'prop-types';
+/* import PropTypes from 'prop-types'; */
 import * as SiIcons from 'react-icons/si';
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 
-function Footer({ style }) {
+function Footer() {
   return (
-    <div
-      className="footer"
-      style={{ backgroundColor: style ? style.color : 'black' }}
-    >
+    <div className="footer">
       <IconContext.Provider value={{ color: '#fff' }}>
         <ul id="button">
           <a href="https://www.facebook.com/">
@@ -41,10 +38,10 @@ function Footer({ style }) {
   );
 }
 
-Footer.propTypes = {
+/* Footer.propTypes = {
   style: PropTypes.shape({
     color: PropTypes.string.isRequired,
   }).isRequired,
-};
+}; */
 
 export default Footer;
