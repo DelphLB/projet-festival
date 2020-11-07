@@ -16,7 +16,6 @@ function PageStyle({ match }) {
       .then((response) => response.data[0])
       .then((data) => setStyle(data));
   }, [idStyle]);
-
   return (
     <div className="Style" style={{ backgroundColor: style.color }}>
       <NavBar />

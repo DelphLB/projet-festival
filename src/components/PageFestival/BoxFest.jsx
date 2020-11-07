@@ -13,7 +13,6 @@ class BoxFest extends Component {
     this.state = {
       festivals: {},
       tickets: [],
-      // artists: [],
       ticket: {},
       isToggleOn: false,
       isToggle: false,
@@ -23,8 +22,8 @@ class BoxFest extends Component {
   }
 
   componentDidMount() {
-    const festi = this.props;
-    const { idfestival } = festi.match.params;
+    const { match } = this.props;
+    const { idfestival } = match.params;
     axios
       .get(`https://api-festit-09-20.herokuapp.com/api/festivals/${idfestival}`)
       .then((response) => {
@@ -45,16 +44,6 @@ class BoxFest extends Component {
           ticket: response.data[0],
         });
       });
-
-    // axios
-    //   .get(
-    //     `https://api-festit-09-20.herokuapp.com/api//festivals/${idfestival}/artists`
-    //   )
-    //   .then((response) => {
-    //     this.setState({
-    //       artists: response.data,
-    //     });
-    //   });
   }
 
   handleClick() {
@@ -70,10 +59,7 @@ class BoxFest extends Component {
   }
 
   render() {
-    const { festivals } = this.state;
-    const { tickets } = this.state;
-    // const { artists } = this.state;
-    const { ticket } = this.state;
+    const { festivals, ticket, tickets } = this.state;
     const Toggle = this.state;
     const isToggle = this.state;
     return (
@@ -144,17 +130,7 @@ class BoxFest extends Component {
         </div>
         {/* -------fin partie icones -------- */}
         {/* ------ le lineup ---------- */}
-        <AutoPlay />
-        {/* <div className="lineUp">
-          <div className="title-lineUp">
-            <p className="tiret"> &#8212;</p>
-            <p> Line - Up </p>
-            <p className="tiret"> &#8212;</p>
-          </div>
-          <div className="container-artist-name">
-            {artists.map((artist) => ())}
-          </div>
-        </div> */}
+        <AutoPlay idFestival={festivals.idfestival} />
         {/* package festival (box ticket) */}
         <div className="cardsPack">
           {tickets.map((pack) => (
