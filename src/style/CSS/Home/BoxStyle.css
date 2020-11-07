@@ -5,47 +5,54 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 18px 0px;
 }
 
 .pageStyle_box {
-  width: 90%;
+  width: 100%;
 }
 
-.insideStyleBox {
-  width: 90%;
-  background-color: white;
-  border-radius: 14px;
-  margin: auto;
-  text-align: center;
+.titleBox {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0px;
 }
 
 .titleStyleBox {
-  margin: 50px 0px 0px 0px;
-  padding: 1.25em;
+  padding: 22px;
 }
 
 .styleName {
-  font-size: auto;
-  background-color: rgba(5, 5, 5, 0.25);
+  width: auto;
+  background-color: rgba(56, 56, 56, 0.25);
   color: white;
+}
+
+.pName {
+  justify-content: center;
 }
 
 @media screen and (min-width: 950px) {
   .pageStyle {
     flex-direction: row;
-    margin: 60px 0px 120px 0px;
+    margin: 44px 0px;
   }
 
   .insideStyleBox {
-    height: 560px;
+    height: 600px;
   }
 
   .insideStyleBox:hover {
     transform: scale(1.1);
+    border-radius: 14px;
   }
 
   .titleStyleBox {
     font-size: 30px;
     padding-top: 225px;
+  }
+
+  .styleName {
+    width: auto;
   }
 }

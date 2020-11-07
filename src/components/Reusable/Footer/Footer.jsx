@@ -1,5 +1,6 @@
 import React from 'react';
-import '../../CSS/Reusable/Footer/Footer.css';
+import '../../../style/CSS/Reusable/Footer/Footer.css';
+/* import PropTypes from 'prop-types'; */
 import * as SiIcons from 'react-icons/si';
 import * as AiIcons from 'react-icons/ai';
 import * as FaIcons from 'react-icons/fa';
@@ -36,5 +37,11 @@ function Footer() {
     </div>
   );
 }
+
+/* Footer.propTypes = {
+  style: PropTypes.shape({
+    color: PropTypes.string.isRequired,
+  }).isRequired,
+}; */
 
 export default Footer;

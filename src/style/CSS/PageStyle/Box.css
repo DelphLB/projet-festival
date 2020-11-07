@@ -1,0 +1,67 @@
+.Box {
+  background-color: #353548;
+  width: 650px;
+  height: 550px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  margin-top: 70px;
+}
+.boxImage {
+  width: 90%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+.boxImage img {
+  width: 100%;
+  border-radius: 10px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.text {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.boxbutton {
+  width: 40%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #0e1f31;
+  margin-bottom: 10px;
+}
+.boxbutton a {
+  text-decoration: none;
+  color: white;
+}
+@media screen and (max-width: 950px) {
+  .boxImage {
+    display: none;
+  }
+  .Box {
+    width: auto;
+    height: auto;
+  }
+}

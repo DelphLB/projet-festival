@@ -1,16 +1,21 @@
 import React from 'react';
-import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import Home from './components/Home/Home';
-// import PageFestival from './components/PageFestival/PageFestival';
+import Artiste from './components/PageArtiste/Artiste';
 import BoxFest from './components/PageFestival/BoxFest';
+import PageStyle from './components/PageStyle/PageStyle';
+import PaymentPage from './components/PaymentPage/PaymentPage';
+import './App.css';
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route path="/" exact component={Home} />
+        <Route path="/pageStyle/:idStyle" component={PageStyle} />
         <Route path="/festivals/:idfestival" component={BoxFest} />
+        <Route path="/artiste" component={Artiste} />
+        <Route path="/PaymentPage" component={PaymentPage} />
       </Switch>
     </div>
   );

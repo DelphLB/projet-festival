@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import '../../CSS/Reusable/NavBar/Navbar.css';
+import '../../../style/CSS/Reusable/Navbar/Navbar.css';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { IconContext } from 'react-icons';
 import Search from './Search';
 
-function NavBarMobile() {
+function Navbar() {
   const [topbar, setTopbar] = useState(false);
 
   const showTopbar = () => setTopbar(!topbar);
@@ -42,15 +42,18 @@ function NavBarMobile() {
     <div className="Navbar">
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className="navbar">
-          <Link to="/" className="menu-bars">
-            <FaIcons.FaBars onClick={showTopbar} />
-          </Link>
+          <div className="menu-bars">
+            <FaIcons.FaBars onKeyDown={showTopbar} onClick={showTopbar} />
+          </div>
         </div>
         <nav className={topbar ? 'nav-menu active' : 'nav-menu'}>
           <p className="navbar-toggle">
-            <Link to="/" className="menu-close" onClick={showTopbar}>
-              <AiIcons.AiOutlineClose />
-            </Link>
+            <div className="menu-close">
+              <AiIcons.AiOutlineClose
+                onKeyDown={showTopbar}
+                onClick={showTopbar}
+              />
+            </div>
           </p>
           <div className="nav-menu-items">
             <div className="searchbar">
@@ -58,7 +61,11 @@ function NavBarMobile() {
             </div>
             {TopbarData.map((item) => {
               return (
-                <div key={item.title} className={item.className}>
+                <div
+                  key={item.title}
+                  className={item.className}
+                  id="navbarlink"
+                >
                   <Link to={item.path}>
                     {item.icons}
                     <span>{item.title}</span>
@@ -73,4 +80,4 @@ function NavBarMobile() {
   );
 }
 
-export default NavBarMobile;
+export default Navbar;
