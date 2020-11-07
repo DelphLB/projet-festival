@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../CSS/Reusable/NavBar/Search.css';
+import '../../../style/CSS/Reusable/Navbar/Search.css';
 import * as AiIcons from 'react-icons/ai';
 import ReactSearchBox from 'react-search-box';
 import axios from 'axios';

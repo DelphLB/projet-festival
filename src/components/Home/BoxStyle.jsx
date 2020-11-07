@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import '../CSS/Home/BoxStyle.css';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import '../../style/CSS/Home/BoxStyle.css';
 
 class BoxStyle extends Component {
   constructor() {
@@ -17,7 +15,6 @@ class BoxStyle extends Component {
     axios
       .get('https://api-festit-09-20.herokuapp.com/api/styles')
       .then((response) => this.setState({ listofStyles: response.data }));
-    Aos.init({ duration: 250 });
   }
 
   render() {
@@ -35,18 +32,18 @@ class BoxStyle extends Component {
                 fontSize: '54px',
               }}
             >
-              <div data-aos="fade-in">
-                <div
-                  className="insideStyleBox"
-                  style={{
-                    backgroundRepeat: 'no-repeat',
-                    backgroundImage: `url(${style.image})`,
-                  }}
-                >
-                  <div className="titleBox">
-                    <p className="titleStyleBox">
-                      <p className="styleName">{style.name}</p>
-                    </p>
+              <div
+                className="insideStyleBox"
+                style={{
+                  backgroundRepeat: 'no-repeat',
+                  backgroundImage: `url(${style.image})`,
+                }}
+              >
+                <div className="titleBox">
+                  <div className="titleStyleBox">
+                    <div className="styleName">
+                      <p className="pName">{style.name}</p>
+                    </div>
                   </div>
                 </div>
               </div>

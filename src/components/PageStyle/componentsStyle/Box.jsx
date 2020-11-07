@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import aos from 'aos';
-
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
-
-import '../../CSS/PageStyle/Box.css';
+import '../../../style/CSS/PageStyle/Box.css';
 
 const Box = ({ style }) => {
   const [boxs, setBoxs] = useState([]);
@@ -16,12 +13,10 @@ const Box = ({ style }) => {
     )
       .then((result) => result.data)
       .then((data) => setBoxs(data));
-
-    aos.init();
   }, [style.name]);
 
   return (
-    <div data-aos="fade-up" data-aos-duration="3000">
+    <div>
       {boxs &&
         boxs.map((box) => {
           return (
@@ -42,7 +37,9 @@ const Box = ({ style }) => {
                   className="boxbutton"
                   style={{ backgroundColor: style.color }}
                 >
-                  <Link to="/">En savoir plus</Link>
+                  <Link to={`/festivals/${box.idfestival}`}>
+                    En savoir plus
+                  </Link>
                 </button>
               </div>
             </div>

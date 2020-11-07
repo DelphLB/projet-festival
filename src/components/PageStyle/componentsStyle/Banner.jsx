@@ -1,7 +1,6 @@
 import React from 'react';
+import '../../../style/CSS/PageStyle/Banner.css';
 import PropTypes from 'prop-types';
-
-import '../../CSS/PageStyle/Banner.css';
 
 const Banner = ({ style }) => {
   return (

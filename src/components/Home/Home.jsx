@@ -1,13 +1,13 @@
 import React from 'react';
 import BoxStyle from './BoxStyle';
-import '../CSS/Home/Home.css';
+import '../../style/CSS/Home/Home.css';
 import Footer from '../Reusable/Footer/Footer';
-import NavBar from '../Reusable/NavBar/Navbar';
+import Navbar from '../Reusable/NavBar/Navbar';
 
 function Home() {
   return (
     <div className="Home">
-      <NavBar />
+      <Navbar />
       <BoxStyle />
       <Footer />
     </div>
