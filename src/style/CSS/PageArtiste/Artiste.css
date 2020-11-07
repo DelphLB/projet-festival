@@ -1,0 +1,44 @@
+.container {
+  background-color: black;
+}
+.artiste-title {
+  color: white;
+  padding-left: 40px;
+  display: flex;
+  justify-content: left;
+  align-items: flex-end;
+  cursor: pointer;
+}
+
+.container-letter {
+  background-color: white;
+  padding: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.boutton-letters {
+  color: gray;
+  font-size: 2.7em;
+  border: none;
+  background-color: white;
+}
+.boutton-letters:focus {
+  font-weight: bold;
+  color: black;
+}
+
+.boutton-letters:hover {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1299px) {
+  .container-letter {
+    display: flex;
+    overflow-x: scroll;
+  }
+}
+
+.pokemon {
+  color: white;
+  padding: 10px;
+}

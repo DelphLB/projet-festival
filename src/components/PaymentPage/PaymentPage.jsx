@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import ExpiryDateInput from 'credit-card-expiry-date';
-import '../CSS/PaymentPage/PaymentPage.css';
+import '../../style/CSS/PaymentPage/PaymentPage.css';
 import * as FaIcons from 'react-icons/fa';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
