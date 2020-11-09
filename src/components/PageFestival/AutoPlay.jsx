@@ -37,7 +37,10 @@ const AutoPlay = ({ idFestival }) => {
       {/* eslint-disable react/jsx-props-no-spreading */}
       <Slider {...settings}>
         {artists.map((artist) => (
-          <div> &#8249; &#47; {artist.name} &#8250; </div>
+          <div className="artist-name">
+            {' '}
+            &#8249; &#47; {artist.name} &#8250;{' '}
+          </div>
         ))}
       </Slider>
     </div>
