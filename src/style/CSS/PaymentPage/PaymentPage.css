@@ -1,3 +1,7 @@
+.paymentPage {
+  background-color: rgb(172, 131, 131);
+}
+
 .row {
   display: flex;
   justify-content: space-evenly;

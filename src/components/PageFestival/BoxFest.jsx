@@ -32,8 +32,6 @@ class BoxFest extends Component {
         });
       });
 
-    window.scrollTo(0, 0);
-
     axios
       .get(
         `https://api-festit-09-20.herokuapp.com/api//tickets/festivals/${idfestival}`
@@ -64,13 +62,15 @@ class BoxFest extends Component {
     const isToggle = this.state;
     return (
       <div className="festival">
-        <Navbar />;{/* box festival : image en background et nom festoch */}
+        <Navbar />
+        {/* box festival : image en background et nom festoch */}
         <div className="fadeEffect">
           <div
             className="boxFestival"
             style={{
               backgroundImage: `url("${festivals.image1}")`,
               backgroundSize: 'cover',
+              zIndex: -1,
             }}
           >
             <div className="cadreTitle" />
@@ -78,6 +78,7 @@ class BoxFest extends Component {
           </div>
         </div>
         {/* ------- Partie description ---------*/}
+
         <div
           className="container-description"
           aria-hidden="true"
@@ -132,31 +133,66 @@ class BoxFest extends Component {
         {/* ------ le lineup ---------- */}
         <AutoPlay idFestival={festivals.idfestival} />
         {/* package festival (box ticket) */}
-        <div className="cardsPack">
-          {tickets.map((pack) => (
-            <div
-              className="packCadre"
-              onMouseEnter={() => this.handleMouse(pack)}
-              onMouseLeave={this.handleMouse}
-            >
-              <div className="imagepackcard">
-                <img
-                  className="imgCard"
-                  src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
-                  alt="imagecard"
-                />
+        <div className="section950px">
+          <div className="cardsPack">
+            {tickets.map((pack) => (
+              <div
+                className="packCadre"
+                onMouseEnter={() => this.handleMouse(pack)}
+                onMouseLeave={this.handleMouse}
+              >
+                <div className="imagepackcard">
+                  <img
+                    className="imgCard"
+                    src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                    alt="imagecard"
+                  />
+                </div>
+                <div className="textPack">
+                  <h2>{pack.name}</h2>
+
+                  <p>{pack.description}</p>
+
+                  {isToggle.isToggle === pack.idticket ? (
+                    <div className="moreInfo">
+                      <p>{pack.date}</p>
+                      <p>{pack.price}€</p>
+                      <Link
+                        to="/"
+                        style={{
+                          textDecoration: 'none',
+                        }}
+                      >
+                        <div className="bouttonResa"> &gt; Réserver</div>
+                      </Link>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                </div>
               </div>
-              <div className="textPack">
-                <h2>{pack.name}</h2>
+            ))}
+          </div>
+        </div>
+        <div className="section951px">
+          <div className="cardsPack">
+            {tickets.map((pack) => (
+              <div className="packCadre">
+                <div className="imagepackcard">
+                  <img
+                    className="imgCard"
+                    src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                    alt="imagecard"
+                  />
+                </div>
+                <div className="textPack">
+                  <h2>{pack.name}</h2>
 
-                <p>{pack.description}</p>
+                  <p>{pack.description}</p>
 
-                {isToggle.isToggle === pack.idticket ? (
                   <div className="moreInfo">
                     <p>{pack.date}</p>
                     <p>{pack.price}€</p>
-
-                    {/* lien vers la résa  */}
                     <Link
                       to="/"
                       style={{
@@ -166,12 +202,10 @@ class BoxFest extends Component {
                       <div className="bouttonResa"> &gt; Réserver</div>
                     </Link>
                   </div>
-                ) : (
-                  ''
-                )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <Footer />
       </div>
