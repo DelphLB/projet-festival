@@ -37,8 +37,8 @@ function Footer() {
     </div>
   );
 }
-/*
-Footer.propTypes = {
+
+/* Footer.propTypes = {
   style: PropTypes.shape({
     color: PropTypes.string.isRequired,
   }).isRequired,

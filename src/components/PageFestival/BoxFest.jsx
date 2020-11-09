@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import '../../style/CSS/festivals/BoxFest.css';
+import '../../style/CSS/PageFestival/BoxFest.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Navbar from '../Reusable/NavBar/Navbar';
@@ -62,7 +62,8 @@ class BoxFest extends Component {
     const isToggle = this.state;
     return (
       <div className="festival">
-        <Navbar />;{/* box festival : image en background et nom festoch */}
+        <Navbar />
+        {/* box festival : image en background et nom festoch */}
         <div className="fadeEffect">
           <div
             className="boxFestival"
@@ -77,6 +78,7 @@ class BoxFest extends Component {
           </div>
         </div>
         {/* ------- Partie description ---------*/}
+
         <div
           className="container-description"
           aria-hidden="true"
@@ -131,31 +133,66 @@ class BoxFest extends Component {
         {/* ------ le lineup ---------- */}
         <AutoPlay idFestival={festivals.idfestival} />
         {/* package festival (box ticket) */}
-        <div className="cardsPack">
-          {tickets.map((pack) => (
-            <div
-              className="packCadre"
-              onMouseEnter={() => this.handleMouse(pack)}
-              onMouseLeave={this.handleMouse}
-            >
-              <div className="imagepackcard">
-                <img
-                  className="imgCard"
-                  src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
-                  alt="imagecard"
-                />
+        <div className="section950px">
+          <div className="cardsPack">
+            {tickets.map((pack) => (
+              <div
+                className="packCadre"
+                onMouseEnter={() => this.handleMouse(pack)}
+                onMouseLeave={this.handleMouse}
+              >
+                <div className="imagepackcard">
+                  <img
+                    className="imgCard"
+                    src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                    alt="imagecard"
+                  />
+                </div>
+                <div className="textPack">
+                  <h2>{pack.name}</h2>
+
+                  <p>{pack.description}</p>
+
+                  {isToggle.isToggle === pack.idticket ? (
+                    <div className="moreInfo">
+                      <p>{pack.date}</p>
+                      <p>{pack.price}€</p>
+                      <Link
+                        to="/"
+                        style={{
+                          textDecoration: 'none',
+                        }}
+                      >
+                        <div className="bouttonResa"> &gt; Réserver</div>
+                      </Link>
+                    </div>
+                  ) : (
+                    ''
+                  )}
+                </div>
               </div>
-              <div className="textPack">
-                <h2>{pack.name}</h2>
+            ))}
+          </div>
+        </div>
+        <div className="section951px">
+          <div className="cardsPack">
+            {tickets.map((pack) => (
+              <div className="packCadre">
+                <div className="imagepackcard">
+                  <img
+                    className="imgCard"
+                    src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                    alt="imagecard"
+                  />
+                </div>
+                <div className="textPack">
+                  <h2>{pack.name}</h2>
 
-                <p>{pack.description}</p>
+                  <p>{pack.description}</p>
 
-                {isToggle.isToggle === pack.idticket ? (
                   <div className="moreInfo">
                     <p>{pack.date}</p>
                     <p>{pack.price}€</p>
-
-                    {/* lien vers la résa  */}
                     <Link
                       to="/"
                       style={{
@@ -165,12 +202,10 @@ class BoxFest extends Component {
                       <div className="bouttonResa"> &gt; Réserver</div>
                     </Link>
                   </div>
-                ) : (
-                  ''
-                )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         <Footer />
       </div>
