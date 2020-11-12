@@ -1,20 +1,49 @@
 .paymentPage {
-  background-color: rgb(172, 131, 131);
+  background-color: black;
+  /* rgb(172, 131, 131); */
+}
+
+h1 {
+  text-align: center;
+  font-size: 4em;
+  color: white;
 }
 
 .row {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
 }
 
 .person {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  width: 35%;
+  height: 900px;
 }
-
-.adress {
-  display: flex;
-  flex-direction: column;
+.person h3 {
+  text-align: center;
+  font-size: 2em;
+}
+input {
+  height: 30px;
+  border-radius: 30px;
+  outline: black;
+  padding-left: 10px;
+  border: none;
+}
+select {
+  height: 30px;
+  border-radius: 30px;
+  background-color: white;
+  border: none;
+  outline: black;
+}
+.input-ticket {
+  border-radius: 5px;
 }
 
 .card {
@@ -27,38 +56,24 @@
 }
 
 #cardNumber {
-  width: 200px;
-  height: 50px;
+  margin-top: 15px;
+  width: 180px;
+  height: 20px;
 }
 
 .date {
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
 }
 
 #ccv {
-  width: 40px;
-  height: 50px;
+  margin-top: 5px;
+  width: 50px;
+  height: 20px;
 }
-/* /* .container {
-    background-color: #f2f2f2;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-  }
-  
-  input[type='text'] {
-    width: 100%;
-    margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  label {
-    margin-bottom: 10px;
-    display: block;
-  } */
 
 .icon-container {
   padding: 7px 0;
@@ -66,27 +81,24 @@
 
   padding: 7px 0;
   font-size: 24px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .btn {
-  background-color: grey;
-  color: white;
-  padding: 12px;
+  background-color: white;
+  color: black;
   margin: auto;
+  border-radius: 30px;
   border: none;
-  width: 40%;
-  border-radius: 3px;
+  width: 20%;
+  outline: black;
   cursor: pointer;
   font-size: 17px;
-  align-items: center;
+  margin-top: 20px;
+  height: 30px;
 }
 
-.button {
-  width: 100%;
-  align-items: center;
-  display: flex;
-}
-
-.btn:hover {
+/* .btn:hover {
   background-color: grey;
-}
+} */
