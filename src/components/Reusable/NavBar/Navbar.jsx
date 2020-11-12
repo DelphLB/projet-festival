@@ -19,8 +19,8 @@ function Navbar() {
       className: 'nav-text',
     },
     {
-      title: 'A propos',
-      path: '/apropos',
+      title: 'Artistes',
+      path: '/Artists',
       icons: <AiIcons.AiOutlineInfoCircle />,
       className: 'nav-text',
     },
