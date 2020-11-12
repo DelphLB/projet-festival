@@ -1,6 +1,13 @@
 .container {
   background-color: black;
 }
+
+.nameArtistBox {
+  margin: 220px 20px;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: white;
+}
+
 .artiste-title {
   color: white;
   font-size: 2.8em;
@@ -95,6 +102,8 @@
   margin-right: 20px;
   margin-top: 30px;
   color: white;
-  padding: 10px;
   background-color: black;
+  width: 280px;
+  height: 280px;
+  text-align: center;
 }

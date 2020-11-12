@@ -8,8 +8,8 @@ import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 
 const Artists = () => {
-  const [pokemons, setPokemons] = useState([]);
-  const [filterPokemon, setFilterPokemon] = useState(null);
+  const [listArtists, setListArtists] = useState([]);
+  const [filterArtists, setFilterArtists] = useState(null);
   const alphabet = [
     'A',
     'B',
@@ -41,22 +41,19 @@ const Artists = () => {
 
   useEffect(() => {
     axios
-      .get('https://pokeapi.co/api/v2/pokemon')
-      .then((response) => setPokemons(response.data.results));
+      .get('https://api-festit-09-20.herokuapp.com/api/artists')
+      .then((response) => setListArtists(response.data));
   }, []);
 
-  const handlePokemon = (letter) => {
+  const handleArtists = (letter) => {
     const newArray = [];
 
-    pokemons
-      .filter(
-        (elem) =>
-          elem.name.charAt(0) === letter.toLowerCase() && newArray.push(elem)
-      )
-      .map(() => {
-        setFilterPokemon(newArray);
-        return newArray;
-      });
+    listArtists.filter(
+      (elem) =>
+        elem.name.charAt(0).toLowerCase() === letter.toLowerCase() &&
+        newArray.push(elem)
+    );
+    setFilterArtists(newArray);
   };
 
   const handleReset = () => {
@@ -80,7 +77,7 @@ const Artists = () => {
         {alphabet.map((letter) => (
           <button
             type="button"
-            onClick={() => handlePokemon(letter)}
+            onClick={() => handleArtists(letter)}
             className="boutton-letters"
           >
             <Link to={`/artists/${letter}`} className="letters">
@@ -92,12 +89,28 @@ const Artists = () => {
 
       <div className="container-liste-artists">
         <div className="container-enfant-artists">
-          {filterPokemon !== null
-            ? filterPokemon.map((pokemon) => (
-                <div className="artists">{pokemon.name}</div>
+          {filterArtists !== null
+            ? filterArtists.map((artists) => (
+                <div
+                  className="artists"
+                  style={{
+                    backgroundRepeat: 'no-repeat',
+                    backgroundImage: `url(${artists.image_url})`,
+                  }}
+                >
+                  <p className="nameArtistBox">{artists.name}</p>
+                </div>
               ))
-            : pokemons.map((pokemon) => (
-                <div className="artists">{pokemon.name}</div>
+            : listArtists.map((artists) => (
+                <div
+                  className="artists"
+                  style={{
+                    backgroundRepeat: 'no-repeat',
+                    backgroundImage: `url(${artists.image_url})`,
+                  }}
+                >
+                  <p className="nameArtistBox">{artists.name}</p>
+                </div>
               ))}
 
           {/* {filterPokemon !== null &&  <div className="pokemon">'ko'</div>} */}

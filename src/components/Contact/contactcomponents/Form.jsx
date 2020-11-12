@@ -56,16 +56,16 @@ const Form = ({ submitForm }) => {
         {errors.email && <p className="message">{errors.email}</p>}
 
         <label className="labelContact" htmlFor="question">
-          Une Question ?
+          Une question ?
           <select className="selectContact">
             <option className="optionContact">
               Comment me faire rembourser mon billet ?
             </option>
             <option className="optionContact">
-              Est-ce-que je peut échanger mon billet ?
+              Est-ce-que je peux échanger mon billet ?
             </option>
             <option className="optionContact">
-              Y&rsquo;a t-il des Assurances ?
+              Y&rsquo;a t-il des assurances ?
             </option>
           </select>
         </label>
@@ -73,7 +73,7 @@ const Form = ({ submitForm }) => {
           <textarea className="areaContact" placeholder="Un commentaire ?" />
         </label>
         <label className="labelContact" htmlFor="newletter">
-          S&rsquo;abonner aux newletters ?
+          S&rsquo;abonner à la newsletter ?
           <input
             type="checkbox"
             id="newletter"
