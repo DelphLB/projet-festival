@@ -14,7 +14,7 @@ const Contact = () => {
   return (
     <div className="contact">
       <Navbar />
-      <p className="title">Contact</p>
+      <p className="titleContact">Contact</p>
       {!isSubmitted ? <Form submitForm={submitForm} /> : <FormSuccess />}
       <Footer />
     </div>
