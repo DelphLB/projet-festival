@@ -3,18 +3,39 @@
 }
 .artiste-title {
   color: white;
-  padding-left: 40px;
+  font-size: 2.8em;
+  text-decoration: none;
+  background-image: url('https://cdn.pixabay.com/photo/2016/01/19/17/38/concert-1149805_960_720.jpg');
+  cursor: default;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
   display: flex;
-  justify-content: left;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+.artiste-title-cursor {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 6px 16px;
+  border-radius: 10px;
+  color: white;
+  font-size: 2em;
+  border: none;
 }
 
 .container-letter {
   background-color: white;
   padding: 20px;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   text-align: center;
+}
+
+.letters {
+  color: gray;
+  text-decoration: none;
 }
 .boutton-letters {
   color: gray;
@@ -22,7 +43,7 @@
   border: none;
   background-color: white;
 }
-.boutton-letters:focus {
+.letters:focus {
   font-weight: bold;
   color: black;
 }
@@ -37,8 +58,43 @@
     overflow-x: scroll;
   }
 }
+@media screen and (max-width: 992px) {
+  .container-enfant-artists {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: black;
+    flex-wrap: wrap;
+    font-size: 2em;
+    margin: 40px auto;
+    width: 70%;
+    text-align: center;
+  }
+}
 
-.pokemon {
+.container-liste-artists {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+@media screen and (min-width: 992px) {
+  .container-enfant-artists {
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: black;
+    flex-wrap: wrap;
+    font-size: 2em;
+    margin: 40px auto;
+    width: 70%;
+  }
+}
+.artists {
+  /* border: 1px solid wheat; */
+  margin-right: 20px;
+  margin-top: 30px;
   color: white;
   padding: 10px;
+  background-color: black;
 }
