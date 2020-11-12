@@ -9,7 +9,7 @@ function PaymentPage() {
   return (
     <div className="paymentPage">
       <Navbar />
-      <h1>Recapitulatif d&rsquo;achat</h1>
+      <h1>Récapitulatif d&rsquo;achat</h1>
       <div className="row">
         <div className="person">
           Civilité
@@ -24,6 +24,7 @@ function PaymentPage() {
             id="firstName"
             name="firstName"
             className="input-field"
+            placeholder="Edward"
           />
           Votre nom
           <input
@@ -31,6 +32,7 @@ function PaymentPage() {
             id="lastName"
             name="lastName"
             className="input-field"
+            placeholder="Elric"
           />
           Votre adresse mail
           <input
@@ -38,7 +40,7 @@ function PaymentPage() {
             id="mail"
             name="mail"
             className="input-field"
-            placeholder="ex : jean@gmail.com"
+            placeholder="ex : fma@gmail.com"
           />
           Confirmer votre adresse mail
           <input type="mail" id="mail" name="mail" className="input-field" />
@@ -63,6 +65,7 @@ function PaymentPage() {
             id="address"
             name="address"
             className="input-field"
+            placeholder="Resembool"
           />
           Ville
           <input type="city" id="city" name="city" className="input-field" />
