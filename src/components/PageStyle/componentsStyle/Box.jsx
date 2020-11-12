@@ -37,7 +37,12 @@ const Box = ({ style }) => {
                   className="boxbutton"
                   style={{ backgroundColor: style.color }}
                 >
-                  <Link to={`/festivals/${box.idfestival}`}>
+                  <Link
+                    to={{
+                      pathname: `/festivals/${box.idfestival}`,
+                      state: { color: style.color },
+                    }}
+                  >
                     En savoir plus
                   </Link>
                 </button>

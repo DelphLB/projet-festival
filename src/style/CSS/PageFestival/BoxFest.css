@@ -78,7 +78,7 @@
 
 /* effet ombre sur banner*/
 
-.boxFestival :after {
+/* .boxFestival :after {
   content: '';
   width: 100%;
   position: absolute;
@@ -86,9 +86,9 @@
   right: 0;
   height: 500px;
   opacity: 0.85;
-  background: linear-gradient(transparent, #0e1f31 90%);
+  background: linear-gradient(transparent,  90%);
   z-index: -1;
-}
+} */
 
 /* les cards tickets */
 .cardsPack {
