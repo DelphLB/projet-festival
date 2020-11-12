@@ -1,0 +1,132 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import '../../style/CSS/Admin/AdminPage.css';
+
+const ArtistForm = () => {
+  const [input, setInput] = useState({});
+  const [festivals, setFestivals] = useState([]);
+  const [festivalId, setFestivalId] = useState(null);
+  const [styles, setStyles] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('https://api-festit-09-20.herokuapp.com/api/festivals')
+      .then((res) => res.data)
+      .then((data) => setFestivals(data));
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get('https://api-festit-09-20.herokuapp.com/api/styles')
+      .then((res) => res.data)
+      .then((data) => setStyles(data));
+  }, []);
+
+  const handleChange = (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value });
+  };
+
+  const handleClick = async () => {
+    let indexArtist;
+    let idArtist;
+    await axios.post('https://api-festit-09-20.herokuapp.com/api/artists', {
+      ...input,
+    });
+
+    await axios
+      .get('https://api-festit-09-20.herokuapp.com/api/artists/')
+      .then((res) => {
+        indexArtist = res.data.length - 1;
+        idArtist = res.data[`${indexArtist}`].idartist;
+      });
+
+    await axios
+      .post(
+        `https://api-festit-09-20.herokuapp.com/api/festivals/${Number(
+          festivalId
+        )}/artists/${idArtist}`
+      )
+      .then((response2) => console.log(response2))
+
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handleSelect = (e) => {
+    setFestivalId(e.target.value);
+  };
+
+  return (
+    <div>
+      <div className="artistform">
+        <h2>Artists</h2>
+        <input
+          name="name"
+          onChange={(e) => handleChange(e)}
+          placeholder="Name"
+        />
+
+        <input
+          name="description"
+          onChange={(e) => handleChange(e)}
+          placeholder="Description"
+        />
+
+        <input
+          name="country"
+          onChange={(e) => handleChange(e)}
+          placeholder="Country"
+        />
+
+        <input
+          name="image_url"
+          onChange={(e) => handleChange(e)}
+          placeholder="Image"
+        />
+
+        <input
+          name="music_url"
+          onChange={(e) => handleChange(e)}
+          placeholder="Music Video"
+        />
+
+        <input
+          name="embed_video"
+          onChange={(e) => handleChange(e)}
+          placeholder="Embed Video"
+        />
+
+        <input
+          name="tracker_count"
+          onChange={(e) => handleChange(e)}
+          placeholder="Tracker"
+        />
+        <select name="id_style" onChange={(e) => handleChange(e)}>
+          <option value="">--Please choose a style--</option>
+          {styles.map((style) => (
+            <option value={style.idstyle}>
+              Name:{style.name}, Id:{style.idstyle}
+            </option>
+          ))}
+        </select>
+
+        <select name="style" onChange={(e) => handleSelect(e)}>
+          <option value="">--Please choose a festival--</option>
+          {festivals.map((festival) => (
+            <option value={festival.idfestival}>
+              Name:{festival.name}, Id:{festival.idfestival}
+            </option>
+          ))}
+        </select>
+        <div className="bouttonCenter">
+          <button type="submit" onClick={() => handleClick()}>
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ArtistForm;
