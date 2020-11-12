@@ -14,8 +14,6 @@ const BoxFest = ({ match, location }) => {
   const [isToggle, setIsToggle] = useState(false);
   const { idfestival } = match.params;
   const { color } = location.state;
-  // const [idStyle, setIdStyle] = useState([]);
-  // const colorStyle: {},
 
   useEffect(() => {
     axios
@@ -28,42 +26,7 @@ const BoxFest = ({ match, location }) => {
         `https://api-festit-09-20.herokuapp.com/api/tickets/festivals/${idfestival}`
       )
       .then((response) => setTickets(response.data));
-
-    // axios
-    //   .get(
-    //     `https://api-festit-09-20.herokuapp.com/api/festivals/${idfestival}/style`
-    //   )
-    //   .then((response) => response.data[0])
-    //   .then((data) =>
-    //     axios
-    //       .get(
-    //         `https://api-festit-09-20.herokuapp.com/api/styles/${data.idstyle}`
-    //       )
-    //       .then((response) => console.log(response.data))
-    //   );
-    // this.setState({
-    //     //  colorStyle: response.data,
-    // })
   }, []);
-
-  // axios   setTickets(res.data), setTicket(res.data[0])
-  //   .get(
-  //     `https://api-festit-09-20.herokuapp.com/api/festivals/${idfestival}/style`
-  //   )
-  //   .then((response) =>
-  //     this.setState({
-  //       idStyle: response.data[0].idstyle,
-  //     })
-  //   );
-
-  // axios
-  //   .get(`https://api-festit-09-20.herokuapp.com/api/styles/${idStyle}`)
-  //   .then(
-  //     (response) => console.log(response)
-  //     // this.setState({
-  //     //  colorStyle: response.data,
-  //     // })
-  //   );
 
   const handleClick = () => {
     setIsToggleOn(!isToggleOn);
@@ -76,16 +39,11 @@ const BoxFest = ({ match, location }) => {
   const handleTicketsPrice = () => {
     const newPrice = [];
 
-    // let avant mais changé pour le husky !! et tickets dans le ()
-
     tickets.map((ticket) => newPrice.push(ticket.price));
 
-    // console.log(newPrice);
+    newPrice.sort((a, b) => a - b);
 
-    newPrice.sort();
-
-    // console.log(newPrice);
-    return newPrice.map((price) => <p>{price}</p>);
+    return newPrice[0];
   };
 
   return (
@@ -170,7 +128,9 @@ const BoxFest = ({ match, location }) => {
             src="https://www.flaticon.com/svg/static/icons/svg/945/945582.svg"
             alt="price"
           />
-          <p className="text-icone">{handleTicketsPrice(tickets)}</p>
+          <p className="text-icone">
+            A partir de {handleTicketsPrice(tickets)}€
+          </p>
         </div>
       </div>
       {/* -------fin partie icones -------- */}
