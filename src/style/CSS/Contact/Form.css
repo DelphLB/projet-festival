@@ -1,0 +1,72 @@
+form {
+  width: 35%;
+  height: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+label {
+  display: flex;
+  flex-direction: column;
+}
+form :focus {
+  outline: black;
+}
+input {
+  margin-top: 5px;
+  padding-left: 15px;
+  border-radius: 20px;
+  height: 30px;
+}
+
+select {
+  margin-top: 10px;
+  padding-left: 5px;
+  border-radius: 20px;
+  height: 30px;
+}
+textarea {
+  margin-top: 20px;
+  height: 150px;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+.letter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.letter input {
+  margin-left: 10px;
+}
+.message {
+  font-size: 1em;
+  color: red;
+}
+button {
+  width: 10%;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  border-radius: 30px;
+  border: solid 1px white;
+  align-items: center;
+  background-color: black;
+  color: white;
+  margin: auto;
+  cursor: pointer;
+}
+@media screen and (max-width: 950px) {
+  form {
+    width: 90%;
+  }
+  button {
+    width: 80%;
+  }
+  option {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

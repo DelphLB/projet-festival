@@ -5,6 +5,7 @@ import Artiste from './components/PageArtiste/Artiste';
 import BoxFest from './components/PageFestival/BoxFest';
 import PageStyle from './components/PageStyle/PageStyle';
 import PaymentPage from './components/PaymentPage/PaymentPage';
+import Contact from './components/Contact/Contact';
 import AdminPage from './components/Admin/AdminPage';
 import './App.css';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/festivals/:idfestival" component={BoxFest} />
         <Route path="/artists" component={Artiste} />
         <Route path="/PaymentPage" component={PaymentPage} />
+        <Route path="/contact" component={Contact} />
         <Route path="/Admin" component={AdminPage} />
       </Switch>
     </div>
