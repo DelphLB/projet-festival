@@ -64,47 +64,58 @@ const ArtistForm = () => {
       <div className="artistform">
         <h2>Artists</h2>
         <input
+          className="inputeuh"
           name="name"
           onChange={(e) => handleChange(e)}
           placeholder="Name"
         />
 
         <input
+          className="inputeuh"
           name="description"
           onChange={(e) => handleChange(e)}
           placeholder="Description"
         />
 
         <input
+          className="inputeuh"
           name="country"
           onChange={(e) => handleChange(e)}
           placeholder="Country"
         />
 
         <input
+          className="inputeuh"
           name="image_url"
           onChange={(e) => handleChange(e)}
           placeholder="Image"
         />
 
         <input
+          className="inputeuh"
           name="music_url"
           onChange={(e) => handleChange(e)}
           placeholder="Music Video"
         />
 
         <input
+          className="inputeuh"
           name="embed_video"
           onChange={(e) => handleChange(e)}
           placeholder="Embed Video"
         />
 
         <input
+          className="inputeuh"
           name="tracker_count"
           onChange={(e) => handleChange(e)}
           placeholder="Tracker"
         />
-        <select name="id_style" onChange={(e) => handleChange(e)}>
+        <select
+          className="selecteuh"
+          name="id_style"
+          onChange={(e) => handleChange(e)}
+        >
           <option value="">--Please choose a style--</option>
           {styles.map((style) => (
             <option value={style.idstyle}>
@@ -113,7 +124,11 @@ const ArtistForm = () => {
           ))}
         </select>
 
-        <select name="style" onChange={(e) => handleSelect(e)}>
+        <select
+          className="selecteuh"
+          name="style"
+          onChange={(e) => handleSelect(e)}
+        >
           <option value="">--Please choose a festival--</option>
           {festivals.map((festival) => (
             <option value={festival.idfestival}>
@@ -122,7 +137,11 @@ const ArtistForm = () => {
           ))}
         </select>
         <div className="bouttonCenter">
-          <button type="submit" onClick={() => handleClick()}>
+          <button
+            className="buttoneuh"
+            type="submit"
+            onClick={() => handleClick()}
+          >
             Submit
           </button>
         </div>

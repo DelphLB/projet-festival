@@ -9,11 +9,11 @@ function PaymentPage() {
   return (
     <div className="paymentPage">
       <Navbar />
-      <h1>Récapitulatif d&rsquo;achat</h1>
+      <h1 className="PayementTitle">Récapitulatif d&rsquo;achat</h1>
       <div className="row">
         <div className="person">
           Civilité
-          <select id="genre" name="genre">
+          <select className="nasratselect" id="genre" name="genre">
             <option value="Monsieur">Monsieur</option>
             <option value="Mademoiselle">Mademoiselle</option>
             <option value="Madame">Madame</option>
@@ -23,7 +23,7 @@ function PaymentPage() {
             type="firstName"
             id="firstName"
             name="firstName"
-            className="input-field"
+            className="PayementInput"
             placeholder="Edward"
           />
           Votre nom
@@ -31,7 +31,7 @@ function PaymentPage() {
             type="lastName"
             id="lastName"
             name="lastName"
-            className="input-field"
+            className="PayementInput"
             placeholder="Elric"
           />
           Votre adresse mail
@@ -39,17 +39,17 @@ function PaymentPage() {
             type="mail"
             id="mail"
             name="mail"
-            className="input-field"
+            className="PayementInput"
             placeholder="ex : fma@gmail.com"
           />
           Confirmer votre adresse mail
-          <input type="mail" id="mail" name="mail" className="input-field" />
+          <input type="mail" id="mail" name="mail" className="PayementInput" />
           Téléphone
           <input
             type="phoneNumber"
             id="phoneNumber"
             name="phoneNumber"
-            className="input-field"
+            className="PayementInput"
           />
           <h3>Détail de l&rsquo;adresse</h3>
           Adresse
@@ -57,14 +57,14 @@ function PaymentPage() {
             type="address"
             id="address"
             name="address"
-            className="input-field"
+            className="PayementInput"
           />
           Complément d&rsquo;adresse
           <input
             type="address"
             id="address"
             name="address"
-            className="input-field"
+            className="PayementInput"
             placeholder="Resembool"
           />
           Ville
@@ -74,13 +74,13 @@ function PaymentPage() {
             type="postalCode"
             id="postalCode"
             name="PostalCode"
-            className="input-field"
+            className="PayementInput"
           />
         </div>
 
         <div className="card">
           <h3>Nombre de tickets</h3>
-          <select id="tickets" name="tickets" className="input-ticket">
+          <select id="tickets" name="tickets" className="nasratselect">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -103,12 +103,12 @@ function PaymentPage() {
             type="cardNumber"
             id="cardNumber"
             name="cardNumber"
-            className="input-field"
+            className="PayementInput"
             maxLength="16_characters"
           />
           <p>Date d&rsquo;expiration</p>
           <div className="date">
-            <select name="expireMM" id="expireMM">
+            <select className="nasratselect" name="expireMM" id="expireMM">
               <option value="">Mois</option>
               <option value="01">Janvier</option>
               <option value="02">Fevrier</option>
@@ -123,7 +123,7 @@ function PaymentPage() {
               <option value="11">Novembre</option>
               <option value="12">Decembre</option>
             </select>
-            <select name="expireYY" id="expireYY">
+            <select className="nasratselect" name="expireYY" id="expireYY">
               <option value="">Année</option> <option value="10">2020</option>
               <option value="11">2021</option>
               <option value="12">2022</option>
@@ -135,7 +135,7 @@ function PaymentPage() {
             type="ccv"
             id="ccv"
             name="ccv"
-            className="input-field"
+            className="PayementInput"
             maxLength="3_characters"
           />
         </div>

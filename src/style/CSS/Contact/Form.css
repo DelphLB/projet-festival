@@ -1,4 +1,4 @@
-form {
+.formContact {
   width: 35%;
   height: 600px;
   margin: auto;
@@ -6,27 +6,35 @@ form {
   flex-direction: column;
   justify-content: space-between;
 }
-label {
+.labelContact {
   display: flex;
   flex-direction: column;
 }
-form :focus {
+.formContact :focus {
   outline: black;
 }
-input {
+
+.inputContact {
   margin-top: 5px;
   padding-left: 15px;
   border-radius: 20px;
   height: 30px;
 }
 
-select {
+#newletter {
+  margin-top: 5px;
+  padding-left: 15px;
+  border-radius: 20px;
+  height: 30px;
+}
+
+.selectContact {
   margin-top: 10px;
   padding-left: 5px;
   border-radius: 20px;
   height: 30px;
 }
-textarea {
+.areaContact {
   margin-top: 20px;
   height: 150px;
   border-radius: 10px;
@@ -44,7 +52,7 @@ textarea {
   font-size: 1em;
   color: red;
 }
-button {
+.buttonContact {
   width: 10%;
   height: 25px;
   display: flex;
@@ -58,13 +66,13 @@ button {
   cursor: pointer;
 }
 @media screen and (max-width: 950px) {
-  form {
+  .formContact {
     width: 90%;
   }
-  button {
+  .buttonContact {
     width: 80%;
   }
-  option {
+  .optionContact {
     width: 90%;
     display: flex;
     flex-wrap: wrap;

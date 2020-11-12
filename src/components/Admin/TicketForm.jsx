@@ -36,42 +36,55 @@ const TicketForm = () => {
       <div className="ticketform">
         <h2> Tickets </h2>
         <input
+          className="inputeuh"
           name="name"
           onChange={(e) => handleChange(e)}
           placeholder="Name"
         />
 
         <input
+          className="inputeuh"
           name="description"
           onChange={(e) => handleChange(e)}
           placeholder="Description"
         />
 
         <input
+          className="inputeuh"
           name="type"
           onChange={(e) => handleChange(e)}
           placeholder="Type"
         />
 
         <input
+          className="inputeuh"
           name="date"
           onChange={(e) => handleChange(e)}
           placeholder="Date"
         />
 
         <input
+          className="inputeuh"
           name="price"
           onChange={(e) => handleChange(e)}
           placeholder="Price"
         />
 
-        <select name="soldOut" onChange={(e) => handleChange(e)}>
+        <select
+          className="selecteuh"
+          name="soldOut"
+          onChange={(e) => handleChange(e)}
+        >
           <option value="">Sold Out</option>
           <option value="false">false</option>
           <option value="true">true</option>
         </select>
 
-        <select name="id_festival" onChange={(e) => handleChange(e)}>
+        <select
+          className="selecteuh"
+          name="id_festival"
+          onChange={(e) => handleChange(e)}
+        >
           <option value="">--Please choose a festival--</option>
           {festivals.map((festival) => (
             <option value={festival.idfestival}>
@@ -80,7 +93,11 @@ const TicketForm = () => {
           ))}
         </select>
         <div className="bouttonCenter">
-          <button type="submit" onClick={() => handleClick()}>
+          <button
+            className="buttoneuh"
+            type="submit"
+            onClick={() => handleClick()}
+          >
             Submit
           </button>
         </div>

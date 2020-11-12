@@ -28,12 +28,12 @@
   width: 250px;
 }
 
-input {
+.inputeuh {
   padding: 10px;
   margin-bottom: 2px;
 }
 
-select {
+.selecteuh {
   padding: 10px;
   margin-bottom: 2px;
 }
@@ -43,7 +43,7 @@ select {
   justify-content: center;
 }
 
-button {
+.buttoneuh {
   padding: 10px;
   width: 120px;
 }

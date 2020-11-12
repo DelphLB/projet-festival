@@ -7,12 +7,13 @@ import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 import AutoPlay from './AutoPlay';
 
-const BoxFest = ({ match }) => {
+const BoxFest = ({ match, location }) => {
   const [festivals, setFestivals] = useState({});
   const [tickets, setTickets] = useState([]);
   const [isToggleOn, setIsToggleOn] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
   const { idfestival } = match.params;
+  const { color } = location.state;
   // const [idStyle, setIdStyle] = useState([]);
   // const colorStyle: {},
 
@@ -33,14 +34,16 @@ const BoxFest = ({ match }) => {
     //     `https://api-festit-09-20.herokuapp.com/api/festivals/${idfestival}/style`
     //   )
     //   .then((response) => response.data[0])
-    //   .then((data) => setIdStyle(data.idstyle));
-
-    // axios
-    //   .get(`https://api-festit-09-20.herokuapp.com/api/styles/${idStyle}`)
-    //   .then((response) => console.log(response.data));
+    //   .then((data) =>
+    //     axios
+    //       .get(
+    //         `https://api-festit-09-20.herokuapp.com/api/styles/${data.idstyle}`
+    //       )
+    //       .then((response) => console.log(response.data))
+    //   );
     // this.setState({
-    // //     //  colorStyle: response.data,
-    //     // })
+    //     //  colorStyle: response.data,
+    // })
   }, []);
 
   // axios   setTickets(res.data), setTicket(res.data[0])
@@ -70,8 +73,23 @@ const BoxFest = ({ match }) => {
     setIsToggle(pack.idticket);
   };
 
+  const handleTicketsPrice = () => {
+    const newPrice = [];
+
+    // let avant mais changé pour le husky !! et tickets dans le ()
+
+    tickets.map((ticket) => newPrice.push(ticket.price));
+
+    // console.log(newPrice);
+
+    newPrice.sort();
+
+    // console.log(newPrice);
+    return newPrice.map((price) => <p>{price}</p>);
+  };
+
   return (
-    <div className="festival">
+    <div className="festival" style={{ backgroundColor: `${color}` }}>
       <Navbar />
       {/* box festival : image en background et nom festoch */}
       <div className="fadeEffect">
@@ -79,12 +97,26 @@ const BoxFest = ({ match }) => {
           className="boxFestival"
           style={{
             backgroundImage: `url("${festivals.image1}")`,
+            opacity: '0.7',
             backgroundSize: 'cover',
             zIndex: -1,
           }}
         >
           {' '}
-          <div className="cadreTitle" />
+          <div
+            className="cadreTitle"
+            // style={{
+            //   content: '',
+            //   width: '100%',
+            //   position: 'absolute',
+            //   left: 0,
+            //   right: 0,
+            //   height: '500px',
+            //   opacity: 0.85,
+            //   background: `linear - gradient(transparent, ${color} 90% )`,
+            //   Zindex: 1,
+            // }}
+          />
           <h2 className="styleNameFest">{festivals.name}</h2>
         </div>
       </div>
@@ -94,6 +126,7 @@ const BoxFest = ({ match }) => {
         className="container-description"
         aria-hidden="true"
         onClick={() => handleClick()}
+        style={{ backgroundColor: `${color}` }}
       >
         <div className="descriptionFestival">
           <p className="details">
@@ -137,9 +170,7 @@ const BoxFest = ({ match }) => {
             src="https://www.flaticon.com/svg/static/icons/svg/945/945582.svg"
             alt="price"
           />
-          {tickets.map((ticket) => (
-            <p className="text-icone">{ticket.price} € </p>
-          ))}
+          <p className="text-icone">{handleTicketsPrice(tickets)}</p>
         </div>
       </div>
       {/* -------fin partie icones -------- */}
@@ -227,6 +258,10 @@ const BoxFest = ({ match }) => {
 BoxFest.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({ idfestival: PropTypes.number }).isRequired,
+  }).isRequired,
+
+  location: PropTypes.shape({
+    state: PropTypes.shape({ color: PropTypes.string }).isRequired,
   }).isRequired,
 };
 

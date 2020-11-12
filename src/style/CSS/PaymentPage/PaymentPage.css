@@ -3,7 +3,7 @@
   /* rgb(172, 131, 131); */
 }
 
-h1 {
+.PayementTitle {
   text-align: center;
   font-size: 4em;
   color: white;
@@ -28,14 +28,15 @@ h1 {
   text-align: center;
   font-size: 2em;
 }
-input {
+
+.PayementInput {
   height: 30px;
   border-radius: 30px;
   outline: black;
   padding-left: 10px;
   border: none;
 }
-select {
+.nasratselect {
   height: 30px;
   border-radius: 30px;
   background-color: white;

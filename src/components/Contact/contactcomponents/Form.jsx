@@ -12,25 +12,27 @@ const Form = ({ submitForm }) => {
   const [newsLetter, setNewletters] = useState(false);
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
+      <form className="formContact" onSubmit={handleSubmit}>
+        <label className="labelContact" htmlFor="name">
           Prénom
           <input
             type="text"
             id="name"
             name="name"
+            className="inputContact"
             placeholder="ex:Jean"
             value={values.name}
             onChange={handleChange}
           />
         </label>
         {errors.name && <p className="message">{errors.name}</p>}
-        <label htmlFor="lastname">
+        <label className="labelContact" htmlFor="lastname">
           Nom
           <input
             type="text"
             id="lastname"
             name="lastname"
+            className="inputContact"
             placeholder="ex:Bernard"
             value={values.lastname}
             onChange={handleChange}
@@ -38,12 +40,13 @@ const Form = ({ submitForm }) => {
         </label>
         {errors.lastname && <p className="message">{errors.lastname}</p>}
 
-        <label htmlFor="email">
+        <label className="labelContact" htmlFor="email">
           E-mail
           <input
             type="email"
             id="email"
             name="email"
+            className="inputContact"
             placeholder="ex:jean@gmail.com"
             value={values.email}
             onChange={handleChange}
@@ -52,18 +55,24 @@ const Form = ({ submitForm }) => {
 
         {errors.email && <p className="message">{errors.email}</p>}
 
-        <label htmlFor="question">
+        <label className="labelContact" htmlFor="question">
           Une Question ?
-          <select className="select">
-            <option>Comment me faire rembourser mon billet ?</option>
-            <option>Est-ce-que je peut échanger mon billet ?</option>
-            <option>Y&rsquo;a t-il des Assurances ?</option>
+          <select className="selectContact">
+            <option className="optionContact">
+              Comment me faire rembourser mon billet ?
+            </option>
+            <option className="optionContact">
+              Est-ce-que je peut échanger mon billet ?
+            </option>
+            <option className="optionContact">
+              Y&rsquo;a t-il des Assurances ?
+            </option>
           </select>
         </label>
-        <label htmlFor="comment">
-          <textarea placeholder="Un commentaire ?" />
+        <label className="labelContact" htmlFor="comment">
+          <textarea className="areaContact" placeholder="Un commentaire ?" />
         </label>
-        <label htmlFor="newletter" className="letter">
+        <label className="labelContact" htmlFor="newletter">
           S&rsquo;abonner aux newletters ?
           <input
             type="checkbox"
@@ -76,7 +85,7 @@ const Form = ({ submitForm }) => {
         </label>
       </form>
 
-      <button type="button" onClick={handleSubmit}>
+      <button className="buttonContact" type="button" onClick={handleSubmit}>
         Envoyer
       </button>
     </div>

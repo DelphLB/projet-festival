@@ -58,47 +58,59 @@ const FestForm = () => {
       <div className="festform">
         <h2> Festivals </h2>
         <input
+          className="inputeuh"
           name="name"
           onChange={(e) => handleChange(e)}
           placeholder="Name"
         />
         <input
+          className="inputeuh"
           name="description"
           onChange={(e) => handleChange(e)}
           placeholder="Description"
         />
         <input
+          className="inputeuh"
           name="city"
           onChange={(e) => handleChange(e)}
           placeholder="City"
         />
         <input
+          className="inputeuh"
           name="country"
           onChange={(e) => handleChange(e)}
           placeholder="Country"
         />
         <input
+          className="inputeuh"
           name="startDate"
           onChange={(e) => handleChange(e)}
           placeholder="Start Date"
         />
         <input
+          className="inputeuh"
           name="endDate"
           onChange={(e) => handleChange(e)}
           placeholder="End Date"
         />
         <input
+          className="inputeuh"
           name="image1"
           onChange={(e) => handleChange(e)}
           placeholder="Image"
         />
         <input
+          className="inputeuh"
           name="url_video"
           onChange={(e) => handleChange(e)}
           placeholder="Video"
         />
 
-        <select name="style" onChange={(e) => handleSelect(e)}>
+        <select
+          className="selecteuh"
+          name="style"
+          onChange={(e) => handleSelect(e)}
+        >
           <option value="">--Please choose a style--</option>
           {styles.map((style) => (
             <option value={style.idstyle}>
@@ -107,7 +119,11 @@ const FestForm = () => {
           ))}
         </select>
         <div className="bouttonCenter">
-          <button type="submit" onClick={() => handleClick()}>
+          <button
+            className="buttoneuh"
+            type="submit"
+            onClick={() => handleClick()}
+          >
             Submit
           </button>
         </div>
