@@ -19,7 +19,7 @@ const Form = ({ submitForm }) => {
             type="text"
             id="name"
             name="name"
-            placeholder="  ex:Jean"
+            placeholder="ex:Jean"
             value={values.name}
             onChange={handleChange}
           />
@@ -31,7 +31,7 @@ const Form = ({ submitForm }) => {
             type="text"
             id="lastname"
             name="lastname"
-            placeholder="  ex:Bernard"
+            placeholder="ex:Bernard"
             value={values.lastname}
             onChange={handleChange}
           />
@@ -44,7 +44,7 @@ const Form = ({ submitForm }) => {
             type="email"
             id="email"
             name="email"
-            placeholder="  ex:jean@gmail.com"
+            placeholder="ex:jean@gmail.com"
             value={values.email}
             onChange={handleChange}
           />
