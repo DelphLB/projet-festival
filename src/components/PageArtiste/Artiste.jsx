@@ -109,7 +109,7 @@ const Artists = () => {
                     backgroundImage: `url(${artists.image_url})`,
                   }}
                 >
-                  <p className="nameArtistBox">{artists.name}</p>
+                  <h3 className="nameArtistBox">{artists.name}</h3>
                 </div>
               ))}
 

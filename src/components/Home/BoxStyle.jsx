@@ -25,7 +25,7 @@ class BoxStyle extends Component {
         {listofStyles.map((style) => (
           <div className="pageStyle_box">
             <Link
-              to={`/pageStyle/${style.idstyle}`}
+              to={`/style/${style.idstyle}`}
               style={{
                 textDecoration: 'none',
                 color: 'white',
@@ -42,7 +42,7 @@ class BoxStyle extends Component {
                 <div className="titleBox">
                   <div className="titleStyleBox">
                     <div className="styleName">
-                      <p className="pName">{style.name}</p>
+                      <h2 className="pName">{style.name}</h2>
                     </div>
                   </div>
                 </div>
