@@ -189,7 +189,6 @@
 /* container description */
 
 .container-description {
-  background-color: #0e1f31;
   border-bottom: solid 1px white;
   z-index: 1;
   display: flex;

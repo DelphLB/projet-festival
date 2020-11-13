@@ -13,7 +13,7 @@ const BoxFest = ({ match, location }) => {
   const [isToggleOn, setIsToggleOn] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
   const { idfestival } = match.params;
-  const { color } = location.state;
+  const { color } = location.state ? location.state : '';
 
   useEffect(() => {
     axios
@@ -47,7 +47,7 @@ const BoxFest = ({ match, location }) => {
   };
 
   return (
-    <div className="festival" style={{ backgroundColor: `${color}` }}>
+    <div className={{ backgroundColor: `${color}` }}>
       <Navbar />
       {/* box festival : image en background et nom festoch */}
       <div className="fadeEffect">
