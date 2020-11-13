@@ -47,7 +47,7 @@ const BoxFest = ({ match, location }) => {
   };
 
   return (
-    <div className={{ backgroundColor: `${color}` }}>
+    <div className="festival" style={{ backgroundColor: `${color}` }}>
       <Navbar />
       {/* box festival : image en background et nom festoch */}
       <div className="fadeEffect">
