@@ -214,6 +214,8 @@
   cursor: pointer;
   font-size: 1.3em;
   margin: 0px;
+  margin-right: 50px;
+  padding-right: 49px;
 }
 
 .description {
