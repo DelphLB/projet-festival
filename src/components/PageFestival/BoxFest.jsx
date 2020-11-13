@@ -162,7 +162,7 @@ const BoxFest = ({ match, location }) => {
                     <p>{pack.date}</p>
                     <p>{pack.price}€</p>
                     <Link
-                      to="/"
+                      to="/paymentpage"
                       style={{
                         textDecoration: 'none',
                       }}
