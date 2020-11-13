@@ -219,9 +219,11 @@
 
 .description {
   font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 1.2em;
 }
 .fleche {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 .descriptionText {
   /* border: 1px solid red; */
@@ -240,6 +242,8 @@
 }
 
 .icone-texte {
+  width: 100px;
+  /* border: 1px solid yellow; */
   text-align: center;
 }
 
