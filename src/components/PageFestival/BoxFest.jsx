@@ -88,9 +88,8 @@ const BoxFest = ({ match, location }) => {
       >
         <div className="descriptionFestival">
           <p className="details">
-            {' '}
             <p className="fleche"> &darr; </p>
-            <p className="description">Description</p>{' '}
+            <p className="description">Description</p>
             <p className="fleche"> &darr; </p>
           </p>
           {isToggleOn ? (
