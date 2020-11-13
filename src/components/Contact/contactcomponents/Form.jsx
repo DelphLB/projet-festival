@@ -72,7 +72,7 @@ const Form = ({ submitForm }) => {
         <label className="labelContact" htmlFor="comment">
           <textarea className="areaContact" placeholder="Un commentaire ?" />
         </label>
-        <label className="labelContact" htmlFor="newletter">
+        <label className="labelContact2" htmlFor="newletter">
           S&rsquo;abonner à la newsletter ?
           <input
             type="checkbox"
