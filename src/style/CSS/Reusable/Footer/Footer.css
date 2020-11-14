@@ -2,12 +2,60 @@
   width: 100%;
   color: white;
   text-align: center;
-  padding-bottom: 10px;
-  margin-top: 52px;
-  background-color: none;
+
+  padding: 15px 120px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.info {
+.container-contact,
+.container-formalites {
+  text-align: left;
+}
+.question {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+}
+.adresse {
+  margin-bottom: 0px;
+}
+.ville {
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+  margin: 40px auto;
+}
+
+@media screen and (max-width: 1250px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+  }
+  .container-reseaux,
+  .container-formalites {
+    margin-top: 70px;
+  }
+  .container-contact {
+    margin: 40px auto;
+  }
+  .container-formalites {
+    margin: 70px auto;
+  }
+}
+
+/* .tt {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+} */
+
+/* .info {
   padding: 0;
 }
 
@@ -31,4 +79,4 @@
   .footer {
     margin-top: 100px;
   }
-}
+} */
