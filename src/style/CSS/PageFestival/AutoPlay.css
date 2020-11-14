@@ -2,12 +2,12 @@
   color: black;
   margin: 100px 0px;
   /* padding: 5px 0px; */
-  font-size: 2.3em;
   background-color: white;
 }
 
 .artist-name {
-  width: 200px;
+  font-size: 2.2em;
+  width: 160px;
   flex-wrap: nowrap;
 }
 

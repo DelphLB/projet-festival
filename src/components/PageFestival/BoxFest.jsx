@@ -13,7 +13,7 @@ const BoxFest = ({ match, location }) => {
   const [isToggleOn, setIsToggleOn] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
   const { idfestival } = match.params;
-  const { color } = location.state;
+  const { color } = location.state ? location.state : '';
 
   useEffect(() => {
     axios
@@ -89,7 +89,7 @@ const BoxFest = ({ match, location }) => {
         <div className="descriptionFestival">
           <p className="details">
             <p className="fleche"> &darr; </p>
-            <p className="description">Description</p>
+            <p className="description">DESCRIPTION</p>
             <p className="fleche"> &darr; </p>
           </p>
           {isToggleOn ? (
