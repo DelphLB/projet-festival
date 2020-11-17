@@ -33,7 +33,8 @@
 }
 .nasratselect {
   height: 30px;
-  border-radius: 30px;
+  border-radius: 15px;
+  padding-left: 15px;
   background-color: white;
   border: none;
   outline: black;
@@ -48,7 +49,7 @@
 }
 
 #tickets {
-  width: 30px;
+  width: 250px;
 }
 
 #cardNumber {
