@@ -105,6 +105,18 @@ const FestForm = () => {
           onChange={(e) => handleChange(e)}
           placeholder="Video"
         />
+        <input
+          className="inputeuh"
+          name="key"
+          onChange={(e) => handleChange(e)}
+          placeholder="Key(Name)"
+        />
+        <input
+          className="inputeuh"
+          name="value"
+          onChange={(e) => handleChange(e)}
+          placeholder="Value(Name)"
+        />
 
         <select
           className="selecteuh"

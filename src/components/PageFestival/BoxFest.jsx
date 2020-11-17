@@ -13,7 +13,7 @@ const BoxFest = ({ match, location }) => {
   const [isToggleOn, setIsToggleOn] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
   const { idfestival } = match.params;
-  const { color } = location.state;
+  const { color } = location.state ? location.state : '';
 
   useEffect(() => {
     axios
