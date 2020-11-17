@@ -1,11 +1,13 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import '../../style/CSS/PaymentPage/PaymentPage.css';
 import * as FaIcons from 'react-icons/fa';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 
-function PaymentPage() {
+const PaymentPage = ({ location }) => {
+  const { price } = location.state;
+
   return (
     <div className="paymentPage">
       <Navbar />
@@ -68,7 +70,7 @@ function PaymentPage() {
             placeholder="Resembool"
           />
           Ville
-          <input type="city" id="city" name="city" className="input-field" />
+          <input type="city" id="city" name="city" className="PayementInput" />
           Code Postal
           <input
             type="postalCode"
@@ -81,12 +83,24 @@ function PaymentPage() {
         <div className="card">
           <h3>Nombre de tickets</h3>
           <select id="tickets" name="tickets" className="nasratselect">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
+            <option value="1">
+              1 x {price}€ | Total : {price * 1}€
+            </option>
+            <option value="2">
+              2 x {price}€ | Total : {price * 2}€
+            </option>
+            <option value="3">
+              3 x {price}€ | Total : {price * 3}€
+            </option>
+            <option value="4">
+              4 x {price}€ | Total : {price * 4}€
+            </option>
+            <option value="5">
+              5 x {price}€ | Total : {price * 5}€
+            </option>
+            <option value="6">
+              6 x {price}€ | Total : {price * 6}€
+            </option>
           </select>
           <h4>Détail du paiement</h4>
           <div htmlFor="cname">
@@ -147,6 +161,12 @@ function PaymentPage() {
       <Footer />
     </div>
   );
-}
+};
+
+PaymentPage.propTypes = {
+  location: PropTypes.shape({
+    state: PropTypes.shape({ price: PropTypes.number }).isRequired,
+  }).isRequired,
+};
 
 export default PaymentPage;

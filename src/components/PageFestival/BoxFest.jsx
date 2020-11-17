@@ -160,8 +160,20 @@ const BoxFest = ({ match, location }) => {
                   <div className="moreInfo">
                     <p>{pack.date}</p>
                     <p>{pack.price}€</p>
+
+                    {/* <Link
+                    to={{
+                      pathname: `/festivals/${box.idfestival}`,
+                      state: { color: style.color },
+                    }}
+                  >
+                    En savoir plus
+                  </Link> */}
                     <Link
-                      to="/payment"
+                      to={{
+                        pathname: '/payment',
+                        state: { price: pack.price },
+                      }}
                       style={{
                         textDecoration: 'none',
                       }}
