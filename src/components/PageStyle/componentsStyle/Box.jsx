@@ -16,38 +16,31 @@ const Box = ({ style }) => {
   }, [style.name]);
 
   return (
-    <div>
+    <div className="allbox">
       {boxs &&
         boxs.map((box) => {
           return (
-            <div className="displaybox">
-              <div className="Box" style={{ backgroundColor: style.color_two }}>
-                <div className="title">
-                  <p>{box.name}</p>
-                </div>
+            <Link
+              className="linkbox"
+              to={{
+                pathname: `/festivals/${box.idfestival}`,
+                state: { color: style.color },
+              }}
+            >
+              <ul className="Box" style={{ backgroundColor: style.color_two }}>
                 <div className="boxImage">
-                  <img src={box.image1} alt={box.name} title={box.name} />
-                </div>
+                  <img src={box.logo} alt={box.name} title={box.name} />
 
-                <div className="text">
-                  <p>{box.description}</p>
+                  <div className="text">
+                    <p>{box.name}</p>
+
+                    <p>
+                      {box.endDate} à {box.city}
+                    </p>
+                  </div>
                 </div>
-                <button
-                  type="button"
-                  className="boxbutton"
-                  style={{ backgroundColor: style.color }}
-                >
-                  <Link
-                    to={{
-                      pathname: `/festivals/${box.idfestival}`,
-                      state: { color: style.color },
-                    }}
-                  >
-                    En savoir plus
-                  </Link>
-                </button>
-              </div>
-            </div>
+              </ul>
+            </Link>
           );
         })}
     </div>
