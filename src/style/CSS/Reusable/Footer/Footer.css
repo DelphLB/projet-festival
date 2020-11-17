@@ -28,25 +28,34 @@
 .buttons {
   display: flex;
   justify-content: space-between;
-  width: 360px;
+  /* width: 360px; */
   margin: 40px auto;
 }
-
+.container-formalites {
+  /* border: 1px solid white; */
+  padding-top: 16px;
+}
 @media screen and (max-width: 1250px) {
   .footer {
     display: flex;
     flex-direction: column;
     margin: 40px auto;
+    padding: 0px;
   }
-  .container-reseaux,
-  .container-formalites {
-    margin-top: 70px;
-  }
+
   .container-contact {
-    margin: 40px auto;
+    margin: 30px auto;
   }
   .container-formalites {
-    margin: 70px auto;
+    margin: 30px auto;
+  }
+
+  .container-reseaux {
+    margin: 30px auto;
+    width: 80%;
+  }
+  .buttons {
+    width: 100%;
   }
 }
 
