@@ -43,3 +43,17 @@ input.sc-bdVaJa {
     display: none;
   }
 }
+.buttonGo {
+  border: none;
+  color: rgb(99, 99, 99);
+  margin-left: -40px;
+  margin-top: 1px;
+  font-size: 23px;
+  background: none;
+  border-radius: 80px;
+  cursor: pointer;
+}
+
+.buttonGo:focus {
+  outline: none;
+}
