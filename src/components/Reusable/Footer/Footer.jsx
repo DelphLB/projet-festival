@@ -16,7 +16,7 @@ function Footer() {
         <p className="ville"> 33100, Bordeaux</p>
       </div>
 
-      <IconContext.Provider value={{ color: '#fff', size: '40px' }}>
+      <IconContext.Provider value={{ size: '40px' }}>
         <div className="container-reseaux">
           <p> SUIVEZ NOUS </p>
           <div className="buttons">

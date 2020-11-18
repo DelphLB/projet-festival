@@ -60,7 +60,6 @@ const BoxFest = ({ match, location }) => {
             zIndex: -1,
           }}
         >
-          {' '}
           <div
             className="cadreTitle"
             // style={{
@@ -222,7 +221,9 @@ const BoxFest = ({ match, location }) => {
           ))}
         </div>
       </div>
-      <Footer />
+      <div className="footerColorChange">
+        <Footer />
+      </div>
     </div>
   );
 };

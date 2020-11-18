@@ -95,3 +95,21 @@
 .light svg {
   color: #111113;
 }
+
+.dark .container-reseaux {
+  color: white;
+  size: 40px;
+}
+
+.light .container-reseaux {
+  color: black;
+  size: 40px;
+}
+
+.dark path {
+  size: 40px;
+}
+
+.light path {
+  size: 40px;
+}
