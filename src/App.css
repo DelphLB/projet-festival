@@ -87,3 +87,11 @@
   background-color: rgb(156, 156, 156);
   color: white;
 }
+
+.dark svg {
+  color: white;
+}
+
+.light svg {
+  color: #111113;
+}
