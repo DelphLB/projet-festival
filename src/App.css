@@ -44,6 +44,15 @@
   outline: black;
 }
 
+.dark .artiste-title-cursor {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.light .artiste-title-cursor {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+}
 .dark .container-letter {
   background-color: rgb(235, 235, 235);
   border-bottom: 1px solid #ffffff;
