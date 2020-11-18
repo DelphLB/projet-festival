@@ -1,7 +1,9 @@
 import React from 'react';
+
 import '../../../style/CSS/Contact/FormSuccess.css';
 
 const FormSuccess = () => {
+  window.scrollTo(0, 0);
   return (
     <div className="form-success">
       <h2>Merci ! Nous avons reçu ta requête !</h2>

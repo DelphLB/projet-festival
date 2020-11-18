@@ -26,7 +26,7 @@ const BoxFest = ({ match, location }) => {
         `https://api-festit-09-20.herokuapp.com/api/tickets/festivals/${idfestival}`
       )
       .then((response) => setTickets(response.data));
-  }, []);
+  }, [idfestival]);
 
   const handleClick = () => {
     setIsToggleOn(!isToggleOn);
