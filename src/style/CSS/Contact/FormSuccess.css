@@ -8,7 +8,7 @@
   width: 100%;
   height: 650px;
   overflow: hidden;
-  background: #111114;
+  background: #111113;
   align-items: center;
 }
 .form-success h2 {
@@ -30,35 +30,35 @@
 }
 .form-success .star.star1 {
   animation-delay: 0s;
-  background: url(../../../style/image/star1.png);
+  background: url(../../../style/img/star1.png);
 }
 .form-success .star.star2 {
   animation-delay: -1s;
-  background: url(../../../style/image/star2.png);
+  background: url(../../../style/img/star2.png);
 }
 .form-success .star.star3 {
   animation-delay: -2s;
-  background: url(../../../style/image/star3.png);
+  background: url(../../../style/img/star3.png);
 }
 .form-success .star.star4 {
   animation-delay: -3s;
-  background: url(../../../style/image/star4.png);
+  background: url(../../../style/img/star4.png);
 }
 .form-success .star.star5 {
   animation-delay: -4s;
-  background: url(../../../style/image/star5.png);
+  background: url(../../../style/img/star5.png);
 }
 .form-success .star.star6 {
   animation-delay: -5s;
-  background: url(../../../style/image/star6.png);
+  background: url(../../../style/img/star6.png);
 }
 .form-success .star.star7 {
   animation-delay: -6s;
-  background: url(../../../style/image/star7.png);
+  background: url(../../../style/img/star7.png);
 }
 .form-success .star.star8 {
   animation-delay: -7s;
-  background: url(../../../style/image/star8.png);
+  background: url(../../../style/img/star8.png);
 }
 @keyframes animate {
   0%,
