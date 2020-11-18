@@ -12,6 +12,7 @@ const Form = ({ submitForm }) => {
   const [newsLetter, setNewletters] = useState(false);
   return (
     <div>
+      <p className="titleContact">Contact</p>
       <form className="formContact" onSubmit={handleSubmit}>
         <label className="labelContact" htmlFor="name">
           Prénom
