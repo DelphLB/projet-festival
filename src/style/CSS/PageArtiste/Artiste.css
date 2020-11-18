@@ -37,14 +37,11 @@
 }
 
 .letters {
-  color: gray;
   text-decoration: none;
 }
 .boutton-letters {
-  color: gray;
   font-size: 2.7em;
   border: none;
-  background-color: white;
 }
 .letters:focus {
   font-weight: bold;

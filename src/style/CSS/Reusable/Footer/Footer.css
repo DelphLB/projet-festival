@@ -1,9 +1,8 @@
 .footer {
   width: 100%;
-  color: white;
   text-align: center;
 
-  padding: 15px 120px;
+  padding: 15px 60px;
   margin-top: 60px;
   display: flex;
   justify-content: space-between;
@@ -35,7 +34,7 @@
   /* border: 1px solid white; */
   padding-top: 16px;
 }
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 980px) {
   .footer {
     display: flex;
     flex-direction: column;

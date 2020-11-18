@@ -3,8 +3,8 @@ import '../../../style/CSS/Reusable/Navbar/Navbar.css';
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { IconContext } from 'react-icons';
 import Search from './Search';
+import Toolbar from './Toolbar';
 
 function Navbar() {
   const [topbar, setTopbar] = useState(false);
@@ -30,52 +30,43 @@ function Navbar() {
       icons: <AiIcons.AiOutlineMessage />,
       className: 'nav-text',
     },
-    // {
-    //   title: 'Politique de Confidentialité',
-    //   path: '/politique-de-confidentialité',
-    //   icons: <AiIcons.AiOutlineFileExclamation />,
-    //   className: 'nav-text',
-    // },
   ];
 
   return (
     <div className="Navbar">
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className="navbar">
-          <div className="menu-bars">
-            <FaIcons.FaBars onKeyDown={showTopbar} onClick={showTopbar} />
+      <div className="navbar">
+        <div className="menu-bars">
+          <FaIcons.FaBars onKeyDown={showTopbar} onClick={showTopbar} />
+        </div>
+      </div>
+      <nav className={topbar ? 'nav-menu active' : 'nav-menu'}>
+        <p className="navbar-toggle">
+          <div className="menu-close">
+            <AiIcons.AiOutlineClose
+              onKeyDown={showTopbar}
+              onClick={showTopbar}
+            />
+          </div>
+        </p>
+        <div className="nav-menu-items">
+          <div className="searchbar">
+            <Search />
+          </div>
+          {TopbarData.map((item) => {
+            return (
+              <div key={item.title} className={item.className} id="navbarlink">
+                <Link to={item.path}>
+                  {item.icons}
+                  <span>{item.title}</span>
+                </Link>
+              </div>
+            );
+          })}
+          <div className="placeToolbar">
+            <Toolbar />
           </div>
         </div>
-        <nav className={topbar ? 'nav-menu active' : 'nav-menu'}>
-          <p className="navbar-toggle">
-            <div className="menu-close">
-              <AiIcons.AiOutlineClose
-                onKeyDown={showTopbar}
-                onClick={showTopbar}
-              />
-            </div>
-          </p>
-          <div className="nav-menu-items">
-            <div className="searchbar">
-              <Search />
-            </div>
-            {TopbarData.map((item) => {
-              return (
-                <div
-                  key={item.title}
-                  className={item.className}
-                  id="navbarlink"
-                >
-                  <Link to={item.path}>
-                    {item.icons}
-                    <span>{item.title}</span>
-                  </Link>
-                </div>
-              );
-            })}
-          </div>
-        </nav>
-      </IconContext.Provider>
+      </nav>
     </div>
   );
 }

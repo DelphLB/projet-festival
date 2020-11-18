@@ -9,19 +9,23 @@ import Contact from './components/Contact/Contact';
 import AdminPage from './components/Admin/AdminPage';
 import './App.css';
 
+import { ThemeContextProvider } from './ThemeContext';
+
 function App() {
   return (
-    <div className="App">
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/style/:idStyle" component={PageStyle} />
-        <Route path="/festivals/:idfestival" component={BoxFest} />
-        <Route path="/artists" component={Artiste} />
-        <Route path="/payment" component={PaymentPage} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/Admin" component={AdminPage} />
-      </Switch>
-    </div>
+    <ThemeContextProvider>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/style/:idStyle" component={PageStyle} />
+          <Route path="/festivals/:idfestival" component={BoxFest} />
+          <Route path="/artists" component={Artiste} />
+          <Route path="/payment" component={PaymentPage} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/Admin" component={AdminPage} />
+        </Switch>
+      </div>
+    </ThemeContextProvider>
   );
 }
 

@@ -13,12 +13,12 @@
 .labelContact2 {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding-right: 290px;
+  justify-content: center;
   align-items: center;
 }
-.formContact :focus {
-  outline: black;
+
+#newletter {
+  margin-left: 15px;
 }
 
 .inputContact {
@@ -66,8 +66,6 @@
   border-radius: 30px;
   border: solid 1px white;
   align-items: center;
-  background-color: black;
-  color: white;
   margin: auto;
   margin-top: 30px;
   cursor: pointer;
