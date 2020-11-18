@@ -95,6 +95,12 @@ const FestForm = () => {
         />
         <input
           className="inputeuh"
+          name="logo"
+          onChange={(e) => handleChange(e)}
+          placeholder="Logo"
+        />
+        <input
+          className="inputeuh"
           name="image1"
           onChange={(e) => handleChange(e)}
           placeholder="Image"
