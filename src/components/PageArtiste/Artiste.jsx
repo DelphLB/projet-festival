@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -7,7 +7,11 @@ import '../../style/CSS/PageArtiste/Artiste.css';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 
+import { ThemeContext } from '../../ThemeContext';
+
 const Artists = () => {
+  const [theme] = useContext(ThemeContext);
+
   const [listArtists, setListArtists] = useState([]);
   const [filterArtists, setFilterArtists] = useState(null);
   const alphabet = [
@@ -60,63 +64,65 @@ const Artists = () => {
     window.location.reload();
   };
   return (
-    <div className="container">
-      <Navbar />
-      <Link to="/artists" className="artiste-title">
-        <button
-          onClick={() => handleReset()}
-          onKeyDown={handleReset}
-          className="artiste-title-cursor"
-          type="button"
-        >
-          Artistes
-        </button>
-      </Link>
-
-      <div className="container-letter">
-        {alphabet.map((letter) => (
+    <div className={theme}>
+      <div className="container">
+        <Navbar />
+        <Link to="/artists" className="artiste-title">
           <button
+            onClick={() => handleReset()}
+            onKeyDown={handleReset}
+            className="artiste-title-cursor"
             type="button"
-            onClick={() => handleArtists(letter)}
-            className="boutton-letters"
           >
-            <Link to={`/artists/${letter}`} className="letters">
-              {letter}
-            </Link>
+            Artistes
           </button>
-        ))}
-      </div>
+        </Link>
 
-      <div className="container-liste-artists">
-        <div className="container-enfant-artists">
-          {filterArtists !== null
-            ? filterArtists.map((artists) => (
-                <div
-                  className="artists"
-                  style={{
-                    backgroundRepeat: 'no-repeat',
-                    backgroundImage: `url(${artists.image_url})`,
-                  }}
-                >
-                  <p className="nameArtistBox">{artists.name}</p>
-                </div>
-              ))
-            : listArtists.map((artists) => (
-                <div
-                  className="artists"
-                  style={{
-                    backgroundRepeat: 'no-repeat',
-                    backgroundImage: `url(${artists.image_url})`,
-                  }}
-                >
-                  <h3 className="nameArtistBox">{artists.name}</h3>
-                </div>
-              ))}
-
-          {/* {filterPokemon !== null &&  <div className="pokemon">'ko'</div>} */}
+        <div className="container-letter">
+          {alphabet.map((letter) => (
+            <button
+              type="button"
+              onClick={() => handleArtists(letter)}
+              className="boutton-letters"
+            >
+              <Link to={`/artists/${letter}`} className="letters">
+                {letter}
+              </Link>
+            </button>
+          ))}
         </div>
+
+        <div className="container-liste-artists">
+          <div className="container-enfant-artists">
+            {filterArtists !== null
+              ? filterArtists.map((artists) => (
+                  <div
+                    className="artists"
+                    style={{
+                      backgroundRepeat: 'no-repeat',
+                      backgroundImage: `url(${artists.image_url})`,
+                    }}
+                  >
+                    <p className="nameArtistBox">{artists.name}</p>
+                  </div>
+                ))
+              : listArtists.map((artists) => (
+                  <div
+                    className="artists"
+                    style={{
+                      backgroundRepeat: 'no-repeat',
+                      backgroundImage: `url(${artists.image_url})`,
+                    }}
+                  >
+                    <h3 className="nameArtistBox">{artists.name}</h3>
+                  </div>
+                ))}
+
+            {/* {filterPokemon !== null &&  <div className="pokemon">'ko'</div>} */}
+          </div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

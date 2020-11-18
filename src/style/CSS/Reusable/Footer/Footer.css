@@ -1,13 +1,69 @@
 .footer {
   width: 100%;
-  color: white;
   text-align: center;
-  padding-bottom: 10px;
-  margin-top: 52px;
-  background-color: none;
+
+  padding: 15px 60px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.info {
+.container-contact,
+.container-formalites {
+  text-align: left;
+}
+.question {
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+}
+.adresse {
+  margin-bottom: 0px;
+}
+.ville {
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  /* width: 360px; */
+  margin: 40px auto;
+}
+.container-formalites {
+  /* border: 1px solid white; */
+  padding-top: 16px;
+}
+@media screen and (max-width: 980px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto;
+    padding: 0px;
+  }
+
+  .container-contact {
+    margin: 30px auto;
+  }
+  .container-formalites {
+    margin: 30px auto;
+  }
+
+  .container-reseaux {
+    margin: 30px auto;
+    width: 80%;
+  }
+  .buttons {
+    width: 100%;
+  }
+}
+
+/* .tt {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+} */
+
+/* .info {
   padding: 0;
 }
 
@@ -31,4 +87,4 @@
   .footer {
     margin-top: 100px;
   }
-}
+} */

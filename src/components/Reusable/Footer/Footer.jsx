@@ -9,30 +9,42 @@ import { IconContext } from 'react-icons';
 function Footer() {
   return (
     <div className="footer">
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <ul id="button">
-          <a href="https://www.facebook.com/">
-            <FaIcons.FaFacebook />
-          </a>
+      <div className="container-contact">
+        <p className="question"> Une Question ? </p>
+        <p> festoch.fastoch@gmail.com</p>
+        <p className="adresse"> 7 allée Serr </p>
+        <p className="ville"> 33100, Bordeaux</p>
+      </div>
 
-          <a href="https://www.youtube.com/">
-            <SiIcons.SiYoutube />
-          </a>
+      <IconContext.Provider value={{ size: '40px' }}>
+        <div className="container-reseaux">
+          <p> SUIVEZ NOUS </p>
+          <div className="buttons">
+            <a className="reseaux-icones" href="https://www.facebook.com/">
+              <FaIcons.FaFacebook />
+            </a>
 
-          <a href="https://www.twitter.com/">
-            <AiIcons.AiOutlineTwitter />
-          </a>
+            <a className="reseaux-icones" href="https://www.youtube.com/">
+              <SiIcons.SiYoutube />
+            </a>
 
-          <a href="https://www.instagram.com/">
-            <SiIcons.SiInstagram />
-          </a>
-        </ul>
+            <a className="reseaux-icones" href="https://www.twitter.com/">
+              <AiIcons.AiOutlineTwitter />
+            </a>
 
-        <ul className="info">
-          <li>Ecris nous</li>
-          <li>festivalwild@gmail.com</li>
-          <li>@FestivalWild, tous droits réservés</li>
-        </ul>
+            <a className="reseaux-icones" href="https://www.instagram.com/">
+              <SiIcons.SiInstagram />
+            </a>
+          </div>
+          <p className="tt"> @ Festoch'Fastoch, 2020, tous droits réservés</p>
+        </div>
+
+        <div className="container-formalites">
+          <p>Conditions générales de ventes</p>
+          <p>Politique de confidentialités</p>
+          <p>Conditions d'achat de billets</p>
+          <p>Mentions légales </p>
+        </div>
       </IconContext.Provider>
     </div>
   );
