@@ -19,7 +19,7 @@ const FestForm = () => {
   };
 
   const handleClick = async () => {
-   await axios
+    await axios
       .post('https://api-festit-09-20.herokuapp.com/api/festivals', {
         ...input,
       })
@@ -27,13 +27,13 @@ const FestForm = () => {
         let indexFestival;
         let idFestival;
 
-       await axios
+        axios
           .get('https://api-festit-09-20.herokuapp.com/api/festivals')
           .then((res) => {
             indexFestival = res.data.length - 1;
             idFestival = res.data[`${indexFestival}`].idfestival;
 
-          await  axios
+            axios
               .post(
                 `https://api-festit-09-20.herokuapp.com/api/festivals/${idFestival}/styles/${Number(
                   styleId
@@ -42,12 +42,12 @@ const FestForm = () => {
               /* eslint-disable no-console */
               .then((response2) => console.log(response2));
           });
-         await window.location.reload(true);
       })
       .catch((error) => {
         /* eslint-disable no-console */
         console.log(error);
       });
+    await window.location.reload(true);
   };
 
   const handleSelect = (e) => {
