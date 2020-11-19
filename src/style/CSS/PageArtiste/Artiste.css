@@ -4,7 +4,7 @@
 }
 
 .artiste-title {
-  font-size: 2.8em;
+  font-size: 2.6em;
   text-decoration: none;
   background-image: url('https://cdn.pixabay.com/photo/2016/01/19/17/38/concert-1149805_960_720.jpg');
   cursor: default;
@@ -59,7 +59,7 @@
     flex-direction: column;
     justify-content: center;
     flex-wrap: wrap;
-    font-size: 2em;
+    font-size: em;
     margin: 40px auto;
     width: 70%;
     text-align: center;
@@ -85,8 +85,7 @@
 }
 .artists {
   /* border: 1px solid wheat; */
-  margin-right: 20px;
-  margin-top: 30px;
+  margin: 15px auto;
   color: white;
   width: 280px;
   height: 280px;
