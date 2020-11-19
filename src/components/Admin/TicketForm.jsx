@@ -17,8 +17,8 @@ const TicketForm = () => {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
-  const handleClick = () => {
-    axios
+  const handleClick = async () => {
+    await axios
       .post('https://api-festit-09-20.herokuapp.com/api/tickets', {
         ...input,
       })
@@ -29,6 +29,7 @@ const TicketForm = () => {
         /* eslint-disable no-console */
         console.log(error);
       });
+    await window.location.reload(true);
   };
 
   return (

@@ -53,6 +53,7 @@ const ArtistForm = () => {
         /* eslint-disable no-console */
         console.log(error);
       });
+    await window.location.reload(true);
   };
 
   const handleSelect = (e) => {
