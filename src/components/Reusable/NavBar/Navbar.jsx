@@ -57,7 +57,7 @@ function Navbar() {
               <div key={item.title} className={item.className} id="navbarlink">
                 <Link to={item.path}>
                   {item.icons}
-                  <span>{item.title}</span>
+                  <span className="togglespan">{item.title}</span>
                 </Link>
               </div>
             );

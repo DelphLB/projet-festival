@@ -219,12 +219,21 @@
   margin: 0px;
   margin-right: 50px;
 }
-
+.image-icone,
+svg {
+  color: white;
+}
 .description {
   font-weight: bold;
   letter-spacing: 2px;
   font-size: 1.2em;
 }
+
+.description:hover {
+  color: pink;
+  transition-delay: 1s;
+}
+
 .fleche {
   font-size: 1.2em;
 }
@@ -234,6 +243,7 @@
   margin: 30px auto;
   font-size: 1.2em;
   text-align: center;
+  transition-delay: 1.5s;
 }
 /* -----------partie icones --------------*/
 .container-icones {
@@ -245,13 +255,15 @@
 }
 
 .icone-texte {
-  width: 100px;
-  /* border: 1px solid yellow; */
   text-align: center;
+  width: 40%;
+  margin: 10px;
 }
 
 .text-icone {
   color: white;
+  font-size: 22px;
+  font-weight: 700;
 }
 
 .image-icone {

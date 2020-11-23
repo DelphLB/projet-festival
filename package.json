@@ -22,7 +22,6 @@
     "react-scripts": "3.4.1",
     "react-search-box": "^2.0.2",
     "react-slick": "^0.27.12",
-    "react-transition-group": "^4.4.1",
     "slick-carousel": "^1.8.1"
   },
   "engines": {
