@@ -1,130 +1,92 @@
-import React, { useState, useEffect, useContext } from 'react';
-
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState, useContext } from 'react';
 import '../../style/CSS/PageArtiste/Artiste.css';
+import { ThemeContext } from '../../ThemeContext';
+
+import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 
-import { ThemeContext } from '../../ThemeContext';
-
-const Artists = () => {
+const Artiste = ({ match }) => {
+  const { idartist } = match.params;
   const [theme] = useContext(ThemeContext);
 
-  const [listArtists, setListArtists] = useState([]);
-  const [filterArtists, setFilterArtists] = useState(null);
-  const alphabet = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'W',
-    'X',
-    'Y',
-    'Z',
-  ];
+  const [artiste, setArtiste] = useState([]);
 
   useEffect(() => {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/artists')
-      .then((response) => setListArtists(response.data));
+      .get(`https://api-festit-09-20.herokuapp.com/api/artists/id/${idartist}`)
+      .then((response) => response.data)
+      .then((data) => setArtiste(data));
   }, []);
 
-  const handleArtists = (letter) => {
-    const newArray = [];
-
-    listArtists.filter(
-      (elem) =>
-        elem.name.charAt(0).toLowerCase() === letter.toLowerCase() &&
-        newArray.push(elem)
-    );
-    setFilterArtists(newArray);
-  };
-
-  const handleReset = () => {
-    window.location.reload();
-  };
   return (
-    <div className={theme}>
-      <div className="container">
-        <Navbar />
-        <Link to="/artists" className="artiste-title">
-          <button
-            onClick={() => handleReset()}
-            onKeyDown={handleReset}
-            className="artiste-title-cursor"
-            type="button"
-          >
-            Artistes
-          </button>
-        </Link>
-
-        <div className="container-letter">
-          {alphabet.map((letter) => (
-            <button
-              type="button"
-              onClick={() => handleArtists(letter)}
-              className="boutton-letters"
-            >
-              <Link to={`/artists/${letter}`} className="letters">
-                {letter}
-              </Link>
-            </button>
-          ))}
-        </div>
-
-        <div className="container-liste-artists">
-          <div className="container-enfant-artists">
-            {filterArtists !== null
-              ? filterArtists.map((artists) => (
-                  <div
-                    className="artists"
-                    style={{
-                      backgroundRepeat: 'no-repeat',
-                      backgroundImage: `url(${artists.image_url})`,
-                    }}
-                  >
-                    <p className="nameArtistBox">{artists.name}</p>
-                  </div>
-                ))
-              : listArtists.map((artists) => (
-                  <div
-                    className="artists"
-                    style={{
-                      backgroundRepeat: 'no-repeat',
-                      backgroundImage: `url(${artists.image_url})`,
-                    }}
-                  >
-                    <h3 className="nameArtistBox">{artists.name}</h3>
-                  </div>
-                ))}
-
-            {/* {filterPokemon !== null &&  <div className="pokemon">'ko'</div>} */}
+    <div className="container-parent-artiste" className={theme}>
+      <Navbar />
+      {artiste.map((artist) => (
+        <div className="container-art">
+          <div className="banner-artiste-texte">
+            <div className="artiste-info">
+              <p className="artiste-nom">{artist.name}</p>
+              <p className="country-artiste"> France ,</p>
+              <div className="music-boutton">
+                <a
+                  href={artist.music_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    className="boutton-play"
+                    src="https://arras.salon-idhome.fr/wp-content/themes/ave-child/play.jpg"
+                    alt=""
+                  />
+                </a>
+                <div className="music">
+                  <p className="top-music"> Top musique </p>
+                  <p className="title-music"> God&apos;s Gonna Cut You Down </p>
+                </div>
+              </div>
+            </div>
+            <div className="div-image">
+              {' '}
+              <img
+                className="image-artiste"
+                src={artist.image_url}
+                alt=""
+              />{' '}
+            </div>
           </div>
+          <div className="container-description-artiste">
+            <p className="descritpion-artiste">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nemo
+              minus eveniet qui, labore veritatis recusandae fugiat accusantium,
+              commodi incidunt blanditiis ex laudantium atque nihil, repudiandae
+              enim? Aperiam quos debitis porro.
+            </p>
+          </div>
+
+          {/* <div className="container-artiste-image">
+            <div
+              className="image-artiste"
+              style={{
+                backgroundImage: `url(${artist.image_url})`,
+                backgroundSize: 'cover',
+              }}
+            ></div>
+
+            <div className="container-description-artiste"> </div>
+          </div> */}
         </div>
-        <Footer />
-      </div>
+      ))}
+
+      <Footer />
     </div>
   );
 };
-
-export default Artists;
+Artiste.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({ idartist: PropTypes.number }).isRequired,
+  }).isRequired,
+};
+export default Artiste;
