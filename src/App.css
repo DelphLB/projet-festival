@@ -4,12 +4,14 @@
   color: #ffffff;
   outline: #ffffff;
   outline: white;
+  transition: all 1s ease-in;
 }
 
 .light {
   text-align: center;
   background-color: rgb(235, 235, 235);
   color: #111113;
+  transition: all 1s ease-in;
 }
 
 .dark a {

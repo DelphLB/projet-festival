@@ -5,15 +5,15 @@
 }
 
 .toggleContainer {
-  width: 60px;
-  height: 35px;
+  width: 61px;
+  height: 36px;
   border-radius: 30px;
   outline: none;
   border: none;
   background: #ddd;
   margin-top: 18px;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 1s ease-in;
 }
 
 .mode {

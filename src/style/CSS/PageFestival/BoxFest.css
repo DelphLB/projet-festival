@@ -2,7 +2,14 @@
   color: white;
 }
 
+.moreInfo {
+  transition: all 0.3s ease-in;
+}
+
 @media screen and (max-width: 950px) {
+  .descriptionTextDesktop {
+    display: none;
+  }
   .cardsPack {
     flex-direction: column;
     align-items: center;
@@ -29,6 +36,9 @@
   }
 }
 @media screen and (min-width: 951px) {
+  .descriptionTextMobile {
+    display: none;
+  }
   .section951px {
     display: none;
   }
@@ -117,6 +127,8 @@
   background-color: white;
   border-radius: 11px;
   max-width: 550px;
+  height: fit-content;
+  min-height: 450px;
 }
 
 .packCadre img {
@@ -137,6 +149,7 @@
   text-align: center;
   opacity: 0.8;
   overflow: hidden;
+  transition: all 0.8s cubic-bezier(0.17, 0.72, 0.42, 1.1);
 }
 
 .packCadre h2 {
@@ -229,21 +242,17 @@ svg {
   font-size: 1.2em;
 }
 
-.description:hover {
-  color: pink;
-  transition-delay: 1s;
-}
-
 .fleche {
   font-size: 1.2em;
 }
-.descriptionText {
+.descriptionTextDesktop p {
   /* border: 1px solid red; */
   color: white;
   margin: 30px auto;
   font-size: 1.2em;
   text-align: center;
-  transition-delay: 1.5s;
+
+  transition: all 2s ease-in;
 }
 /* -----------partie icones --------------*/
 .container-icones {
