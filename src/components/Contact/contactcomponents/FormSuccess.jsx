@@ -7,14 +7,14 @@ const FormSuccess = () => {
   return (
     <div className="form-success">
       <h2>Merci ! Nous avons reçu ta requête !</h2>
-      <div className="star star1">p</div>
-      <div className="star star2">p</div>
-      <div className="star star3">p</div>
-      <div className="star star4">p</div>
-      <div className="star star5">p</div>
-      <div className="star star6">p</div>
-      <div className="star star7">p</div>
-      <div className="star star8">p</div>
+      <div className="star star1">&nbsp;</div>
+      <div className="star star2">&nbsp;</div>
+      <div className="star star3">&nbsp;</div>
+      <div className="star star4">&nbsp;</div>
+      <div className="star star5">&nbsp;</div>
+      <div className="star star6">&nbsp;</div>
+      <div className="star star7">&nbsp;</div>
+      <div className="star star8">&nbsp;</div>
     </div>
   );
 };
