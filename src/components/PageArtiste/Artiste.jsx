@@ -1,130 +1,76 @@
-import React, { useState, useEffect, useContext } from 'react';
-
-import { Link } from 'react-router-dom';
-import axios from 'axios';
+import React, { useEffect, useState, useContext } from 'react';
 import '../../style/CSS/PageArtiste/Artiste.css';
+
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import { ThemeContext } from '../../ThemeContext';
 
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 
-import { ThemeContext } from '../../ThemeContext';
-
-const Artists = () => {
+const Artiste = ({ match }) => {
+  const { idartist } = match.params;
   const [theme] = useContext(ThemeContext);
 
-  const [listArtists, setListArtists] = useState([]);
-  const [filterArtists, setFilterArtists] = useState(null);
-  const alphabet = [
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'W',
-    'X',
-    'Y',
-    'Z',
-  ];
+  const [artiste, setArtiste] = useState([]);
 
   useEffect(() => {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/artists')
-      .then((response) => setListArtists(response.data));
+      .get(`https://api-festit-09-20.herokuapp.com/api/artists/id/${idartist}`)
+      .then((response) => response.data)
+      .then((data) => setArtiste(data));
   }, []);
 
-  const handleArtists = (letter) => {
-    const newArray = [];
-
-    listArtists.filter(
-      (elem) =>
-        elem.name.charAt(0).toLowerCase() === letter.toLowerCase() &&
-        newArray.push(elem)
-    );
-    setFilterArtists(newArray);
-  };
-
-  const handleReset = () => {
-    window.location.reload();
-  };
   return (
-    <div className={theme}>
-      <div className="container">
+    <div className="container-parent-artiste">
+      <div className={theme}>
         <Navbar />
-        <Link to="/artists" className="artiste-title">
-          <button
-            onClick={() => handleReset()}
-            onKeyDown={handleReset}
-            className="artiste-title-cursor"
-            type="button"
-          >
-            Artistes
-          </button>
-        </Link>
-
-        <div className="container-letter">
-          {alphabet.map((letter) => (
-            <button
-              type="button"
-              onClick={() => handleArtists(letter)}
-              className="boutton-letters"
-            >
-              <Link to={`/artists/${letter}`} className="letters">
-                {letter}
-              </Link>
-            </button>
-          ))}
-        </div>
-
-        <div className="container-liste-artists">
-          <div className="container-enfant-artists">
-            {filterArtists !== null
-              ? filterArtists.map((artists) => (
-                  <div
-                    className="artists"
-                    style={{
-                      backgroundRepeat: 'no-repeat',
-                      backgroundImage: `url(${artists.image_url})`,
-                    }}
+        {artiste.map((artist) => (
+          <div className="container-art">
+            <div className="banner-artiste-texte">
+              <div className="artiste-info">
+                <p className="artiste-nom">{artist.name}</p>
+                <p className="country-artiste"> {artist.country},</p>
+                <div className="music-boutton">
+                  <a
+                    href={artist.music_url}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    <p className="nameArtistBox">{artists.name}</p>
+                    <img
+                      className="boutton-play"
+                      src="https://arras.salon-idhome.fr/wp-content/themes/ave-child/play.jpg"
+                      alt=""
+                    />
+                  </a>
+                  <div className="music">
+                    <p className="top-music"> Top musique </p>
+                    <p className="title-music">{artist.embed_video}</p>
                   </div>
-                ))
-              : listArtists.map((artists) => (
-                  <div
-                    className="artists"
-                    style={{
-                      backgroundRepeat: 'no-repeat',
-                      backgroundImage: `url(${artists.image_url})`,
-                    }}
-                  >
-                    <h3 className="nameArtistBox">{artists.name}</h3>
-                  </div>
-                ))}
-
-            {/* {filterPokemon !== null &&  <div className="pokemon">'ko'</div>} */}
+                </div>
+              </div>
+              <div className="div-image">
+                <img
+                  className="image-artiste"
+                  src={artist.image_url}
+                  alt="artiste"
+                />
+              </div>
+            </div>
+            <div className="container-description-artiste">
+              <p className="descritpion-artiste">{artist.description}</p>
+            </div>
           </div>
-        </div>
+        ))}
+
         <Footer />
       </div>
     </div>
   );
 };
-
-export default Artists;
+Artiste.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({ idartist: PropTypes.number }).isRequired,
+  }).isRequired,
+};
+export default Artiste;
