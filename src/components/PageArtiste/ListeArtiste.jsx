@@ -65,16 +65,18 @@ const ListeArtistes = () => {
     <div className="container">
       <div className={theme}>
         <Navbar />
-        <Link to="/artists" className="artiste-title">
-          <button
-            onClick={() => handleReset()}
-            onKeyDown={handleReset}
-            className="artiste-title-cursor"
-            type="button"
-          >
-            Artistes
-          </button>
-        </Link>
+        <div className="fixArtist">
+          <Link to="/artists" className="artiste-title">
+            <button
+              onClick={() => handleReset()}
+              onKeyDown={handleReset}
+              className="artiste-title-cursor"
+              type="button"
+            >
+              Artistes
+            </button>
+          </Link>
+        </div>
 
         <div className="container-letter">
           {alphabet.map((letter) => (
