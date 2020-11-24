@@ -45,10 +45,7 @@ const Artiste = ({ match }) => {
                   </a>
                   <div className="music">
                     <p className="top-music"> Top musique </p>
-                    <p className="title-music">
-                      {' '}
-                      God&apos;s Gonna Cut You Down{' '}
-                    </p>
+                    <p className="title-music">{artist.embed_video}</p>
                   </div>
                 </div>
               </div>
