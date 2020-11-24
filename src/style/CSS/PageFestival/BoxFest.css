@@ -2,8 +2,8 @@
   color: white;
 }
 
-.moreInfo {
-  transition: all 0.3s ease-in;
+.moreinfo {
+  height: fit-content;
 }
 
 @media screen and (max-width: 950px) {
@@ -44,9 +44,10 @@
   }
 
   .packCadre:hover img {
-    transform: scale(1.2);
-    opacity: 0.5;
+    transform: scale(1);
+    opacity: 0.8;
     border-radius: 8px;
+    height: 300px;
   }
 
   .packCadre:hover .imagepackcard {
@@ -57,6 +58,7 @@
 
   .packCadre {
     width: 40%;
+    height: fit-content;
   }
 
   /* titre sur banner */
@@ -121,11 +123,17 @@
 }
 
 /* une card ticket */
+
+.packCadre:hover {
+  height: fit-content;
+  min-height: 300px;
+}
+
 .packCadre {
   margin: 20px;
   margin-top: 40px;
   background-color: white;
-  border-radius: 11px;
+  border-radius: 10px 10px 0px 0px;
   max-width: 550px;
   height: fit-content;
   min-height: 450px;
@@ -137,6 +145,7 @@
   border-radius: 8px;
   z-index: -1;
   display: block;
+  transition: all 0.8s cubic-bezier(0.17, 0.72, 0.42, 1.1);
 }
 
 .imagepackcard {
@@ -149,7 +158,6 @@
   text-align: center;
   opacity: 0.8;
   overflow: hidden;
-  transition: all 0.8s cubic-bezier(0.17, 0.72, 0.42, 1.1);
 }
 
 .packCadre h2 {

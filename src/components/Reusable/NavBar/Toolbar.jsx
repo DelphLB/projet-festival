@@ -14,7 +14,7 @@ export default function Toolbar() {
     return (
       <span
         className={`toggleKnob 
-                      ${isOn ? 'isActive' : ''}`}
+                      ${theme === 'dark' ? 'isActive' : ''}`}
       ></span>
     );
   }
@@ -25,7 +25,7 @@ export default function Toolbar() {
       <p>Mode</p>
       <button
         type="button"
-        className={`toggleContainer ${isOn ? 'isActive' : ''}`}
+        className={`toggleContainer ${theme === 'dark' ? 'isActive' : ''}`}
         onClick={() => handleChange()}
         defaultValue={theme}
       >

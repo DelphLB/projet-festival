@@ -148,7 +148,7 @@ const BoxFest = ({ match, location }) => {
               <div className="imagepackcard">
                 <img
                   className="imgCard"
-                  src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                  src="https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                   alt="imagecard"
                 />
               </div>
@@ -197,7 +197,7 @@ const BoxFest = ({ match, location }) => {
               <div className="imagepackcard">
                 <img
                   className="imgCard"
-                  src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                  src="https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                   alt="imagecard"
                 />
               </div>
