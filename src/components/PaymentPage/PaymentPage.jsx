@@ -4,11 +4,10 @@ import '../../style/CSS/PaymentPage/PaymentPage.css';
 import * as FaIcons from 'react-icons/fa';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
-
 import { ThemeContext } from '../../ThemeContext';
 
 const PaymentPage = ({ location }) => {
-  const { price } = location.state;
+  const { price } = location.state ? location.state : '';
 
   const [theme] = useContext(ThemeContext);
 
@@ -43,9 +42,9 @@ const PaymentPage = ({ location }) => {
             />
             Votre adresse mail
             <input
-              type="mail"
-              id="mail"
-              name="mail"
+              type="email"
+              id="email"
+              name="email"
               className="PayementInput"
               placeholder="ex : fma@gmail.com"
             />
@@ -128,49 +127,58 @@ const PaymentPage = ({ location }) => {
               </div>
             </div>
             Numéro de carte
-            <input
-              type="cardNumber"
-              id="cardNumber"
-              name="cardNumber"
-              className="PayementInput"
-              maxLength="16_characters"
-            />
-            <p>Date d&rsquo;expiration</p>
+            <div className="cardN">
+              <input
+                type="text"
+                id="cardNumber"
+                name="cardNumber"
+                className="PayementInput"
+                maxLength="16"
+              />
+            </div>
+            Date d&rsquo;expiration
             <div className="date">
-              <select className="nasratselect" name="expireMM" id="expireMM">
-                <option value="">Mois</option>
-                <option value="01">Janvier</option>
-                <option value="02">Fevrier</option>
-                <option value="03">Mars</option>
-                <option value="04">Avril</option>
-                <option value="05">Mai</option>
-                <option value="06">Juin</option>
-                <option value="07">Juillet</option>
-                <option value="08">Aout</option>
-                <option value="09">Septembre</option>
-                <option value="10">Octobre</option>
-                <option value="11">Novembre</option>
-                <option value="12">Decembre</option>
-              </select>
-              <select className="nasratselect" name="expireYY" id="expireYY">
-                <option value="">Année</option> <option value="10">2020</option>
-                <option value="11">2021</option>
-                <option value="12">2022</option>
-                <option value="12">2023</option>
-              </select>{' '}
+              <div className="month">
+                <select className="nasratselect" name="expireMM" id="expireMM">
+                  <option value="">Mois</option>
+                  <option value="01">Janvier</option>
+                  <option value="02">Fevrier</option>
+                  <option value="03">Mars</option>
+                  <option value="04">Avril</option>
+                  <option value="05">Mai</option>
+                  <option value="06">Juin</option>
+                  <option value="07">Juillet</option>
+                  <option value="08">Aout</option>
+                  <option value="09">Septembre</option>
+                  <option value="10">Octobre</option>
+                  <option value="11">Novembre</option>
+                  <option value="12">Decembre</option>
+                </select>
+              </div>
+              <div className="year">
+                <select className="nasratselect" name="expireYY" id="expireYY">
+                  <option value="">Année</option>{' '}
+                  <option value="10">2020</option>
+                  <option value="11">2021</option>
+                  <option value="12">2022</option>
+                  <option value="12">2023</option>
+                </select>{' '}
+              </div>
             </div>
             Numéro CCV
-            <input
-              type="ccv"
-              id="ccv"
-              name="ccv"
-              className="PayementInput"
-              maxLength="3_characters"
-            />
+            <div className="ccv">
+              <input
+                type="text"
+                id="ccv"
+                name="ccv"
+                className="PayementInput"
+                maxLength="3"
+              />
+            </div>
           </div>
 
           <button type="button" className="btn">
-            Procéder au paiement
+            Payer
           </button>
         </div>
         <Footer />
