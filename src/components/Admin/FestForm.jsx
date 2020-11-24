@@ -19,34 +19,32 @@ const FestForm = () => {
   };
 
   const handleClick = async () => {
+    let indexFestival;
+    let idFestival;
+    await axios.post('https://api-festit-09-20.herokuapp.com/api/festivals', {
+      ...input,
+    });
+
     await axios
-      .post('https://api-festit-09-20.herokuapp.com/api/festivals', {
-        ...input,
-      })
-      .then(() => {
-        let indexFestival;
-        let idFestival;
+      .get('https://api-festit-09-20.herokuapp.com/api/festivals')
+      .then((res) => {
+        indexFestival = res.data.length - 1;
+        idFestival = res.data[`${indexFestival}`].idfestival;
+      });
 
-        axios
-          .get('https://api-festit-09-20.herokuapp.com/api/festivals')
-          .then((res) => {
-            indexFestival = res.data.length - 1;
-            idFestival = res.data[`${indexFestival}`].idfestival;
-
-            axios
-              .post(
-                `https://api-festit-09-20.herokuapp.com/api/festivals/${idFestival}/styles/${Number(
-                  styleId
-                )}`
-              )
-              /* eslint-disable no-console */
-              .then((response2) => console.log(response2));
-          });
-      })
+    await axios
+      .post(
+        `https://api-festit-09-20.herokuapp.com/api/festivals/${idFestival}/styles/${Number(
+          styleId
+        )}`
+      )
+      /* eslint-disable no-console */
+      .then((response2) => console.log(response2))
       .catch((error) => {
         /* eslint-disable no-console */
         console.log(error);
       });
+
     await window.location.reload(true);
   };
 

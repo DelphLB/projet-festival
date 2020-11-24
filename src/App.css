@@ -1,15 +1,33 @@
+.dark .toggleContainer {
+  background-color: #fff;
+}
+
+.light .toggleContainer.isActive {
+  background-color: #111113;
+}
+
+.dark .toggleKnob {
+  background-color: #111113;
+}
+
+.light .toggleKnob.isActive {
+  background-color: #fff;
+}
+
 .dark {
   text-align: center;
   background-color: #111113;
   color: #ffffff;
   outline: #ffffff;
   outline: white;
+  transition: all 1s ease-in;
 }
 
 .light {
   text-align: center;
   background-color: rgb(235, 235, 235);
   color: #111113;
+  transition: all 1s ease-in;
 }
 
 .dark a {
@@ -78,12 +96,14 @@
   color: #111113;
 }
 
-.dark button {
+.dark .buttonContact,
+.btn {
   background-color: white;
   color: black;
 }
 
-.light button {
+.light .buttonContact,
+.btn {
   background-color: rgb(156, 156, 156);
   color: white;
 }
