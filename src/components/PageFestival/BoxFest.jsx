@@ -3,6 +3,9 @@ import axios from 'axios';
 import '../../style/CSS/PageFestival/BoxFest.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { IconContext } from 'react-icons';
+import * as BiIcons from 'react-icons/bi';
+import * as TiIcons from 'react-icons/ti';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 import AutoPlay from './AutoPlay';
@@ -28,7 +31,7 @@ const BoxFest = ({ match, location }) => {
       .then((response) => setTickets(response.data));
   }, [idfestival]);
 
-  const handleClick = () => {
+  const handleMouseDes = () => {
     setIsToggleOn(!isToggleOn);
   };
 
@@ -48,7 +51,9 @@ const BoxFest = ({ match, location }) => {
 
   return (
     <div className="festival" style={{ backgroundColor: `${color}` }}>
-      <Navbar />
+      <div className="footerColorChange">
+        <Navbar />
+      </div>
       {/* box festival : image en background et nom festoch */}
       <div className="fadeEffect">
         <div
@@ -82,7 +87,8 @@ const BoxFest = ({ match, location }) => {
       <div
         className="container-description"
         aria-hidden="true"
-        onClick={() => handleClick()}
+        onMouseEnter={() => handleMouseDes()}
+        onMouseLeave={() => handleMouseDes()}
         style={{ backgroundColor: `${color}` }}
       >
         <div className="descriptionFestival">
@@ -100,37 +106,33 @@ const BoxFest = ({ match, location }) => {
       </div>
       {/* ------- Partie description ---------*/}
       {/* -----Partie icones ----- */}
-      <div className="container-icones">
-        <div className="icone-texte">
-          <img
-            className="image-icone"
-            src="https://www.flaticon.com/svg/static/icons/svg/929/929426.svg"
-            alt="location"
-          />
-          <p className="text-icone"> {festivals.city}</p>
-        </div>
+      <IconContext.Provider value={{ size: '90px' }}>
+        <div className="container-icones">
+          <div className="icone-texte">
+            <p className="reseaux-icones">
+              <TiIcons.TiLocationOutline />
+            </p>
+            <p className="text-icone"> {festivals.city}</p>
+          </div>
 
-        <div className="icone-texte">
-          <img
-            className="image-icone"
-            src="https://www.flaticon.com/svg/static/icons/svg/1861/1861233.svg"
-            alt="date"
-          />
-          <p className="text-icone">
-            {festivals.startDate} {festivals.endDate}
-          </p>
+          <div className="icone-texte">
+            <p className="reseaux-icones">
+              <BiIcons.BiCalendarStar />
+            </p>
+            <p className="text-icone">
+              Du {festivals.startDate} au {festivals.endDate}
+            </p>
+          </div>
+          <div className="icone-texte">
+            <p className="reseaux-icones">
+              <BiIcons.BiEuro />
+            </p>
+            <p className="text-icone">
+              A partir de {handleTicketsPrice(tickets)}€
+            </p>
+          </div>
         </div>
-        <div className="icone-texte">
-          <img
-            className="image-icone"
-            src="https://www.flaticon.com/svg/static/icons/svg/945/945582.svg"
-            alt="price"
-          />
-          <p className="text-icone">
-            A partir de {handleTicketsPrice(tickets)}€
-          </p>
-        </div>
-      </div>
+      </IconContext.Provider>
       {/* -------fin partie icones -------- */}
       {/* ------ le lineup ---------- */}
       <AutoPlay idFestival={festivals.idfestival} />
