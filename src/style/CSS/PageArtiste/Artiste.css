@@ -1,93 +1,113 @@
-.nameArtistBox {
-  margin: 200px 20px;
-  background-color: rgba(0, 0, 0, 0.35);
+.banner-artiste-texte {
+  display: flex;
+  justify-content: space-between;
+  min-height: 580px;
 }
 
-.artiste-title {
-  font-size: 2.6em;
-  text-decoration: none;
-  background-image: url('https://cdn.pixabay.com/photo/2016/01/19/17/38/concert-1149805_960_720.jpg');
-  cursor: default;
+.artiste-info {
+  color: white;
+  margin-top: 210px;
+  margin-left: 40px;
+  text-align: left;
+}
+
+.artiste-nom {
+  margin-bottom: 0px;
+  font-size: 7em;
+}
+.boutton-play {
+  width: 50px;
+  margin-top: 15px;
+}
+
+.music-boutton {
+  /* border: 1px solid wheat; */
+  display: flex;
+}
+
+.music {
+  padding-left: 17px;
+}
+
+.top-music {
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+.title-music {
+  /* border: 1px solid blue; */
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.div-image {
+  max-height: 600px;
+}
+.image-artiste {
+  margin: 50px 70px -680px 0px;
   background-repeat: no-repeat;
-  background-position: center center;
-  height: 50vh;
-  width: 100%;
-  background-size: cover;
+  width: 600px;
+  height: 600px;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.container-description-artiste {
+  border: 1px solid red;
+  background-color: white;
+  height: 510px;
   display: flex;
   justify-content: center;
+}
+
+.descritpion-artiste {
+  width: 50%;
+  display: flex;
+  text-align: justify;
   align-items: center;
-}
-.artiste-title-cursor {
-  cursor: pointer;
-  padding: 6px 16px;
-  border-radius: 10px;
-  font-size: 2em;
-  border: none;
-}
-
-.container-letter {
-  padding: 20px;
-  letter-spacing: 4px;
-  text-align: center;
-}
-
-.letters {
-  text-decoration: none;
-}
-.boutton-letters {
-  font-size: 2.7em;
-  border: none;
-}
-.letters:focus {
+  font-size: 1.7em;
   font-weight: bold;
   color: black;
 }
 
-.boutton-letters:hover {
-  font-weight: bold;
-}
-
-@media screen and (max-width: 1299px) {
-  .container-letter {
-    display: flex;
-    overflow-x: scroll;
-  }
-}
-@media screen and (max-width: 992px) {
-  .container-enfant-artists {
+@media screen and (max-width: 1320px) {
+  .container-art {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-size: em;
-    margin: 40px auto;
-    width: 70%;
-    text-align: center;
   }
-}
-
-.container-liste-artists {
-  margin-top: 0px;
-  padding-top: 0px;
-}
-
-@media screen and (min-width: 992px) {
-  .container-enfant-artists {
-    /* border: 1px solid blue; */
+  .banner-artiste-texte {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    font-size: 2em;
-    margin: 40px auto;
-    width: 70%;
+    flex-direction: column;
   }
-}
-.artists {
-  /* border: 1px solid wheat; */
-  margin: 15px auto;
-  color: white;
-  width: 280px;
-  height: 280px;
-  text-align: center;
+  .artiste-nom {
+    font-size: 5em;
+  }
+  .artiste-info {
+    height: 500px;
+    margin-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    margin-left: 12px;
+  }
+  .div-image {
+    /* border: 1px red solid; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    justify-content: center;
+  }
+  .image-artiste {
+    position: relative;
+    margin: -15px auto;
+  }
+  .container-description-artiste {
+    margin-top: 0px;
+    height: auto;
+  }
+  .descritpion-artiste {
+    padding: 30px;
+    width: 80%;
+    font-size: 1.3em;
+    text-align: justify;
+  }
 }
