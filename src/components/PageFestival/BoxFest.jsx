@@ -63,6 +63,7 @@ const BoxFest = ({ match, location }) => {
             opacity: '0.7',
             backgroundSize: 'cover',
             zIndex: -1,
+            backgroundPosition: 'center',
           }}
         >
           <div
