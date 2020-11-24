@@ -1,22 +1,14 @@
-.container-parent-artiste {
-}
-
-.container-art {
-}
-
 .banner-artiste-texte {
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: space-between;
   min-height: 580px;
 }
 
 .artiste-info {
-  /* border: 1px solid red; */
   color: white;
-  height: 200px;
   margin-top: 210px;
   margin-left: 40px;
+  text-align: left;
 }
 
 .artiste-nom {
@@ -26,7 +18,6 @@
 .boutton-play {
   width: 50px;
   margin-top: 15px;
-  /* border: 1px solid red; */
 }
 
 .music-boutton {
@@ -39,7 +30,7 @@
 }
 
 .top-music {
-  /* border: 1px solid red; */
+  padding-left: 0px;
   margin-bottom: 0px;
 }
 .title-music {
@@ -48,10 +39,17 @@
   font-style: italic;
 }
 
+.div-image {
+  max-height: 600px;
+}
 .image-artiste {
-  /* border: 1px solid red; */
-  margin: 50px 70px -80px 0px;
+  margin: 50px 70px -680px 0px;
+  background-repeat: no-repeat;
   width: 600px;
+  height: 600px;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
 }
 
 .container-description-artiste {
@@ -62,13 +60,13 @@
 }
 
 .descritpion-artiste {
-  /* border: 1px solid gray; */
   width: 50%;
   display: flex;
   text-align: justify;
   align-items: center;
   font-size: 1.7em;
   font-weight: bold;
+  color: black;
 }
 
 @media screen and (max-width: 1320px) {
@@ -84,7 +82,7 @@
     font-size: 5em;
   }
   .artiste-info {
-    height: 400px;
+    height: 500px;
     margin-top: 0px;
     padding-bottom: 0px;
     margin-bottom: 20px;
@@ -92,7 +90,6 @@
   }
   .div-image {
     /* border: 1px red solid; */
-    /* z-index: 1000; */
     margin-top: 0px;
     margin-bottom: 0px;
     display: flex;
@@ -103,13 +100,13 @@
     margin: -15px auto;
   }
   .container-description-artiste {
-    /* margin-top: 400px; */
-    /* border: 4px solid blue; */
     margin-top: 0px;
     height: auto;
   }
   .descritpion-artiste {
     padding: 30px;
     width: 80%;
+    font-size: 1.4em;
+    text-align: justify;
   }
 }

@@ -8,8 +8,6 @@ import { ThemeContext } from '../../ThemeContext';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 
-import Artiste from './Artiste';
-
 const ListeArtistes = () => {
   const [theme] = useContext(ThemeContext);
   const [listArtists, setListArtists] = useState([]);
@@ -64,73 +62,75 @@ const ListeArtistes = () => {
     window.location.reload();
   };
   return (
-    <div className="container" className={theme}>
-      <Navbar />
-      <Link to="/artists" className="artiste-title">
-        <button
-          onClick={() => handleReset()}
-          onKeyDown={handleReset}
-          className="artiste-title-cursor"
-          type="button"
-        >
-          Artistes
-        </button>
-      </Link>
-
-      <div className="container-letter">
-        {alphabet.map((letter) => (
+    <div className="container">
+      <div className={theme}>
+        <Navbar />
+        <Link to="/artists" className="artiste-title">
           <button
+            onClick={() => handleReset()}
+            onKeyDown={handleReset}
+            className="artiste-title-cursor"
             type="button"
-            onClick={() => handleArtists(letter)}
-            className="boutton-letters"
           >
-            <Link to={`/artists/${letter}`} className="letters">
-              {letter}
-            </Link>
+            Artistes
           </button>
-        ))}
-      </div>
+        </Link>
 
-      <div className="container-liste-artists">
-        <div className="container-enfant-artists">
-          {filterArtists !== null
-            ? filterArtists.map((artists) => (
-                <div
-                  className="artists"
-                  style={{
-                    backgroundRepeat: 'no-repeat',
-                    backgroundImage: `url(${artists.image_url})`,
-                  }}
-                >
-                  <Link
-                    to={`/artiste/${artists.idartist}`}
-                    className="nameArtistBox"
-                  >
-                    {artists.name}
-                  </Link>
-                </div>
-              ))
-            : listArtists.map((artists) => (
-                <div
-                  className="artists"
-                  style={{
-                    backgroundRepeat: 'no-repeat',
-                    backgroundImage: `url(${artists.image_url})`,
-                  }}
-                >
-                  <Link
-                    to={`/artiste/${artists.idartist}`}
-                    className="nameArtistBox"
-                  >
-                    {artists.name}
-                  </Link>
-                </div>
-              ))}
-
-          {/* {filterPokemon !== null &&  <div className="pokemon">'ko'</div>} */}
+        <div className="container-letter">
+          {alphabet.map((letter) => (
+            <button
+              type="button"
+              onClick={() => handleArtists(letter)}
+              className="boutton-letters"
+            >
+              <Link to={`/artists/${letter}`} className="letters">
+                {letter}
+              </Link>
+            </button>
+          ))}
         </div>
+
+        <div className="container-liste-artists">
+          <div className="container-enfant-artists">
+            {filterArtists !== null
+              ? filterArtists.map((artists) => (
+                  <div
+                    className="artists"
+                    style={{
+                      backgroundRepeat: 'no-repeat',
+                      backgroundImage: `url(${artists.image_url})`,
+                    }}
+                  >
+                    <Link
+                      to={`/artiste/${artists.idartist}`}
+                      className="nameArtistBox"
+                    >
+                      {artists.name}
+                    </Link>
+                  </div>
+                ))
+              : listArtists.map((artists) => (
+                  <div
+                    className="artists"
+                    style={{
+                      backgroundRepeat: 'no-repeat',
+                      backgroundImage: `url(${artists.image_url})`,
+                      backgroundPosition: 'center center',
+                      backgroundSize: 'cover',
+                    }}
+                  >
+                    <Link
+                      to={`/artiste/${artists.idartist}`}
+                      className="nameArtistBox"
+                    >
+                      {artists.name}
+                    </Link>
+                  </div>
+                ))}
+          </div>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };
