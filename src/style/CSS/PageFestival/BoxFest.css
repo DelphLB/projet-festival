@@ -7,7 +7,25 @@
 }
 
 @media screen and (max-width: 950px) {
-  .descriptionTextDesktop {
+  .descriptionText {
+    max-width: 1600px;
+    color: white;
+    margin: 30px auto;
+    line-height: 1.4;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .text-icone {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  svg {
+    color: white;
+    width: 60px;
+  }
+  .container-descriptionDesktop {
     display: none;
   }
   .cardsPack {
@@ -36,7 +54,16 @@
   }
 }
 @media screen and (min-width: 951px) {
-  .descriptionTextMobile {
+  .descriptionText {
+    max-width: 1600px;
+    color: white;
+    margin: 30px auto;
+    line-height: 1.4;
+    font-size: 1.3em;
+
+    text-align: center;
+  }
+  .container-descriptionMobli {
     display: none;
   }
   .section951px {
@@ -240,10 +267,7 @@
   margin: 0px;
   margin-right: 50px;
 }
-.image-icone,
-svg {
-  color: white;
-}
+
 .description {
   font-weight: bold;
   letter-spacing: 2px;
@@ -253,15 +277,7 @@ svg {
 .fleche {
   font-size: 1.2em;
 }
-.descriptionTextDesktop p {
-  /* border: 1px solid red; */
-  color: white;
-  margin: 30px auto;
-  font-size: 1.2em;
-  text-align: center;
 
-  transition: all 2s ease-in;
-}
 /* -----------partie icones --------------*/
 .container-icones {
   /* border: 1px solid red; */

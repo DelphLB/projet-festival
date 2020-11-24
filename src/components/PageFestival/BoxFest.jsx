@@ -85,7 +85,7 @@ const BoxFest = ({ match, location }) => {
       {/* ------- Partie description ---------*/}
 
       <div
-        className="container-description"
+        className="container-descriptionDesktop"
         aria-hidden="true"
         onMouseEnter={() => handleMouseDes()}
         onMouseLeave={() => handleMouseDes()}
@@ -102,6 +102,21 @@ const BoxFest = ({ match, location }) => {
           ) : (
             ''
           )}
+        </div>
+      </div>
+
+      <div
+        className="container-descriptionMobli"
+        aria-hidden="true"
+        style={{ backgroundColor: `${color}` }}
+      >
+        <div className="descriptionFestival">
+          <p className="details">
+            <p className="fleche"> &darr; </p>
+            <p className="description">DESCRIPTION</p>
+            <p className="fleche"> &darr; </p>
+          </p>
+          <div className="descriptionText">{festivals.description}</div>
         </div>
       </div>
       {/* ------- Partie description ---------*/}
