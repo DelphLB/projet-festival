@@ -38,7 +38,7 @@
   }
 
   .insideStyleBox {
-    height: 600px;
+    min-height: 600px;
   }
 
   .insideStyleBox:hover {
