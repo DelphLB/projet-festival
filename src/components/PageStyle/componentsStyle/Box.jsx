@@ -35,7 +35,7 @@ const Box = ({ style }) => {
                     <p>{box.name}</p>
 
                     <p>
-                      {box.endDate} à {box.city}
+                      {box.startdate} à {box.city}
                     </p>
                   </div>
                 </div>
