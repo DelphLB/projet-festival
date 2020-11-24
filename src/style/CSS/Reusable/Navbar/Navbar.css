@@ -4,14 +4,19 @@
   text-align: center;
 }
 
+.centerButtonThemeNavbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .toggleContainer {
   width: 61px;
   height: 36px;
   border-radius: 30px;
+  background-color: #111113;
   outline: none;
   border: none;
-  background: #ddd;
-  margin-top: 18px;
+  margin-top: 12px;
   cursor: pointer;
   transition: all 1s ease-in;
 }
@@ -31,10 +36,10 @@
 .toggleKnob {
   width: 34px;
   height: 33px;
-  background: #111113;
   display: block;
   border-radius: 50%;
   line-height: 35px;
+  background-color: white;
   transition: all 0.5s ease-in;
   margin-left: -5px;
 }
@@ -43,7 +48,6 @@
   width: 32px;
   height: 32px;
   transform: translateX(24px);
-  background: white;
   border-radius: 50%;
   line-height: 35px;
   display: block;
@@ -51,10 +55,6 @@
 
 .span {
   margin-left: 16px;
-}
-
-.toggleContainer.isActive {
-  background: #111113;
 }
 
 .menu-bars {
@@ -117,6 +117,22 @@ span:hover {
     display: flex;
     align-items: center;
   }
+
+  .themeP {
+    display: none;
+  }
+
+  .mode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  .centerButtonThemeNavbar {
+    padding: 8px;
+  }
+
   .menu-bars {
     padding-top: 20px;
     font-size: 2rem;
