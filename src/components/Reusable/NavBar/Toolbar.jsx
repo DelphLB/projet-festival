@@ -15,7 +15,9 @@ export default function Toolbar() {
       <span
         className={`toggleKnob 
                       ${theme === 'dark' ? 'isActive' : ''}`}
-      ></span>
+      >
+        &nbsp;
+      </span>
     );
   }
 
