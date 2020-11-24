@@ -8,7 +8,7 @@ import Footer from '../Reusable/Footer/Footer';
 import { ThemeContext } from '../../ThemeContext';
 
 const PaymentPage = ({ location }) => {
-  const { price } = location.state;
+  const { price } = location.state ? location.state : '';
 
   const [theme] = useContext(ThemeContext);
 
