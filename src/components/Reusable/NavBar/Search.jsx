@@ -35,6 +35,7 @@ function Search() {
           value=""
           onSelect={(e) => handleId(e)}
           data={dataArray}
+          className="searchbarText"
         />
         <Link to={`/festivals/${idFest}`}>
           <button type="button" className="buttonGo">

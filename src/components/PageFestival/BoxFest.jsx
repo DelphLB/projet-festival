@@ -86,7 +86,7 @@ const BoxFest = ({ match, location }) => {
       {/* ------- Partie description ---------*/}
 
       <div
-        className="container-description"
+        className="container-descriptionDesktop"
         aria-hidden="true"
         onMouseEnter={() => handleMouseDes()}
         onMouseLeave={() => handleMouseDes()}
@@ -103,6 +103,21 @@ const BoxFest = ({ match, location }) => {
           ) : (
             ''
           )}
+        </div>
+      </div>
+
+      <div
+        className="container-descriptionMobli"
+        aria-hidden="true"
+        style={{ backgroundColor: `${color}` }}
+      >
+        <div className="descriptionFestival">
+          <p className="details">
+            <p className="fleche"> &darr; </p>
+            <p className="description">DESCRIPTION</p>
+            <p className="fleche"> &darr; </p>
+          </p>
+          <div className="descriptionText">{festivals.description}</div>
         </div>
       </div>
       {/* ------- Partie description ---------*/}
@@ -149,7 +164,7 @@ const BoxFest = ({ match, location }) => {
               <div className="imagepackcard">
                 <img
                   className="imgCard"
-                  src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                  src="https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                   alt="imagecard"
                 />
               </div>
@@ -198,7 +213,7 @@ const BoxFest = ({ match, location }) => {
               <div className="imagepackcard">
                 <img
                   className="imgCard"
-                  src="https://cdn.pixabay.com/photo/2014/05/03/01/02/concert-336695_960_720.jpg"
+                  src="https://images.pexels.com/photos/2014775/pexels-photo-2014775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
                   alt="imagecard"
                 />
               </div>

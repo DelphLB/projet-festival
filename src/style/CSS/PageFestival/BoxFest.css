@@ -2,12 +2,30 @@
   color: white;
 }
 
-.moreInfo {
-  transition: all 0.3s ease-in;
+.moreinfo {
+  height: fit-content;
 }
 
 @media screen and (max-width: 950px) {
-  .descriptionTextDesktop {
+  .descriptionText {
+    max-width: 1500px;
+    color: white;
+    margin: 30px auto;
+    line-height: 1.6;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .text-icone {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  svg {
+    color: white;
+    width: 60px;
+  }
+  .container-descriptionDesktop {
     display: none;
   }
   .cardsPack {
@@ -36,7 +54,19 @@
   }
 }
 @media screen and (min-width: 951px) {
-  .descriptionTextMobile {
+  .descriptionText {
+    max-width: 1600px;
+    color: white;
+    margin: 30px;
+    line-height: 1.8;
+    font-size: 1.3em;
+    padding: 5px;
+    background-color: #fefefe0f;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .container-descriptionMobli {
     display: none;
   }
   .section951px {
@@ -44,9 +74,10 @@
   }
 
   .packCadre:hover img {
-    transform: scale(1.2);
-    opacity: 0.5;
+    transform: scale(1);
+    opacity: 0.8;
     border-radius: 8px;
+    height: 300px;
   }
 
   .packCadre:hover .imagepackcard {
@@ -57,6 +88,7 @@
 
   .packCadre {
     width: 40%;
+    height: fit-content;
   }
 
   /* titre sur banner */
@@ -121,14 +153,18 @@
 }
 
 /* une card ticket */
+
+.packCadre:hover {
+  height: fit-content;
+  min-height: 300px;
+}
+
 .packCadre {
   margin: 20px;
   margin-top: 40px;
   background-color: white;
-  border-radius: 11px;
+  border-radius: 10px 10px 0px 0px;
   max-width: 550px;
-  height: fit-content;
-  min-height: 450px;
 }
 
 .packCadre img {
@@ -137,6 +173,7 @@
   border-radius: 8px;
   z-index: -1;
   display: block;
+  transition: all 0.8s cubic-bezier(0.17, 0.72, 0.42, 1.1);
 }
 
 .imagepackcard {
@@ -149,7 +186,6 @@
   text-align: center;
   opacity: 0.8;
   overflow: hidden;
-  transition: all 0.8s cubic-bezier(0.17, 0.72, 0.42, 1.1);
 }
 
 .packCadre h2 {
@@ -165,6 +201,7 @@
   text-align-last: start;
   padding-left: 15px;
   padding-right: 15px;
+  min-height: 100px;
 }
 
 .textPack p {
@@ -232,10 +269,7 @@
   margin: 0px;
   margin-right: 50px;
 }
-.image-icone,
-svg {
-  color: white;
-}
+
 .description {
   font-weight: bold;
   letter-spacing: 2px;
@@ -245,15 +279,7 @@ svg {
 .fleche {
   font-size: 1.2em;
 }
-.descriptionTextDesktop p {
-  /* border: 1px solid red; */
-  color: white;
-  margin: 30px auto;
-  font-size: 1.2em;
-  text-align: center;
 
-  transition: all 2s ease-in;
-}
 /* -----------partie icones --------------*/
 .container-icones {
   /* border: 1px solid red; */

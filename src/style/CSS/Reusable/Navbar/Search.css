@@ -7,6 +7,11 @@
   transition: 350ms;
   pointer-events: none;
 }
+
+.react-search-box-dropdown-list-item {
+  color: black;
+}
+
 .search-icon {
   display: flex;
   font-size: 2rem;
