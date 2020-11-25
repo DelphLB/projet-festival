@@ -30,7 +30,7 @@ const Artiste = ({ match }) => {
             <div className="banner-artiste-texte">
               <div className="artiste-info">
                 <p className="artiste-nom">{artist.name}</p>
-                <p className="country-artiste"> {artist.country},</p>
+                <p className="country-artiste"> {artist.country}</p>
                 <div className="music-boutton">
                   <a
                     href={artist.music_url}

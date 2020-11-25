@@ -8,7 +8,6 @@ import PageStyle from './components/PageStyle/PageStyle';
 import PaymentPage from './components/PaymentPage/PaymentPage';
 import Contact from './components/Contact/Contact';
 import AdminPage from './components/Admin/AdminPage';
-import Toolbar from './components/Reusable/NavBar/Navbar';
 import './App.css';
 
 import { ThemeContextProvider } from './ThemeContext';
