@@ -8,10 +8,10 @@
 
 @media screen and (max-width: 950px) {
   .descriptionText {
-    max-width: 1600px;
+    max-width: 1500px;
     color: white;
     margin: 30px auto;
-    line-height: 1.4;
+    line-height: 1.6;
     font-size: 15px;
     text-align: center;
   }
@@ -57,12 +57,15 @@
   .descriptionText {
     max-width: 1600px;
     color: white;
-    margin: 30px auto;
-    line-height: 1.4;
+    margin: 30px;
+    line-height: 1.8;
     font-size: 1.3em;
-
+    padding: 5px;
+    background-color: #fefefe0f;
+    border-radius: 8px;
     text-align: center;
   }
+
   .container-descriptionMobli {
     display: none;
   }
