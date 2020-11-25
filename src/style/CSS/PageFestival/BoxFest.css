@@ -6,6 +6,10 @@
   height: fit-content;
 }
 
+.festival .mode {
+  display: none;
+}
+
 @media screen and (max-width: 950px) {
   .descriptionText {
     max-width: 1500px;

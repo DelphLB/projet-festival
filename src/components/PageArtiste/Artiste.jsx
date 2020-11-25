@@ -19,7 +19,7 @@ const Artiste = ({ match }) => {
       .get(`https://api-festit-09-20.herokuapp.com/api/artists/id/${idartist}`)
       .then((response) => response.data)
       .then((data) => setArtiste(data));
-  }, []);
+  }, [idartist]);
 
   return (
     <div className="container-parent-artiste">
