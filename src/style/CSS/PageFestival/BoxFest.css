@@ -198,6 +198,7 @@
   text-align-last: start;
   padding-left: 15px;
   padding-right: 15px;
+  min-height: 100px;
 }
 
 .textPack p {
