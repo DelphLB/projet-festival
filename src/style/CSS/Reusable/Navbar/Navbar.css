@@ -162,6 +162,7 @@ span:hover {
     position: fixed;
     z-index: 1000;
     display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     top: -5px;
     transition: 850ms;
@@ -178,11 +179,10 @@ span:hover {
   .nav-menu-items {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-top: 50px;
     height: 100%;
     width: 100%;
     align-items: center;
+    justify-content: normal;
   }
   .nav-text {
     display: flex;
@@ -196,12 +196,13 @@ span:hover {
   }
 
   .navbar-toogle {
-    background-color: blue;
-    margin: 0;
+    height: 0%;
+    place-self: flex-start;
   }
 
   span {
     margin-left: 16px;
+    width: auto;
   }
 
   #navbarlink {
@@ -210,5 +211,16 @@ span:hover {
     justify-content: flex-start;
     align-items: center;
     margin: 50px 0px 50px 65px;
+  }
+  .menu-close{
+    width: 100%;
+  }
+  .menu-close svg{
+    display: flex;
+    margin-top: -20px;
+
+  }
+  .nav-text svg{
+    width: auto;
   }
 }
