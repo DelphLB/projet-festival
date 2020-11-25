@@ -54,7 +54,7 @@ const TicketForm = () => {
           className="inputeuh"
           name="type"
           onChange={(e) => handleChange(e)}
-          placeholder="Type"
+          placeholder="Type of the ticket"
         />
 
         <input

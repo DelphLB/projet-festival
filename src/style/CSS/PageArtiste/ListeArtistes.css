@@ -2,6 +2,10 @@
   background-color: black;
 }
 
+.fixArtist {
+  display: flex;
+}
+
 .nameArtistBox {
   margin: 220px 20px;
   background-color: rgba(0, 0, 0, 0.35);
@@ -100,6 +104,10 @@
     width: 70%;
     text-align: center;
     width: 282px;
+  }
+
+  .fixArtist {
+    font-size: 12px;
   }
 }
 

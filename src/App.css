@@ -133,3 +133,35 @@
 .light path {
   size: 40px;
 }
+
+.dark .nameArtistBox {
+  color: white;
+}
+
+.light .nameArtistBox {
+  color: white;
+}
+
+.dark .music {
+  color: white;
+}
+
+.light .music {
+  color: black;
+}
+
+.dark .artiste-info {
+  color: white;
+}
+
+.light .artiste-info {
+  color: black;
+}
+
+.dark .react-search-box-dropdown-list-item {
+  color: black;
+}
+
+.light .react-search-box-dropdown-list-item {
+  color: black;
+}

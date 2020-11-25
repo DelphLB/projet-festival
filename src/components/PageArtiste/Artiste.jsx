@@ -19,7 +19,7 @@ const Artiste = ({ match }) => {
       .get(`https://api-festit-09-20.herokuapp.com/api/artists/id/${idartist}`)
       .then((response) => response.data)
       .then((data) => setArtiste(data));
-  }, []);
+  }, [idartist]);
 
   return (
     <div className="container-parent-artiste">
@@ -30,7 +30,7 @@ const Artiste = ({ match }) => {
             <div className="banner-artiste-texte">
               <div className="artiste-info">
                 <p className="artiste-nom">{artist.name}</p>
-                <p className="country-artiste"> {artist.country},</p>
+                <p className="country-artiste"> {artist.country}</p>
                 <div className="music-boutton">
                   <a
                     href={artist.music_url}

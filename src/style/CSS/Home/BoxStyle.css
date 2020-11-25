@@ -30,6 +30,14 @@
 .pName {
   justify-content: center;
 }
+.pageStyle_box {
+  min-height: 160px;
+}
+
+.insideStyleBox {
+  min-height: 130px;
+  max-height: 130px;
+}
 
 @media screen and (min-width: 950px) {
   .pageStyle {
@@ -38,7 +46,7 @@
   }
 
   .insideStyleBox {
-    height: 600px;
+    min-height: 600px;
   }
 
   .insideStyleBox:hover {

@@ -1,6 +1,7 @@
 .container-artists {
   color: black;
   margin: 100px 0px;
+  height: 68px;
   /* padding: 5px 0px; */
   background-color: white;
 }

@@ -103,14 +103,14 @@ const ArtistForm = () => {
           className="inputeuh"
           name="embed_video"
           onChange={(e) => handleChange(e)}
-          placeholder="Embed Video"
+          placeholder="Title of the Music"
         />
 
         <input
           className="inputeuh"
           name="tracker_count"
           onChange={(e) => handleChange(e)}
-          placeholder="Tracker"
+          placeholder="Number of followers"
         />
         <select
           className="selecteuh"

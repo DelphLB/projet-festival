@@ -85,3 +85,11 @@
     transform: scale(2);
   }
 }
+@media screen and (max-width: 950px) {
+  .form-success {
+    height: 250px;
+  }
+  .form-success h2 {
+    font-size: 2em;
+  }
+}
