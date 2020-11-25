@@ -101,6 +101,8 @@ const ListeArtistes = () => {
                     style={{
                       backgroundRepeat: 'no-repeat',
                       backgroundImage: `url(${artists.image_url})`,
+                      backgroundPosition: 'center center',
+                      backgroundSize: 'cover',
                     }}
                   >
                     <Link
