@@ -16,12 +16,11 @@ const Contact = () => {
     setIsSubmitted(true);
   }
   return (
-
     <div className={theme}>
       <div className="contact">
-      <Navbar />
-      {!isSubmitted ? <Form submitForm={submitForm} /> : <FormSuccess />}
-      <Footer />
+        <Navbar />
+        {!isSubmitted ? <Form submitForm={submitForm} /> : <FormSuccess />}
+        <Footer />
       </div>
     </div>
   );
