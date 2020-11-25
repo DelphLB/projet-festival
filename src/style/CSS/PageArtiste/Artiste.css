@@ -53,14 +53,13 @@
 }
 
 .container-description-artiste {
-  border: 1px solid red;
   background-color: white;
-  height: 510px;
   display: flex;
   justify-content: center;
 }
 
 .descritpion-artiste {
+  margin: 70px auto;
   width: 50%;
   display: flex;
   text-align: justify;
@@ -106,7 +105,7 @@
   }
   .descritpion-artiste {
     padding: 30px;
-    width: 80%;
+    width: 90%;
     font-size: 1.3em;
     text-align: justify;
   }
