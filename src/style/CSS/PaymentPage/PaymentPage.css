@@ -43,6 +43,11 @@
   flex-direction: column;
 }
 
+.cardN {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
 #tickets {
   width: 250px;
 }
@@ -50,21 +55,38 @@
 #cardNumber {
   margin-top: 15px;
   width: 180px;
-  height: 20px;
+  height: 30px;
 }
 
 .date {
+  margin-left: 70px;
+  margin-top: 15px;
   width: 120px;
   height: 40px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   margin-bottom: 10px;
+}
+
+.month {
+  padding-right: 5px;
+}
+
+.year {
+  padding-left: 5px;
+}
+
+.ccv {
+  margin-top: 5px;
+
+  display: flex;
+  justify-content: center;
 }
 
 #ccv {
   margin-top: 5px;
   width: 50px;
-  height: 20px;
+  height: 30px;
 }
 
 .icon-container {

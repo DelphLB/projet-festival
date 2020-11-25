@@ -9,7 +9,6 @@ import PaymentPage from './components/PaymentPage/PaymentPage';
 import Contact from './components/Contact/Contact';
 import AdminPage from './components/Admin/AdminPage';
 import './App.css';
-
 import { ThemeContextProvider } from './ThemeContext';
 
 function App() {
