@@ -20,7 +20,7 @@
 }
 .Box:hover {
   transform: scale(1.05);
-  transition-duration: 500ms;
+  transition-duration: 300ms;
 }
 .Box .text {
   display: flex;
