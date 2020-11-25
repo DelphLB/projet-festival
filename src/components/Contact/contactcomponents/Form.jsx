@@ -44,7 +44,7 @@ const Form = ({ submitForm }) => {
         <label className="labelContact" htmlFor="email">
           E-mail
           <input
-            type="email"
+            type="text"
             id="email"
             name="email"
             className="inputContact"
