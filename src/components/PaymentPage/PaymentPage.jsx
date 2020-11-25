@@ -5,8 +5,11 @@ import * as FaIcons from 'react-icons/fa';
 import Navbar from '../Reusable/NavBar/Navbar';
 import Footer from '../Reusable/Footer/Footer';
 import { ThemeContext } from '../../ThemeContext';
+import usePay from './usePay';
+import validate from './Validatepay';
 
 const PaymentPage = ({ location }) => {
+  const { handleChange, values, errors } = usePay(validate);
   const { price } = location.state ? location.state : '';
 
   const [theme] = useContext(ThemeContext);
@@ -47,14 +50,20 @@ const PaymentPage = ({ location }) => {
               name="email"
               className="PayementInput"
               placeholder="ex : fma@gmail.com"
+              value={values.email}
+              onChange={handleChange}
             />
+            {errors.email && <p className="message">{errors.email}</p>}
             Confirmer votre adresse mail
             <input
               type="mail"
               id="mail"
               name="mail"
               className="PayementInput"
+              value={values.email}
+              onChange={handleChange}
             />
+            {errors.email && <p className="message">{errors.email}</p>}
             Téléphone
             <input
               type="phoneNumber"
