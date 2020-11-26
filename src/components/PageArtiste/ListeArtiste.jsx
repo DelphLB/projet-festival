@@ -96,7 +96,8 @@ const ListeArtistes = () => {
           <div className="container-enfant-artists">
             {filterArtists !== null
               ? filterArtists.map((artists) => (
-                  <div
+                  <Link
+                    to={`/artiste/${artists.idartist}`}
                     className="artists"
                     style={{
                       backgroundRepeat: 'no-repeat',
@@ -105,13 +106,8 @@ const ListeArtistes = () => {
                       backgroundSize: 'cover',
                     }}
                   >
-                    <Link
-                      to={`/artiste/${artists.idartist}`}
-                      className="nameArtistBox"
-                    >
-                      {artists.name}
-                    </Link>
-                  </div>
+                    <p className="nameArtistBox">{artists.name}</p>
+                  </Link>
                 ))
               : listArtists.map((artists) => (
                   <Link
