@@ -109,3 +109,11 @@
   margin-top: 20px;
   height: 30px;
 }
+@media screen and (max-width: 950px){
+  .person{
+    width: 70%;
+  }
+  .PayementTitle{
+    font-size: 3em;
+  }
+}
