@@ -32,11 +32,10 @@ const Box = ({ style }) => {
                   <img src={box.logo} alt={box.name} title={box.name} />
 
                   <div className="text">
-                    <p>{box.name}</p>
+                    <h3>{box.name}</h3>
 
-                    <p>
-                      {box.startdate} à {box.city}
-                    </p>
+                    <p>{box.startdate}</p>
+                    <p>{box.city}</p>
                   </div>
                 </div>
               </ul>
