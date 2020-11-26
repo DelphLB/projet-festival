@@ -166,7 +166,7 @@
 
 .packCadre:hover {
   height: fit-content;
-  min-height: 300px;
+  height: 451px;
 }
 
 .packCadre {
@@ -175,6 +175,7 @@
   background-color: white;
   border-radius: 10px 10px 0px 0px;
   max-width: 550px;
+  height: 451px;
 }
 
 .packCadre img {
