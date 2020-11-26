@@ -10,7 +10,7 @@
   display: none;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1024px) {
   .descriptionText {
     max-width: 1500px;
     color: white;
@@ -57,7 +57,7 @@
     display: none;
   }
 }
-@media screen and (min-width: 951px) {
+@media screen and (min-width: 1025px) {
   .descriptionText {
     max-width: 1600px;
     color: white;
