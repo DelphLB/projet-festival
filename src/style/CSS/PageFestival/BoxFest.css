@@ -65,6 +65,11 @@
   }
 }
 @media screen and (min-width: 1025px) {
+  .packCadre:hover {
+    height: fit-content;
+    height: 451px;
+  }
+
   .descriptionText {
     max-width: 1600px;
     color: white;
@@ -176,11 +181,6 @@
 }
 
 /* une card ticket */
-
-.packCadre:hover {
-  height: fit-content;
-  height: 451px;
-}
 
 .packCadre img {
   height: auto;
