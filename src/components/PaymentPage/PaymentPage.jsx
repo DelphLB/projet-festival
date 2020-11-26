@@ -9,17 +9,23 @@ import { ThemeContext } from '../../ThemeContext';
 const PaymentPage = ({ location }) => {
   const { price } = location.state ? location.state : '';
   const [values, setValues] = useState({ email: '' });
+  const [value, setValue] = useState({ mail: '' });
   const [theme] = useContext(ThemeContext);
+
   const handleChange = (e) => {
     setValues({ [e.target.name]: e.target.value });
   };
+
+  const handleChange2 = (e) => {
+    setValue({ [e.target.name]: e.target.value });
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (values.email.includes('@')) {
+    if (value.mail === values.email && values.email.includes('@')) {
       return alert('Merci de votre achat');
     }
-
     return alert('Email invalide');
   };
 
@@ -71,9 +77,9 @@ const PaymentPage = ({ location }) => {
                 type="mail"
                 id="mail"
                 name="mail"
-                value={values.email}
+                value={value.mail}
                 className="PayementInput"
-                onChange={handleChange}
+                onChange={handleChange2}
               />
               Téléphone
               <input
