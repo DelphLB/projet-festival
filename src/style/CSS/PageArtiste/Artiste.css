@@ -121,3 +121,14 @@
     margin-bottom: 0;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .artiste-nom {
+    font-size: 2em;
+  }
+
+  .artiste-info {
+    height: 400px;
+    margin-bottom: 0;
+  }
+}
