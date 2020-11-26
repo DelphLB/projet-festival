@@ -24,6 +24,11 @@
   width: 280px;
   height: 280px;
   text-align: center;
+  transition: transform ease-in-out .5s;
+}
+.artists:hover {
+  transform: scale(1.05);
+  transition-duration: 300ms;
 }
 .image-liste-artiste {
   background-size: cover;
