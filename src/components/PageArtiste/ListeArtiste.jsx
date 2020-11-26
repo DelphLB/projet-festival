@@ -114,7 +114,8 @@ const ListeArtistes = () => {
                   </div>
                 ))
               : listArtists.map((artists) => (
-                  <div
+                  <Link
+                    to={`/artiste/${artists.idartist}`}
                     className="artists"
                     style={{
                       backgroundRepeat: 'no-repeat',
@@ -123,13 +124,8 @@ const ListeArtistes = () => {
                       backgroundSize: 'cover',
                     }}
                   >
-                    <Link
-                      to={`/artiste/${artists.idartist}`}
-                      className="nameArtistBox"
-                    >
-                      {artists.name}
-                    </Link>
-                  </div>
+                    <p className="nameArtistBox">{artists.name}</p>
+                  </Link>
                 ))}
           </div>
         </div>
