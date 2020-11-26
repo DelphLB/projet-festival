@@ -212,15 +212,14 @@ span:hover {
     align-items: center;
     margin: 50px 0px 50px 65px;
   }
-  .menu-close{
+  .menu-close {
     width: 100%;
   }
-  .menu-close svg{
+  .menu-close svg {
     display: flex;
     margin-top: -20px;
-
   }
-  .nav-text svg{
+  .nav-text svg {
     width: auto;
   }
 }

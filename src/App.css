@@ -134,12 +134,22 @@
   size: 40px;
 }
 
+.dark a.artists {
+  color: white;
+}
+
+.light a.artists {
+  color: white;
+}
+
 .dark .nameArtistBox {
   color: white;
+  border-color: white;
 }
 
 .light .nameArtistBox {
   color: white;
+  border-color: white;
 }
 
 .dark .music {
