@@ -70,6 +70,12 @@
     text-align: center;
   }
 
+  .text-icone {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
   .container-descriptionMobli {
     display: none;
   }
@@ -304,12 +310,6 @@
   text-align: center;
   width: 40%;
   margin: 10px;
-}
-
-.text-icone {
-  color: white;
-  font-size: 22px;
-  font-weight: 700;
 }
 
 .image-icone {
