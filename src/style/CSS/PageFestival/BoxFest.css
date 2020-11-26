@@ -10,7 +10,7 @@
   display: none;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1024px) {
   .descriptionText {
     max-width: 1500px;
     color: white;
@@ -57,7 +57,7 @@
     display: none;
   }
 }
-@media screen and (min-width: 951px) {
+@media screen and (min-width: 1025px) {
   .descriptionText {
     max-width: 1600px;
     color: white;
@@ -68,6 +68,12 @@
     background-color: #fefefe0f;
     border-radius: 8px;
     text-align: center;
+  }
+
+  .text-icone {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
   }
 
   .container-descriptionMobli {
@@ -279,7 +285,6 @@
   cursor: pointer;
   font-size: 1.3em;
   margin: 0px;
-  margin-right: 50px;
 }
 
 .description {
@@ -305,12 +310,6 @@
   text-align: center;
   width: 40%;
   margin: 10px;
-}
-
-.text-icone {
-  color: white;
-  font-size: 22px;
-  font-weight: 700;
 }
 
 .image-icone {
