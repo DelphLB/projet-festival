@@ -42,6 +42,13 @@
     margin-top: 20px;
   }
 
+  .packCadre {
+    margin: 20px;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    max-width: 550px;
+  }
   /* titre sur banner */
   .styleNameFest {
     background: none;
@@ -69,7 +76,14 @@
     border-radius: 8px;
     text-align: center;
   }
-
+  .packCadre {
+    margin: 20px;
+    margin-top: 40px;
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    max-width: 550px;
+    height: 451px;
+  }
   .text-icone {
     color: white;
     font-size: 22px;
@@ -98,7 +112,6 @@
 
   .packCadre {
     width: 40%;
-    height: fit-content;
   }
 
   /* titre sur banner */
@@ -166,15 +179,6 @@
 
 .packCadre:hover {
   height: fit-content;
-  height: 451px;
-}
-
-.packCadre {
-  margin: 20px;
-  margin-top: 40px;
-  background-color: white;
-  border-radius: 10px 10px 0px 0px;
-  max-width: 550px;
   height: 451px;
 }
 
