@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../../style/CSS/PaymentPage/PaymentPage.css';
 import * as FaIcons from 'react-icons/fa';
@@ -12,6 +13,8 @@ const PaymentPage = ({ location }) => {
   const [value, setValue] = useState({ mail: '' });
   const [theme] = useContext(ThemeContext);
 
+  const history = useHistory();
+
   const handleChange = (e) => {
     setValues({ [e.target.name]: e.target.value });
   };
@@ -24,9 +27,13 @@ const PaymentPage = ({ location }) => {
     e.preventDefault();
 
     if (value.mail === values.email && values.email.includes('@')) {
-      return alert('Merci de votre achat');
+      history.push('/');
+      alert(
+        "Merci de votre achat, vous allez être redirigé vers la page d'accueil"
+      );
+    } else {
+      alert('Email invalide');
     }
-    return alert('Email invalide');
   };
 
   return (
@@ -95,14 +102,6 @@ const PaymentPage = ({ location }) => {
                 id="address"
                 name="address"
                 className="PayementInput"
-              />
-              Complément d&rsquo;adresse
-              <input
-                type="address"
-                id="address"
-                name="address"
-                className="PayementInput"
-                placeholder="Resembool"
               />
               Ville
               <input
