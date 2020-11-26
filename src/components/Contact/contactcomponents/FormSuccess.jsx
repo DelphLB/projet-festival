@@ -6,7 +6,10 @@ const FormSuccess = () => {
   window.scrollTo(0, 0);
   return (
     <div className="form-success">
-      <h2>Merci ! Nous avons reçu ta requête !</h2>
+      <div className="container-requete">
+        <h2 className="merci">Merci ! </h2>
+        <p className="requete"> Nous avons bien reçu ta requête </p>
+      </div>
       <div className="star star1">&nbsp;</div>
       <div className="star star2">&nbsp;</div>
       <div className="star star3">&nbsp;</div>

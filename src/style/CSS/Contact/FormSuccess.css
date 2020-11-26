@@ -6,18 +6,33 @@
 .form-success {
   position: relative;
   width: 100%;
-  height: 650px;
+  height: 100vh;
   overflow: hidden;
   background: #111113;
   align-items: center;
 }
-.form-success h2 {
+.container-requete {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.merci {
   color: transparent;
   font-weight: 900;
   font-size: 7em;
   -webkit-text-stroke: 2px #fff;
   text-transform: uppercase;
   text-align: center;
+}
+
+.requete {
+  color: transparent;
+  font-weight: 900;
+  font-size: 4em;
+  -webkit-text-stroke: 2px #fff;
+  text-transform: uppercase;
 }
 .form-success .star {
   position: absolute;
@@ -87,9 +102,10 @@
 }
 @media screen and (max-width: 950px) {
   .form-success {
-    height: 250px;
+    height: 100vh;
   }
-  .form-success h2 {
+  .form-success h2,
+  .requete {
     font-size: 2em;
   }
 }
