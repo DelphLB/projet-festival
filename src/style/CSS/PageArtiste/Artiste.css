@@ -110,3 +110,14 @@
     text-align: justify;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .artiste-nom {
+    font-size: 3em;
+  }
+
+  .artiste-info {
+    height: 400px;
+    margin-bottom: 0;
+  }
+}
