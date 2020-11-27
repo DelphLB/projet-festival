@@ -10,14 +10,14 @@ const ArtistForm = () => {
 
   useEffect(() => {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/festivals')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/festivals`)
       .then((res) => res.data)
       .then((data) => setFestivals(data));
   }, []);
 
   useEffect(() => {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/styles')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/styles`)
       .then((res) => res.data)
       .then((data) => setStyles(data));
   }, []);
@@ -29,12 +29,12 @@ const ArtistForm = () => {
   const handleClick = async () => {
     let indexArtist;
     let idArtist;
-    await axios.post('https://api-festit-09-20.herokuapp.com/api/artists', {
+    await axios.post(`${process.env.REACT_APP_BASE_URL}/api/artists`, {
       ...input,
     });
 
     await axios
-      .get('https://api-festit-09-20.herokuapp.com/api/artists/')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/artists/`)
       .then((res) => {
         indexArtist = res.data.length - 1;
         idArtist = res.data[`${indexArtist}`].idartist;
@@ -42,7 +42,7 @@ const ArtistForm = () => {
 
     await axios
       .post(
-        `https://api-festit-09-20.herokuapp.com/api/festivals/${Number(
+        `${process.env.REACT_APP_BASE_URL}/api/festivals/${Number(
           festivalId
         )}/artists/${idArtist}`
       )

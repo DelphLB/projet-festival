@@ -12,7 +12,7 @@ function Search() {
 
   function getData() {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/festivals/')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/festivals/`)
       .then((response) => response.data)
       .then((data) => {
         setDataArray(data);

@@ -13,7 +13,7 @@ class BoxStyle extends Component {
 
   componentDidMount() {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/styles')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/styles`)
       .then((response) => this.setState({ listofStyles: response.data }));
   }
 

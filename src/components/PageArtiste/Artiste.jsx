@@ -16,7 +16,7 @@ const Artiste = ({ match }) => {
 
   useEffect(() => {
     axios
-      .get(`https://api-festit-09-20.herokuapp.com/api/artists/id/${idartist}`)
+      .get(`${process.env.REACT_APP_BASE_URL}/api/artists/id/${idartist}`)
       .then((response) => response.data)
       .then((data) => setArtiste(data));
   }, [idartist]);
