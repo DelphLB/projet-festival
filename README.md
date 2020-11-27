@@ -1,4 +1,4 @@
-This project url : https://festochfastoch.herokuapp.com/.
+Project url : https://festochfastoch.herokuapp.com/.
 
 
 ## Getting started
