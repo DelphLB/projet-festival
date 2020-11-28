@@ -36,7 +36,7 @@ function Navbar() {
     <div className="Navbar">
       <div className="navbar">
         <div className="menu-bars">
-          <FaIcons.FaBars onKeyDown={showTopbar} onClick={showTopbar} />
+          <FaIcons.FaBars onClick={showTopbar} />
         </div>
       </div>
       <nav className={topbar ? 'nav-menu active' : 'nav-menu'}>
