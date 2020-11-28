@@ -24,13 +24,19 @@ function Navbar() {
       icons: <AiIcons.AiOutlineInfoCircle />,
       className: 'nav-text',
     },
+    {
+      title: 'Contact',
+      path: '/contact',
+      icons: <AiIcons.AiOutlineMessage />,
+      className: 'nav-text',
+    },
   ];
 
   return (
     <div className="Navbar">
       <div className="navbar">
         <div className="menu-bars">
-          <FaIcons.FaBars onClick={showTopbar} />
+          <FaIcons.FaBars onKeyDown={showTopbar} onClick={showTopbar} />
         </div>
       </div>
       <nav className={topbar ? 'nav-menu active' : 'nav-menu'}>
