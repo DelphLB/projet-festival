@@ -43,7 +43,7 @@ const ListeArtistes = () => {
 
   useEffect(() => {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/artists')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/artists`)
       .then((response) => setListArtists(response.data));
   }, []);
 

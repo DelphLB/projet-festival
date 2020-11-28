@@ -8,7 +8,7 @@ const TicketForm = () => {
 
   useEffect(() => {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/festivals')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/festivals`)
       .then((res) => res.data)
       .then((data) => setFestivals(data));
   }, []);
@@ -19,7 +19,7 @@ const TicketForm = () => {
 
   const handleClick = async () => {
     await axios
-      .post('https://api-festit-09-20.herokuapp.com/api/tickets', {
+      .post(`${process.env.REACT_APP_BASE_URL}/api/tickets`, {
         ...input,
       })
       /* eslint-disable no-console */

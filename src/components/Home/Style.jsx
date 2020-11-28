@@ -13,7 +13,7 @@ class Style extends Component {
   componentDidMount() {
     const { match } = this.props;
     Axios.get(
-      `https://api-festit-09-20.herokuapp.com/api/styles/${match.params.id}`
+      `${process.env.REACT_APP_BASE_URL}/api/styles/${match.params.id}`
     ).then((response) => this.setState({ style: response.data[0] }));
   }
 

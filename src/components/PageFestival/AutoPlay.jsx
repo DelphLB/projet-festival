@@ -26,7 +26,7 @@ const AutoPlay = ({ idFestival }) => {
   useEffect(() => {
     axios
       .get(
-        `https://api-festit-09-20.herokuapp.com/api/festivals/${idFestival}/artists`
+        `${process.env.REACT_APP_BASE_URL}/api/festivals/${idFestival}/artists`
       )
       .then((response) => response.data)
       .then((data) => setArtists(data));

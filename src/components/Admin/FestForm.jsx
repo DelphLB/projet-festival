@@ -9,7 +9,7 @@ const FestForm = () => {
 
   useEffect(() => {
     axios
-      .get('https://api-festit-09-20.herokuapp.com/api/styles')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/styles`)
       .then((res) => res.data)
       .then((data) => setStyles(data));
   }, []);
@@ -21,12 +21,12 @@ const FestForm = () => {
   const handleClick = async () => {
     let indexFestival;
     let idFestival;
-    await axios.post('https://api-festit-09-20.herokuapp.com/api/festivals', {
+    await axios.post(`${process.env.REACT_APP_BASE_URL}/api/festivals`, {
       ...input,
     });
 
     await axios
-      .get('https://api-festit-09-20.herokuapp.com/api/festivals')
+      .get(`${process.env.REACT_APP_BASE_URL}/api/festivals`)
       .then((res) => {
         indexFestival = res.data.length - 1;
         idFestival = res.data[`${indexFestival}`].idfestival;
@@ -34,9 +34,9 @@ const FestForm = () => {
 
     await axios
       .post(
-        `https://api-festit-09-20.herokuapp.com/api/festivals/${idFestival}/styles/${Number(
-          styleId
-        )}`
+        `${
+          process.env.REACT_APP_BASE_URL
+        }/api/festivals/${idFestival}/styles/${Number(styleId)}`
       )
       /* eslint-disable no-console */
       .then((response2) => console.log(response2))

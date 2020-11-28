@@ -9,7 +9,7 @@ const Box = ({ style }) => {
 
   useEffect(() => {
     Axios.get(
-      `https://api-festit-09-20.herokuapp.com/api/festivals/style/${style.name}`
+      `${process.env.REACT_APP_BASE_URL}/api/festivals/style/${style.name}`
     )
       .then((result) => result.data)
       .then((data) => setBoxs(data));

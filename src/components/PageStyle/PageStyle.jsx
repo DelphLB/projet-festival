@@ -12,7 +12,7 @@ function PageStyle({ match }) {
   const { idStyle } = match.params;
 
   useEffect(() => {
-    Axios.get(`https://api-festit-09-20.herokuapp.com/api/styles/${idStyle}`)
+    Axios.get(`${process.env.REACT_APP_BASE_URL}/api/styles/${idStyle}`)
       .then((response) => response.data[0])
       .then((data) => setStyle(data));
   }, [idStyle]);

@@ -20,13 +20,13 @@ const BoxFest = ({ match, location }) => {
 
   useEffect(() => {
     axios
-      .get(`https://api-festit-09-20.herokuapp.com/api/festivals/${idfestival}`)
+      .get(`${process.env.REACT_APP_BASE_URL}/api/festivals/${idfestival}`)
       .then((response) => response.data)
       .then((data) => setFestivals(data[0]));
 
     axios
       .get(
-        `https://api-festit-09-20.herokuapp.com/api/tickets/festivals/${idfestival}`
+        `${process.env.REACT_APP_BASE_URL}/api/tickets/festivals/${idfestival}`
       )
       .then((response) => setTickets(response.data));
   }, [idfestival]);
