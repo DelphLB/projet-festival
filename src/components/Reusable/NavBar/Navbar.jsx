@@ -24,12 +24,6 @@ function Navbar() {
       icons: <AiIcons.AiOutlineInfoCircle />,
       className: 'nav-text',
     },
-    {
-      title: 'Contact',
-      path: '/contact',
-      icons: <AiIcons.AiOutlineMessage />,
-      className: 'nav-text',
-    },
   ];
 
   return (
